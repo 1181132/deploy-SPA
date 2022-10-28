@@ -5354,19 +5354,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/paulomaio/.nuget/packages/": {}
+    "C:\\Users\\ricar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/paulomaio/Work/Ensino/2019-20/ARQSI/Projects/DDDNetCore/DDDNetCore.csproj",
+      "projectUniqueName": "C:\\Users\\ricar\\OneDrive\\Documentos\\lapr5_2022_g29\\DDDNetCore.csproj",
       "projectName": "DDDNetCore",
-      "projectPath": "/Users/paulomaio/Work/Ensino/2019-20/ARQSI/Projects/DDDNetCore/DDDNetCore.csproj",
-      "packagesPath": "/Users/paulomaio/.nuget/packages/",
-      "outputPath": "/Users/paulomaio/Work/Ensino/2019-20/ARQSI/Projects/DDDNetCore/obj/",
+      "projectPath": "C:\\Users\\ricar\\OneDrive\\Documentos\\lapr5_2022_g29\\DDDNetCore.csproj",
+      "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ricar\\OneDrive\\Documentos\\lapr5_2022_g29\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/paulomaio/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\ricar\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp5.0"
@@ -5434,7 +5434,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
       }
     }
   }
