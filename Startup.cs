@@ -11,8 +11,6 @@ using DDDSample1.Infrastructure.Shared;
 using DDDSample1.Domain.Shared;
 using DDDSample1.Domain.Entregas;
 using DDDSample1.Infrastructure.Armazens;
-using DDDSample1.Infrastructure.Shared;
-using DDDSample1.Domain.Shared;
 using DDDSample1.Domain.Armazens;
 
 namespace DDDSample1
