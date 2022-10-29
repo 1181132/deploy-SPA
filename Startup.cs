@@ -8,12 +8,12 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using DDDSample1.Infrastructure;
 using DDDSample1.Infrastructure.Categories;
 using DDDSample1.Infrastructure.Products;
-using DDDSample1.Infrastructure.Families;
+using DDDSample1.Infrastructure.Entregas;
 using DDDSample1.Infrastructure.Shared;
 using DDDSample1.Domain.Shared;
 using DDDSample1.Domain.Categories;
 using DDDSample1.Domain.Products;
-using DDDSample1.Domain.Families;
+using DDDSample1.Domain.Entregas;
 
 namespace DDDSample1
 {
@@ -74,8 +74,8 @@ namespace DDDSample1
             services.AddTransient<IProductRepository,ProductRepository>();
             services.AddTransient<ProductService>();
 
-            services.AddTransient<IFamilyRepository,FamilyRepository>();
-            services.AddTransient<FamilyService>();
+            services.AddTransient<IEntregaRepository,EntregaRepository>();
+            services.AddTransient<EntregaService>();
         }
     }
 }

@@ -1,9 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using DDDSample1.Domain.Categories;
 using DDDSample1.Domain.Products;
-using DDDSample1.Domain.Families;
+using DDDSample1.Domain.Entregas;
 using DDDSample1.Infrastructure.Categories;
 using DDDSample1.Infrastructure.Products;
+using DDDSample1.Infrastructure.Entregas;
 
 namespace DDDSample1.Infrastructure
 {
@@ -13,7 +14,7 @@ namespace DDDSample1.Infrastructure
 
         public DbSet<Product> Products { get; set; }
 
-        public DbSet<Family> Families { get; set; }
+        public DbSet<Entrega> Entregas { get; set; }
 
         public DDDSample1DbContext(DbContextOptions options) : base(options)
         {
@@ -24,7 +25,7 @@ namespace DDDSample1.Infrastructure
         {
             modelBuilder.ApplyConfiguration(new CategoryEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new ProductEntityTypeConfiguration());
-            modelBuilder.ApplyConfiguration(new FamilyEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new EntregaEntityTypeConfiguration());
         }
     }
 }
