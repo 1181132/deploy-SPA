@@ -3,33 +3,33 @@ using System.Collections.Generic;
 using System;
 using System.Threading.Tasks;
 using DDDSample1.Domain.Shared;
-using DDDSample1.Domain.Categories;
+using DDDSample1.Domain.Armazens;
 
 namespace DDDSample1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoriesController : ControllerBase
+    public class ArmazensController : ControllerBase
     {
-        private readonly CategoryService _service;
+        private readonly ArmazemService _service;
 
-        public CategoriesController(CategoryService service)
+        public ArmazensController(ArmazemService service)
         {
             _service = service;
         }
 
-        // GET: api/Categories
+        // GET: api/Armazens
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CategoryDto>>> GetAll()
+        public async Task<ActionResult<IEnumerable<ArmazemDto>>> GetAll()
         {
             return await _service.GetAllAsync();
         }
 
-        // GET: api/Categories/5
+        // GET: api/Armazens/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<CategoryDto>> GetGetById(Guid id)
+        public async Task<ActionResult<ArmazemDto>> GetGetById(Guid id)
         {
-            var cat = await _service.GetByIdAsync(new CategoryId(id));
+            var cat = await _service.GetByIdAsync(new ArmazemId(id));
 
             if (cat == null)
             {
@@ -39,9 +39,9 @@ namespace DDDSample1.Controllers
             return cat;
         }
 
-        // POST: api/Categories
+        // POST: api/Armazens
         [HttpPost]
-        public async Task<ActionResult<CategoryDto>> Create(CreatingCategoryDto dto)
+        public async Task<ActionResult<ArmazemDto>> Create(CreatingArmazemDto dto)
         {
             var cat = await _service.AddAsync(dto);
 
@@ -49,9 +49,9 @@ namespace DDDSample1.Controllers
         }
 
         
-        // PUT: api/Categories/5
+        // PUT: api/Armazens/5
         [HttpPut("{id}")]
-        public async Task<ActionResult<CategoryDto>> Update(Guid id, CategoryDto dto)
+        public async Task<ActionResult<ArmazemDto>> Update(Guid id, ArmazemDto dto)
         {
             if (id != dto.Id)
             {
@@ -74,11 +74,11 @@ namespace DDDSample1.Controllers
             }
         }
 
-        // Inactivate: api/Categories/5
+        // Inactivate: api/Armazens/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<CategoryDto>> SoftDelete(Guid id)
+        public async Task<ActionResult<ArmazemDto>> SoftDelete(Guid id)
         {
-            var cat = await _service.InactivateAsync(new CategoryId(id));
+            var cat = await _service.InactivateAsync(new ArmazemId(id));
 
             if (cat == null)
             {
@@ -88,13 +88,13 @@ namespace DDDSample1.Controllers
             return Ok(cat);
         }
         
-        // DELETE: api/Categories/5
+        // DELETE: api/Armazens/5
         [HttpDelete("{id}/hard")]
-        public async Task<ActionResult<CategoryDto>> HardDelete(Guid id)
+        public async Task<ActionResult<ArmazemDto>> HardDelete(Guid id)
         {
             try
             {
-                var cat = await _service.DeleteAsync(new CategoryId(id));
+                var cat = await _service.DeleteAsync(new ArmazemId(id));
 
                 if (cat == null)
                 {

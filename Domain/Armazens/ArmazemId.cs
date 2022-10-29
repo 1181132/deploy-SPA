@@ -2,16 +2,16 @@ using System;
 using DDDSample1.Domain.Shared;
 using Newtonsoft.Json;
 
-namespace DDDSample1.Domain.Categories
+namespace DDDSample1.Domain.Armazens
 {
-    public class CategoryId : EntityId
+    public class ArmazemId : EntityId
     {
         [JsonConstructor]
-        public CategoryId(Guid value) : base(value)
+        public ArmazemId(Guid value) : base(value)
         {
         }
 
-        public CategoryId(String value) : base(value)
+        public ArmazemId(String value) : base(value)
         {
         }
 
