@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using DDDSample1.Domain.Entregas;
+using DDDSample1.Infrastructure.Entregas;
 using DDDSample1.Domain.Armazens;
-using DDDSample1.Domain.Families;
 using DDDSample1.Infrastructure.Armazens;
 
 namespace DDDSample1.Infrastructure
@@ -9,7 +10,7 @@ namespace DDDSample1.Infrastructure
     {
         public DbSet<Armazem> Armazens { get; set; }
 
-        public DbSet<Family> Families { get; set; }
+        public DbSet<Entrega> Entregas { get; set; }
 
         public DDDSample1DbContext(DbContextOptions options) : base(options)
         {
@@ -18,8 +19,8 @@ namespace DDDSample1.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new EntregaEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new ArmazemEntityTypeConfiguration());
-            modelBuilder.ApplyConfiguration(new FamilyEntityTypeConfiguration());
         }
     }
 }

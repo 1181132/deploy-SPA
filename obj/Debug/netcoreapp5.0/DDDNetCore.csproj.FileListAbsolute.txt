@@ -28,3 +28,33 @@ C:\Users\ricar\OneDrive\Documentos\lapr5_2022_g29\obj\Debug\netcoreapp5.0\DDDNet
 C:\Users\ricar\OneDrive\Documentos\lapr5_2022_g29\obj\Debug\netcoreapp5.0\DDDNetCore.genruntimeconfig.cache
 C:\Users\ricar\OneDrive\Documentos\lapr5_2022_g29\obj\Debug\netcoreapp5.0\ref\DDDNetCore.dll
 C:\Users\ricar\OneDrive\Documentos\lapr5_2022_g29\bin\Debug\netcoreapp5.0\ref\DDDNetCore.dll
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\bin\Debug\netcoreapp5.0\appsettings.Development.json
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\bin\Debug\netcoreapp5.0\appsettings.json
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\bin\Debug\netcoreapp5.0\DDDNetCore.exe
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\bin\Debug\netcoreapp5.0\DDDNetCore.deps.json
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\bin\Debug\netcoreapp5.0\DDDNetCore.runtimeconfig.json
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\bin\Debug\netcoreapp5.0\DDDNetCore.runtimeconfig.dev.json
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\bin\Debug\netcoreapp5.0\DDDNetCore.dll
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\bin\Debug\netcoreapp5.0\ref\DDDNetCore.dll
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\bin\Debug\netcoreapp5.0\DDDNetCore.pdb
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\bin\Debug\netcoreapp5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\bin\Debug\netcoreapp5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\bin\Debug\netcoreapp5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\bin\Debug\netcoreapp5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\bin\Debug\netcoreapp5.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\bin\Debug\netcoreapp5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\bin\Debug\netcoreapp5.0\Microsoft.EntityFrameworkCore.Relational.Design.dll
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\bin\Debug\netcoreapp5.0\Newtonsoft.Json.dll
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\bin\Debug\netcoreapp5.0\Newtonsoft.Json.Bson.dll
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\obj\Debug\netcoreapp5.0\DDDNetCore.csproj.AssemblyReference.cache
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\obj\Debug\netcoreapp5.0\DDDNetCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\obj\Debug\netcoreapp5.0\DDDNetCore.AssemblyInfoInputs.cache
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\obj\Debug\netcoreapp5.0\DDDNetCore.AssemblyInfo.cs
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\obj\Debug\netcoreapp5.0\DDDNetCore.csproj.CoreCompileInputs.cache
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\obj\Debug\netcoreapp5.0\DDDNetCore.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\obj\Debug\netcoreapp5.0\DDDNetCore.RazorTargetAssemblyInfo.cache
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\obj\Debug\netcoreapp5.0\DDDNetCore.csproj.CopyComplete
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\obj\Debug\netcoreapp5.0\DDDNetCore.dll
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\obj\Debug\netcoreapp5.0\ref\DDDNetCore.dll
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\obj\Debug\netcoreapp5.0\DDDNetCore.pdb
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\obj\Debug\netcoreapp5.0\DDDNetCore.genruntimeconfig.cache

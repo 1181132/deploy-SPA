@@ -1,12 +1,12 @@
 using System;
 using DDDSample1.Domain.Shared;
 
-namespace DDDSample1.Domain.Families
+namespace DDDSample1.Domain.Entregas
 {
-    public class FamilyId : EntityId
+    public class EntregaId : EntityId
     {
 
-        public FamilyId(String value):base(value)
+        public EntregaId(String value):base(value)
         {
 
         }

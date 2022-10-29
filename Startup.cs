@@ -6,12 +6,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using DDDSample1.Infrastructure;
-using DDDSample1.Infrastructure.Armazens;
-using DDDSample1.Infrastructure.Families;
+using DDDSample1.Infrastructure.Entregas;
 using DDDSample1.Infrastructure.Shared;
 using DDDSample1.Domain.Shared;
+using DDDSample1.Domain.Entregas;
+using DDDSample1.Infrastructure.Armazens;
 using DDDSample1.Domain.Armazens;
-using DDDSample1.Domain.Families;
 
 namespace DDDSample1
 {
@@ -69,8 +69,8 @@ namespace DDDSample1
             services.AddTransient<IArmazemRepository,ArmazemRepository>();
             services.AddTransient<ArmazemService>();
 
-            services.AddTransient<IFamilyRepository,FamilyRepository>();
-            services.AddTransient<FamilyService>();
+            services.AddTransient<IEntregaRepository,EntregaRepository>();
+            services.AddTransient<EntregaService>();
         }
     }
 }
