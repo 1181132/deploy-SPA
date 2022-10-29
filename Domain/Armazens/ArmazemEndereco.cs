@@ -73,7 +73,7 @@ namespace DDDSample1.Domain.Armazens
                 .ValidaExpressao(codigoPostal, Constantes.PADRAO_CODIGO_POSTAL);
         }
 
-        public override bool Equals(object obj)
+/*        public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
             return obj is EntityId other && Equals(other);
@@ -88,6 +88,6 @@ namespace DDDSample1.Domain.Armazens
             if (other == null)
                 return -1;
             return this.Value.CompareTo(other.Value);
-        }
+        }*/
     }
 }
