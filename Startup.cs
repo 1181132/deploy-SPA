@@ -6,20 +6,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using DDDSample1.Infrastructure;
-using DDDSample1.Infrastructure.Categories;
-using DDDSample1.Infrastructure.Products;
 using DDDSample1.Infrastructure.Entregas;
 using DDDSample1.Infrastructure.Shared;
 using DDDSample1.Domain.Shared;
-using DDDSample1.Domain.Categories;
-using DDDSample1.Domain.Products;
 using DDDSample1.Domain.Entregas;
 using DDDSample1.Infrastructure.Armazens;
-using DDDSample1.Infrastructure.Families;
 using DDDSample1.Infrastructure.Shared;
 using DDDSample1.Domain.Shared;
 using DDDSample1.Domain.Armazens;
-using DDDSample1.Domain.Families;
 
 namespace DDDSample1
 {
