@@ -26,7 +26,7 @@ namespace DDDSample1.Infrastructure.Shared
         
         public async Task<TEntity> GetByIdAsync(TEntityId id)
         {
-            //return await this._context.Categories.FindAsync(id);
+            //return await this._context.Armazens.FindAsync(id);
             return await this._objs
                 .Where(x => id.Equals(x.Id)).FirstOrDefaultAsync();
         }

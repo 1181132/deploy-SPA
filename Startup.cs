@@ -14,6 +14,12 @@ using DDDSample1.Domain.Shared;
 using DDDSample1.Domain.Categories;
 using DDDSample1.Domain.Products;
 using DDDSample1.Domain.Entregas;
+using DDDSample1.Infrastructure.Armazens;
+using DDDSample1.Infrastructure.Families;
+using DDDSample1.Infrastructure.Shared;
+using DDDSample1.Domain.Shared;
+using DDDSample1.Domain.Armazens;
+using DDDSample1.Domain.Families;
 
 namespace DDDSample1
 {
@@ -68,11 +74,8 @@ namespace DDDSample1
         {
             services.AddTransient<IUnitOfWork,UnitOfWork>();
 
-            services.AddTransient<ICategoryRepository,CategoryRepository>();
-            services.AddTransient<CategoryService>();
-
-            services.AddTransient<IProductRepository,ProductRepository>();
-            services.AddTransient<ProductService>();
+            services.AddTransient<IArmazemRepository,ArmazemRepository>();
+            services.AddTransient<ArmazemService>();
 
             services.AddTransient<IEntregaRepository,EntregaRepository>();
             services.AddTransient<EntregaService>();

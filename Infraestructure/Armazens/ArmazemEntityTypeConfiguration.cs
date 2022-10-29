@@ -1,16 +1,16 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using DDDSample1.Domain.Categories;
+using DDDSample1.Domain.Armazens;
 
-namespace DDDSample1.Infrastructure.Categories
+namespace DDDSample1.Infrastructure.Armazens
 {
-    internal class CategoryEntityTypeConfiguration : IEntityTypeConfiguration<Category>
+    internal class ArmazemEntityTypeConfiguration : IEntityTypeConfiguration<Armazem>
     {
-        public void Configure(EntityTypeBuilder<Category> builder)
+        public void Configure(EntityTypeBuilder<Armazem> builder)
         {
             // cf. https://www.entityframeworktutorial.net/efcore/fluent-api-in-entity-framework-core.aspx
             
-            //builder.ToTable("Categories", SchemaNames.DDDSample1);
+            //builder.ToTable("Armazens", SchemaNames.DDDSample1);
             builder.HasKey(b => b.Id);
             //builder.Property<bool>("_active").HasColumnName("Active");
         }
