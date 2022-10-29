@@ -29,23 +29,23 @@ namespace DDDSample1.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<ArmazemDto>> GetGetById(Guid id)
         {
-            var cat = await _service.GetByIdAsync(new ArmazemId(id));
+            var armazem = await _service.GetByIdAsync(new ArmazemId(id));
 
-            if (cat == null)
+            if (armazem == null)
             {
                 return NotFound();
             }
 
-            return cat;
+            return armazem;
         }
 
         // POST: api/Armazens
         [HttpPost]
         public async Task<ActionResult<ArmazemDto>> Create(CreatingArmazemDto dto)
         {
-            var cat = await _service.AddAsync(dto);
+            var armazem = await _service.AddAsync(dto);
 
-            return CreatedAtAction(nameof(GetGetById), new { id = cat.Id }, cat);
+            return CreatedAtAction(nameof(GetGetById), new { id = armazem.Id }, armazem);
         }
 
         
@@ -60,13 +60,13 @@ namespace DDDSample1.Controllers
 
             try
             {
-                var cat = await _service.UpdateAsync(dto);
+                var armazem = await _service.UpdateAsync(dto);
                 
-                if (cat == null)
+                if (armazem == null)
                 {
                     return NotFound();
                 }
-                return Ok(cat);
+                return Ok(armazem);
             }
             catch(BusinessRuleValidationException ex)
             {
@@ -78,14 +78,14 @@ namespace DDDSample1.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<ArmazemDto>> SoftDelete(Guid id)
         {
-            var cat = await _service.InactivateAsync(new ArmazemId(id));
+            var armazem = await _service.InactivateAsync(new ArmazemId(id));
 
-            if (cat == null)
+            if (armazem == null)
             {
                 return NotFound();
             }
 
-            return Ok(cat);
+            return Ok(armazem);
         }
         
         // DELETE: api/Armazens/5
@@ -94,14 +94,14 @@ namespace DDDSample1.Controllers
         {
             try
             {
-                var cat = await _service.DeleteAsync(new ArmazemId(id));
+                var armazem = await _service.DeleteAsync(new ArmazemId(id));
 
-                if (cat == null)
+                if (armazem == null)
                 {
                     return NotFound();
                 }
 
-                return Ok(cat);
+                return Ok(armazem);
             }
             catch(BusinessRuleValidationException ex)
             {

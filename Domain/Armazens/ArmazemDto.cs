@@ -6,9 +6,20 @@ namespace DDDSample1.Domain.Armazens
     {
         public Guid Id { get; set; }
 
-        public string Description { get; set; }
+        public string Designacao { get; set; }
 
-// tentativa
-        public ArmazemCoordenadas Coordenadas { get; set;}
+        public string Rua { get; set; }
+
+        public int NumeroPorta { get; set; }
+
+        public string CodigoPostal { get; set; }
+
+        public string Cidade { get; set; }
+
+        public string Pais { get; set; }
+
+        public int CoordenadaLon { get; set; }
+
+        public int CoordenadaLat { get; set; }
     }
 }
