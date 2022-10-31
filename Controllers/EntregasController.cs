@@ -41,7 +41,7 @@ namespace DDDSample1.Controllers
 
         // POST: api/Families
         [HttpPost]
-        public async Task<ActionResult<EntregaDto>> Create(EntregaDto dto)
+        public async Task<ActionResult<EntregaDto>> Create(CreatingEntregaDto dto)
         {
             var entrega = await _service.AddAsync(dto);
 

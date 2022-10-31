@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\ricar\\OneDrive\\Documentos\\lapr5_2022_g29\\DDDNetCore.csproj": {}
   },
   "projects": {
@@ -18,13 +19,36 @@
         ],
         "originalTargetFrameworks": [
           "net5.0"
+=======
+    "C:\\Users\\almei\\OneDrive\\Ambiente de Trabalho\\ISEP\\1_Semestre\\2º\\LAPR5\\Projeto\\DDDNetCore.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\almei\\OneDrive\\Ambiente de Trabalho\\ISEP\\1_Semestre\\2º\\LAPR5\\Projeto\\DDDNetCore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\almei\\OneDrive\\Ambiente de Trabalho\\ISEP\\1_Semestre\\2º\\LAPR5\\Projeto\\DDDNetCore.csproj",
+        "projectName": "DDDNetCore",
+        "projectPath": "C:\\Users\\almei\\OneDrive\\Ambiente de Trabalho\\ISEP\\1_Semestre\\2º\\LAPR5\\Projeto\\DDDNetCore.csproj",
+        "packagesPath": "C:\\Users\\almei\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\almei\\OneDrive\\Ambiente de Trabalho\\ISEP\\1_Semestre\\2º\\LAPR5\\Projeto\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\almei\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp5.0"
+>>>>>>> 5c75a2fffc1a1ef5606038a2c361f4c06eb086d2
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
+<<<<<<< HEAD
             "targetAlias": "net5.0",
+=======
+            "targetAlias": "netcoreapp5.0",
+>>>>>>> 5c75a2fffc1a1ef5606038a2c361f4c06eb086d2
             "projectReferences": {}
           }
         },
@@ -36,6 +60,7 @@
       },
       "frameworks": {
         "net5.0": {
+<<<<<<< HEAD
           "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.AspNetCore.Cors": {
@@ -49,12 +74,32 @@
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.11, )"
+=======
+          "targetAlias": "netcoreapp5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+>>>>>>> 5c75a2fffc1a1ef5606038a2c361f4c06eb086d2
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
+<<<<<<< HEAD
               "version": "[5.0.11, )"
+=======
+              "version": "[5.0.0, )"
+>>>>>>> 5c75a2fffc1a1ef5606038a2c361f4c06eb086d2
             },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
@@ -64,6 +109,7 @@
               "target": "Package",
               "version": "[1.1.6, )"
             },
+<<<<<<< HEAD
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.11, )"
@@ -81,6 +127,11 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[5.0.2, )"
+=======
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+>>>>>>> 5c75a2fffc1a1ef5606038a2c361f4c06eb086d2
             },
             "Newtonsoft.Json": {
               "target": "Package",
