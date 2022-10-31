@@ -27,7 +27,7 @@ namespace DDDSample1.Controllers
 
         // GET: api/Armazens/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<ArmazemDto>> GetGetById(Guid id)
+        public async Task<ActionResult<ArmazemDto>> GetGetById(String id)
         {
             var armazem = await _service.GetByIdAsync(new ArmazemId(id));
 
@@ -51,7 +51,7 @@ namespace DDDSample1.Controllers
         
         // PUT: api/Armazens/5
         [HttpPut("{id}")]
-        public async Task<ActionResult<ArmazemDto>> Update(Guid id, ArmazemDto dto)
+        public async Task<ActionResult<ArmazemDto>> Update(String id, ArmazemDto dto)
         {
             if (id != dto.Id)
             {
@@ -76,7 +76,7 @@ namespace DDDSample1.Controllers
 
         // Inactivate: api/Armazens/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<ArmazemDto>> SoftDelete(Guid id)
+        public async Task<ActionResult<ArmazemDto>> SoftDelete(String id)
         {
             var armazem = await _service.InactivateAsync(new ArmazemId(id));
 
@@ -90,7 +90,7 @@ namespace DDDSample1.Controllers
         
         // DELETE: api/Armazens/5
         [HttpDelete("{id}/hard")]
-        public async Task<ActionResult<ArmazemDto>> HardDelete(Guid id)
+        public async Task<ActionResult<ArmazemDto>> HardDelete(String id)
         {
             try
             {

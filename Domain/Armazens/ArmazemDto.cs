@@ -4,7 +4,7 @@ namespace DDDSample1.Domain.Armazens
 {
     public class ArmazemDto
     {
-        public Guid Id { get; set; }
+        public string Id { get; set; }
 
         public string Designacao { get; set; }
 

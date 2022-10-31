@@ -1,10 +1,17 @@
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 using DDDSample1.Domain.Shared;
 
 namespace DDDSample1.Domain.Armazens
 {
     public class Armazem : Entity<ArmazemId>, IAggregateRoot
     {
+
+     //   [Key]
+        //public ArmazemId Id { get; set; }
+
         public ArmazemDesignacao Designacao { get; private set; }
 
         public ArmazemEndereco Endereco { get; private set; }
@@ -13,18 +20,19 @@ namespace DDDSample1.Domain.Armazens
 
         public bool Active { get; private set; }
 
-        private Armazem()
+        protected Armazem()
         {
             this.Active = true;
         }
 
         public Armazem(
+            ArmazemId id,
             ArmazemDesignacao designacao,
             ArmazemEndereco endereco,
             ArmazemCoordenadas coordenadas
         )
         {
-            this.Id = new ArmazemId(Guid.NewGuid());
+            this.Id = id;
             this.Designacao = designacao;
             this.Endereco = endereco;
             this.Coordenadas = coordenadas;

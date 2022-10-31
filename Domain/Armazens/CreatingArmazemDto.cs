@@ -2,6 +2,8 @@ namespace DDDSample1.Domain.Armazens
 {
     public class CreatingArmazemDto
     {
+        public ArmazemId Id { get; set; }
+
         public ArmazemDesignacao Designacao { get; set; }
 
         public ArmazemEndereco Endereco { get; set; }
@@ -9,6 +11,7 @@ namespace DDDSample1.Domain.Armazens
         public ArmazemCoordenadas Coordenadas { get; set; }
 
         public CreatingArmazemDto(
+            string id,
             string designacao,
             string rua,
             int numeroPorta,
@@ -19,6 +22,7 @@ namespace DDDSample1.Domain.Armazens
             int coordenadaLat
         )
         {
+            this.Id = new ArmazemId(id);
             this.Designacao = new ArmazemDesignacao(designacao);
             this.Endereco =
                 new ArmazemEndereco(rua,

@@ -25,9 +25,7 @@ namespace DDDSample1.Domain.Utils
 
         public const int MIN_COMPRIMENTO_NOME_PAIS = 0;
 
-        public const int MAX_INDENTIFICADOR_ARMAZEM = 1000;
-
-        public const int MIN_MAX_INDENTIFICADOR_ARMAZEM = 99;
+        public const int TAMANHO_INDENTIFICADOR_ARMAZEM = 3;
 
         public const int MAX_LAT = 90;
 

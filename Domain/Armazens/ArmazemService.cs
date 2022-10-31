@@ -20,7 +20,7 @@ namespace DDDSample1.Domain.Armazens
             var list = await this._repo.GetAllAsync();
             
             List<ArmazemDto> listDto = list.ConvertAll<ArmazemDto>(armazem => new ArmazemDto{
-                Id = armazem.Id.AsGuid(), Designacao = armazem.Designacao.Designacao, Rua = armazem.Endereco.Rua, NumeroPorta = armazem.Endereco.NumeroPorta,
+                Id = armazem.Id.AsString(), Designacao = armazem.Designacao.Designacao, Rua = armazem.Endereco.Rua, NumeroPorta = armazem.Endereco.NumeroPorta,
                 CodigoPostal = armazem.Endereco.CodigoPostal, Cidade = armazem.Endereco.Cidade, Pais = armazem.Endereco.Pais,
                  CoordenadaLon = armazem.Coordenadas.CoordenadaLon, CoordenadaLat = armazem.Coordenadas.CoordenadaLat});
 
@@ -34,20 +34,20 @@ namespace DDDSample1.Domain.Armazens
             if(armazem == null)
                 return null;
 
-            return new ArmazemDto{Id = armazem.Id.AsGuid(), Designacao = armazem.Designacao.Designacao, Rua = armazem.Endereco.Rua, NumeroPorta = armazem.Endereco.NumeroPorta,
+            return new ArmazemDto{Id = armazem.Id.AsString(), Designacao = armazem.Designacao.Designacao, Rua = armazem.Endereco.Rua, NumeroPorta = armazem.Endereco.NumeroPorta,
                 CodigoPostal = armazem.Endereco.CodigoPostal, Cidade = armazem.Endereco.Cidade, Pais = armazem.Endereco.Pais,
                  CoordenadaLon = armazem.Coordenadas.CoordenadaLon, CoordenadaLat = armazem.Coordenadas.CoordenadaLat};
         }
 
         public async Task<ArmazemDto> AddAsync(CreatingArmazemDto dto)
         {
-            var armazem = new Armazem(dto.Designacao, dto.Endereco, dto.Coordenadas);
+            var armazem = new Armazem(dto.Id, dto.Designacao, dto.Endereco, dto.Coordenadas);
 
             await this._repo.AddAsync(armazem);
 
             await this._unitOfWork.CommitAsync();
 
-            return new ArmazemDto {Id = armazem.Id.AsGuid(), Designacao = armazem.Designacao.Designacao, Rua = armazem.Endereco.Rua, NumeroPorta = armazem.Endereco.NumeroPorta,
+            return new ArmazemDto {Id = armazem.Id.AsString(), Designacao = armazem.Designacao.Designacao, Rua = armazem.Endereco.Rua, NumeroPorta = armazem.Endereco.NumeroPorta,
                 CodigoPostal = armazem.Endereco.CodigoPostal, Cidade = armazem.Endereco.Cidade, Pais = armazem.Endereco.Pais,
                  CoordenadaLon = armazem.Coordenadas.CoordenadaLon, CoordenadaLat = armazem.Coordenadas.CoordenadaLat};
         }
@@ -70,7 +70,7 @@ namespace DDDSample1.Domain.Armazens
             
             await this._unitOfWork.CommitAsync();
 
-            return new ArmazemDto {Id = armazem.Id.AsGuid(), Designacao = armazem.Designacao.Designacao, Rua = armazem.Endereco.Rua, NumeroPorta = armazem.Endereco.NumeroPorta,
+            return new ArmazemDto {Id = armazem.Id.AsString(), Designacao = armazem.Designacao.Designacao, Rua = armazem.Endereco.Rua, NumeroPorta = armazem.Endereco.NumeroPorta,
                 CodigoPostal = armazem.Endereco.CodigoPostal, Cidade = armazem.Endereco.Cidade, Pais = armazem.Endereco.Pais,
                  CoordenadaLon = armazem.Coordenadas.CoordenadaLon, CoordenadaLat = armazem.Coordenadas.CoordenadaLat};
         }
@@ -87,7 +87,7 @@ namespace DDDSample1.Domain.Armazens
             
             await this._unitOfWork.CommitAsync();
 
-            return new ArmazemDto{Id = armazem.Id.AsGuid(), Designacao = armazem.Designacao.Designacao, Rua = armazem.Endereco.Rua, NumeroPorta = armazem.Endereco.NumeroPorta,
+            return new ArmazemDto{Id = armazem.Id.AsString(), Designacao = armazem.Designacao.Designacao, Rua = armazem.Endereco.Rua, NumeroPorta = armazem.Endereco.NumeroPorta,
                 CodigoPostal = armazem.Endereco.CodigoPostal, Cidade = armazem.Endereco.Cidade, Pais = armazem.Endereco.Pais,
                  CoordenadaLon = armazem.Coordenadas.CoordenadaLon, CoordenadaLat = armazem.Coordenadas.CoordenadaLat};
         }
@@ -105,7 +105,7 @@ namespace DDDSample1.Domain.Armazens
             this._repo.Remove(armazem);
             await this._unitOfWork.CommitAsync();
 
-            return new ArmazemDto {Id = armazem.Id.AsGuid(), Designacao = armazem.Designacao.Designacao, Rua = armazem.Endereco.Rua, NumeroPorta = armazem.Endereco.NumeroPorta,
+            return new ArmazemDto {Id = armazem.Id.AsString(), Designacao = armazem.Designacao.Designacao, Rua = armazem.Endereco.Rua, NumeroPorta = armazem.Endereco.NumeroPorta,
                 CodigoPostal = armazem.Endereco.CodigoPostal, Cidade = armazem.Endereco.Cidade, Pais = armazem.Endereco.Pais,
                  CoordenadaLon = armazem.Coordenadas.CoordenadaLon, CoordenadaLat = armazem.Coordenadas.CoordenadaLat};
         }
