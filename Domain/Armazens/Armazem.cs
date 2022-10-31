@@ -34,21 +34,30 @@ namespace DDDSample1.Domain.Armazens
         public void ChangeDescription(ArmazemDesignacao designacao)
         {
             if (!this.Active)
-                throw new BusinessRuleValidationException("It is not possible to change the description to an inactive armazem.");
+                throw new BusinessRuleValidationException("Não é possível alterar a designacao para um inactivo armazem.");
             this.Designacao = designacao;
         }
 
         public void ChangeArmazemEnderco(ArmazemEndereco endereco)
         {
             if (!this.Active)
-                throw new BusinessRuleValidationException("It is not possible to change the description to an inactive armazem.");
+                throw new BusinessRuleValidationException("It is not possible to change the endereco para um inactivo armazem.");
             this.Endereco = endereco;
         }
 
         public void ChangeArmazemCoordenadas(ArmazemCoordenadas coordenadas)
         {
             if (!this.Active)
-                throw new BusinessRuleValidationException("It is not possible to change the description to an inactive armazem.");
+                throw new BusinessRuleValidationException("Não é possível alterar as coordenadas para um inactivo armazem.");
+            this.Coordenadas = coordenadas;
+        }
+
+        public void ChangeAllFields(ArmazemDesignacao designacao, ArmazemEndereco endereco ,ArmazemCoordenadas coordenadas)
+        {
+            if (!this.Active)
+                throw new BusinessRuleValidationException("Não é possível alterar todos os parametros para um inativo armazem.");
+            this.Designacao = designacao;
+            this.Endereco = endereco;
             this.Coordenadas = coordenadas;
         }
 
