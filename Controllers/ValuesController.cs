@@ -28,7 +28,7 @@ namespace DDDSample1.Controllers
         }
 
         // PUT api/values/5
-        [HttpPut("{id}")]
+        [HttpPut("{id:int}")]
         public void Put(int id, [FromBody] string value)
         {
         }

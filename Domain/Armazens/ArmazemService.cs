@@ -19,34 +19,37 @@ namespace DDDSample1.Domain.Armazens
         {
             var list = await this._repo.GetAllAsync();
             
-            //ver depois
-            List<ArmazemDto> listDto = list.ConvertAll<ArmazemDto>(cat => new ArmazemDto{Id = cat.Id.AsGuid(), Description = cat.Description});
+            List<ArmazemDto> listDto = list.ConvertAll<ArmazemDto>(armazem => new ArmazemDto{
+                Id = armazem.Id.AsGuid(), Designacao = armazem.Designacao.Designacao, Rua = armazem.Endereco.Rua, NumeroPorta = armazem.Endereco.NumeroPorta,
+                CodigoPostal = armazem.Endereco.CodigoPostal, Cidade = armazem.Endereco.Cidade, Pais = armazem.Endereco.Pais,
+                 CoordenadaLon = armazem.Coordenadas.CoordenadaLon, CoordenadaLat = armazem.Coordenadas.CoordenadaLat});
 
             return listDto;
         }
 
         public async Task<ArmazemDto> GetByIdAsync(ArmazemId id)
         {
-            var cat = await this._repo.GetByIdAsync(id);
+            var armazem = await this._repo.GetByIdAsync(id);
             
-            if(cat == null)
+            if(armazem == null)
                 return null;
 
-            //ver depois
-            return new ArmazemDto{Id = cat.Id.AsGuid(), Description = cat.Description};
+            return new ArmazemDto{Id = armazem.Id.AsGuid(), Designacao = armazem.Designacao.Designacao, Rua = armazem.Endereco.Rua, NumeroPorta = armazem.Endereco.NumeroPorta,
+                CodigoPostal = armazem.Endereco.CodigoPostal, Cidade = armazem.Endereco.Cidade, Pais = armazem.Endereco.Pais,
+                 CoordenadaLon = armazem.Coordenadas.CoordenadaLon, CoordenadaLat = armazem.Coordenadas.CoordenadaLat};
         }
 
         public async Task<ArmazemDto> AddAsync(CreatingArmazemDto dto)
         {
-            //tentativa
-            var armazem = new Armazem(dto.Description , dto.Coordenadas);
+            var armazem = new Armazem(dto.Designacao, dto.Endereco, dto.Coordenadas);
 
             await this._repo.AddAsync(armazem);
 
             await this._unitOfWork.CommitAsync();
 
-//mexi aqui tambem
-            return new ArmazemDto { Id = armazem.Id.AsGuid(), Description = armazem.Description, Coordenadas = armazem.Coordenadas };
+            return new ArmazemDto {Id = armazem.Id.AsGuid(), Designacao = armazem.Designacao.Designacao, Rua = armazem.Endereco.Rua, NumeroPorta = armazem.Endereco.NumeroPorta,
+                CodigoPostal = armazem.Endereco.CodigoPostal, Cidade = armazem.Endereco.Cidade, Pais = armazem.Endereco.Pais,
+                 CoordenadaLon = armazem.Coordenadas.CoordenadaLon, CoordenadaLat = armazem.Coordenadas.CoordenadaLat};
         }
 
 
@@ -59,15 +62,17 @@ namespace DDDSample1.Domain.Armazens
                 return null;   
 
             // change all field
-            armazem.ChangeDescription(dto.Description);
+            armazem.ChangeDescription(new ArmazemDesignacao(dto.Designacao));
+            armazem.ChangeArmazemEnderco(new ArmazemEndereco(dto.Rua, dto.NumeroPorta, dto.CodigoPostal, dto.Cidade, dto.Pais));
+            armazem.ChangeArmazemCoordenadas(new ArmazemCoordenadas(dto.CoordenadaLon, dto.CoordenadaLat));
 
-            //tentativa
-            armazem.ChangeArmazemCoordenadas(dto.Coordenadas);
+    //  armazem.ChangeAllFields(dto.dataEntrega, dto.massaEntrega, dto.armazemEntrega, dto.tempoColocarEntrega, dto.tempoRetirarEntrega);
             
             await this._unitOfWork.CommitAsync();
 
-            //tentativa
-            return new ArmazemDto { Id = armazem.Id.AsGuid(), Description = armazem.Description, Coordenadas = armazem.Coordenadas };
+            return new ArmazemDto {Id = armazem.Id.AsGuid(), Designacao = armazem.Designacao.Designacao, Rua = armazem.Endereco.Rua, NumeroPorta = armazem.Endereco.NumeroPorta,
+                CodigoPostal = armazem.Endereco.CodigoPostal, Cidade = armazem.Endereco.Cidade, Pais = armazem.Endereco.Pais,
+                 CoordenadaLon = armazem.Coordenadas.CoordenadaLon, CoordenadaLat = armazem.Coordenadas.CoordenadaLat};
         }
 
         public async Task<ArmazemDto> InactivateAsync(ArmazemId id)
@@ -82,8 +87,9 @@ namespace DDDSample1.Domain.Armazens
             
             await this._unitOfWork.CommitAsync();
 
-            //tentativa
-            return new ArmazemDto { Id = armazem.Id.AsGuid(), Description = armazem.Description, Coordenadas = armazem.Coordenadas };
+            return new ArmazemDto{Id = armazem.Id.AsGuid(), Designacao = armazem.Designacao.Designacao, Rua = armazem.Endereco.Rua, NumeroPorta = armazem.Endereco.NumeroPorta,
+                CodigoPostal = armazem.Endereco.CodigoPostal, Cidade = armazem.Endereco.Cidade, Pais = armazem.Endereco.Pais,
+                 CoordenadaLon = armazem.Coordenadas.CoordenadaLon, CoordenadaLat = armazem.Coordenadas.CoordenadaLat};
         }
 
          public async Task<ArmazemDto> DeleteAsync(ArmazemId id)
@@ -94,13 +100,14 @@ namespace DDDSample1.Domain.Armazens
                 return null;   
 
             if (armazem.Active)
-                throw new BusinessRuleValidationException("It is not possible to delete an active armazem.");
+                throw new BusinessRuleValidationException("Não é possivel apagar um armazem activo.");
             
             this._repo.Remove(armazem);
             await this._unitOfWork.CommitAsync();
 
-            //tentativa
-            return new ArmazemDto { Id = armazem.Id.AsGuid(), Description = armazem.Description, Coordenadas = armazem.Coordenadas };
+            return new ArmazemDto {Id = armazem.Id.AsGuid(), Designacao = armazem.Designacao.Designacao, Rua = armazem.Endereco.Rua, NumeroPorta = armazem.Endereco.NumeroPorta,
+                CodigoPostal = armazem.Endereco.CodigoPostal, Cidade = armazem.Endereco.Cidade, Pais = armazem.Endereco.Pais,
+                 CoordenadaLon = armazem.Coordenadas.CoordenadaLon, CoordenadaLat = armazem.Coordenadas.CoordenadaLat};
         }
     }
 }

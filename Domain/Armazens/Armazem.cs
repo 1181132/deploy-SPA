@@ -5,39 +5,60 @@ namespace DDDSample1.Domain.Armazens
 {
     public class Armazem : Entity<ArmazemId>, IAggregateRoot
     {
-     
-        public string Description { get;  private set; }
+        public ArmazemDesignacao Designacao { get; private set; }
 
-        // tentativa
-        public ArmazemCoordenadas Coordenadas { get; private set;  }
+        public ArmazemEndereco Endereco { get; private set; }
 
-        public bool Active{ get;  private set; }
+        public ArmazemCoordenadas Coordenadas { get; private set; }
+
+        public bool Active { get; private set; }
 
         private Armazem()
         {
             this.Active = true;
         }
 
-        public Armazem(string description, ArmazemCoordenadas coordenadas)
+        public Armazem(
+            ArmazemDesignacao designacao,
+            ArmazemEndereco endereco,
+            ArmazemCoordenadas coordenadas
+        )
         {
             this.Id = new ArmazemId(Guid.NewGuid());
-            this.Description = description;
+            this.Designacao = designacao;
+            this.Endereco = endereco;
             this.Coordenadas = coordenadas;
             this.Active = true;
         }
 
-        public void ChangeDescription(string description)
+        public void ChangeDescription(ArmazemDesignacao designacao)
         {
             if (!this.Active)
-                throw new BusinessRuleValidationException("It is not possible to change the description to an inactive armazem.");
-            this.Description = description;
+                throw new BusinessRuleValidationException("Não é possível alterar a designacao para um inactivo armazem.");
+            this.Designacao = designacao;
         }
 
-        public void ChangeArmazemCoordenadas(ArmazemCoordenadas Coordenadas)
+        public void ChangeArmazemEnderco(ArmazemEndereco endereco)
         {
             if (!this.Active)
-                throw new BusinessRuleValidationException("It is not possible to change the description to an inactive armazem.");
-            this.Coordenadas = Coordenadas;
+                throw new BusinessRuleValidationException("It is not possible to change the endereco para um inactivo armazem.");
+            this.Endereco = endereco;
+        }
+
+        public void ChangeArmazemCoordenadas(ArmazemCoordenadas coordenadas)
+        {
+            if (!this.Active)
+                throw new BusinessRuleValidationException("Não é possível alterar as coordenadas para um inactivo armazem.");
+            this.Coordenadas = coordenadas;
+        }
+
+        public void ChangeAllFields(ArmazemDesignacao designacao, ArmazemEndereco endereco ,ArmazemCoordenadas coordenadas)
+        {
+            if (!this.Active)
+                throw new BusinessRuleValidationException("Não é possível alterar todos os parametros para um inativo armazem.");
+            this.Designacao = designacao;
+            this.Endereco = endereco;
+            this.Coordenadas = coordenadas;
         }
 
         public void MarkAsInative()

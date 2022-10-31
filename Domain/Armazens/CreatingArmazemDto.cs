@@ -2,16 +2,32 @@ namespace DDDSample1.Domain.Armazens
 {
     public class CreatingArmazemDto
     {
-        public string Description { get; set; }
+        public ArmazemDesignacao Designacao { get; set; }
 
-        //tentativa
+        public ArmazemEndereco Endereco { get; set; }
+
         public ArmazemCoordenadas Coordenadas { get; set; }
 
-        public CreatingArmazemDto(string description, string coordenadas )
+        public CreatingArmazemDto(
+            string designacao,
+            string rua,
+            int numeroPorta,
+            string codigoPostal,
+            string cidade,
+            string pais,
+            int coordenadaLon,
+            int coordenadaLat
+        )
         {
-            this.Description = description;
-
-            this.Coordenadas = new ArmazemCoordenadas(coordenadas);
+            this.Designacao = new ArmazemDesignacao(designacao);
+            this.Endereco =
+                new ArmazemEndereco(rua,
+                    numeroPorta,
+                    codigoPostal,
+                    cidade,
+                    pais);
+            this.Coordenadas =
+                new ArmazemCoordenadas(coordenadaLon, coordenadaLat);
         }
     }
 }
