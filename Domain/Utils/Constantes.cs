@@ -40,5 +40,7 @@ namespace DDDSample1.Domain.Utils
         public const string PADRAO_CODIGO_POSTAL = @"(^\d{4}(-\d{3})?$)";
 
         public const string PADRAO_ALFANUMERICO = @"(^[a-zA-Z0-9]*$)";
+
+        public const string PADRAO_DATA = @"^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$";
     }
 }

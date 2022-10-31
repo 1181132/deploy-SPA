@@ -12,6 +12,7 @@ using DDDSample1.Domain.Shared;
 using DDDSample1.Domain.Entregas;
 using DDDSample1.Infrastructure.Armazens;
 using DDDSample1.Domain.Armazens;
+using Microsoft.EntityFrameworkCore.Sqlite;
 
 namespace DDDSample1
 {
@@ -27,14 +28,19 @@ namespace DDDSample1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DDDSample1DbContext>(opt =>
+           /* services.AddDbContext<DDDSample1DbContext>(opt =>
                 opt.UseInMemoryDatabase("DDDSample1DB")
                 .ReplaceService<IValueConverterSelector, StronglyEntityIdValueConverterSelector>());
 
             ConfigureMyServices(services);
             
 
-            services.AddControllers().AddNewtonsoftJson();
+            services.AddControllers().AddNewtonsoftJson();*/
+            var connection= "Data Source= theDataBase.db";
+            
+            services.AddDbContext<DDDSample1DbContext>(options=> options.UseSqlite(connection));
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
