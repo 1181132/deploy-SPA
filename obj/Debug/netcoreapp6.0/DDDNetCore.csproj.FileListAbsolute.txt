@@ -1,0 +1,6 @@
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\obj\Debug\netcoreapp6.0\DDDNetCore.csproj.AssemblyReference.cache
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\obj\Debug\netcoreapp6.0\DDDNetCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\obj\Debug\netcoreapp6.0\DDDNetCore.AssemblyInfoInputs.cache
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\obj\Debug\netcoreapp6.0\DDDNetCore.AssemblyInfo.cs
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\obj\Debug\netcoreapp6.0\DDDNetCore.csproj.CoreCompileInputs.cache
+C:\Users\almei\OneDrive\Ambiente de Trabalho\ISEP\1_Semestre\2º\LAPR5\Projeto\obj\Debug\netcoreapp6.0\DDDNetCore.MvcApplicationPartsAssemblyInfo.cache

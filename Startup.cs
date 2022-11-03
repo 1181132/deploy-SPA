@@ -9,7 +9,6 @@ using DDDSample1.Infrastructure.Shared;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Sqlite;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,53 +28,26 @@ namespace DDDSample1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // IWebHostEnvironment (stored in _env) is injected into the Startup class.
-           // if (!_env.IsDevelopment())
-          //  {
-          /*      services
-                    .AddHttpsRedirection(options =>
-                    {
-                        options.RedirectStatusCode =
-                            (int) HttpStatusCode.PermanentRedirect;
-                        options.HttpsPort = 443;
-                    });*/
-          //  }
 
-            // var connection= "Data Source= theDataBase.db";
-            //   services.AddDbContext<DDDSample1DbContext>(options=> options.UseSqlite(connection));
             services
                 .AddDbContext<DDDSample1DbContext>(options =>
                     options
-                        .UseSqlServer(Configuration
-                            .GetConnectionString("DefaultConnection"))
-                        .ReplaceService
-                        <IValueConverterSelector,
-                            StronglyEntityIdValueConverterSelector
-                        >());
+                        .UseMySql(Configuration
+                            .GetConnectionString("OtherConnection"),
+                            new MySqlServerVersion(new version(10,7,3)),
+                            o => o.SchemaBehavior(MySqlSchemaBehavior.Ignore))
+                            .ReplaceService<IValueConverterSelector, StronglyEntityIdValueConverterSelector>());
 
-            services
-                .AddCors(options =>
-                {
-                    options
-                        .AddPolicy("AllowAll",
-                        builder =>
-                        {
-                            builder
-                                .AllowAnyOrigin()
-                                .AllowAnyMethod()
-                                .AllowAnyHeader();
-                        });
-                });
+            var optionsBuilder = new DbContextOptionsBuilder<DDDSample1DbContext>();
+
+            optionsBuilder.UseMySql(Configuration.GetConnectionString("OtherConnection"), new MySqlServerVersion(new version(10,7,3)),o => O.SchemaBehavior(MySqlSchemaBehavior.Ignore));
+
+            using (var dbContext = new DDDSample1DbContext(optionsBuilder.Options)){
+                dbContext.DataBase.EnsureCreated();
+            }
 
             ConfigureMyServices (services);
 
-             services.AddControllers().AddNewtonsoftJson();
-
-            /*services.AddDbContext<DDDSample1DbContext>(opt =>
-                opt.UseInMemoryDatabase("DDDSample1DB")
-                .ReplaceService<IValueConverterSelector, StronglyEntityIdValueConverterSelector>())
-
-            */
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
