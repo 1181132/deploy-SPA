@@ -32,16 +32,14 @@ namespace DDDSample1
             // IWebHostEnvironment (stored in _env) is injected into the Startup class.
            // if (!_env.IsDevelopment())
           //  {
-                services
+          /*      services
                     .AddHttpsRedirection(options =>
                     {
                         options.RedirectStatusCode =
                             (int) HttpStatusCode.PermanentRedirect;
                         options.HttpsPort = 443;
-                    });
+                    });*/
           //  }
-
-            services.AddControllers().AddNewtonsoftJson();
 
             // var connection= "Data Source= theDataBase.db";
             //   services.AddDbContext<DDDSample1DbContext>(options=> options.UseSqlite(connection));
@@ -70,6 +68,8 @@ namespace DDDSample1
                 });
 
             ConfigureMyServices (services);
+
+             services.AddControllers().AddNewtonsoftJson();
 
             /*services.AddDbContext<DDDSample1DbContext>(opt =>
                 opt.UseInMemoryDatabase("DDDSample1DB")

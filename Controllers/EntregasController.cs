@@ -18,14 +18,14 @@ namespace DDDSample1.Controllers
             _service = service;
         }
 
-        // GET: api/Families
+        // GET: api/Entregas
         [HttpGet]
         public async Task<ActionResult<IEnumerable<EntregaDto>>> GetAll()
         {
             return await _service.GetAllAsync();
         }
 
-        // GET: api/Families/F1
+        // GET: api/Entregas/6
         [HttpGet("{id}")]
         public async Task<ActionResult<EntregaDto>> GetGetById(String id)
         {
@@ -39,7 +39,7 @@ namespace DDDSample1.Controllers
             return entrega;
         }
 
-        // POST: api/Families
+        // POST: api/Entregas
         [HttpPost]
         public async Task<ActionResult<EntregaDto>> Create(CreatingEntregaDto dto)
         {
@@ -49,7 +49,7 @@ namespace DDDSample1.Controllers
         }
 
         
-        // PUT: api/Families/F5
+        // PUT: api/Entregas/6
         [HttpPut("{id}")]
         public async Task<ActionResult<EntregaDto>> Update(String id, EntregaDto dto)
         {
@@ -74,7 +74,7 @@ namespace DDDSample1.Controllers
             }
         }
 
-        // Inactivate: api/Families/F5
+        // Inactivate: api/Entregas/6
         [HttpDelete("{id}")]
         public async Task<ActionResult<EntregaDto>> SoftDelete(String id)
         {
@@ -88,7 +88,7 @@ namespace DDDSample1.Controllers
             return Ok(entrega);
         }
         
-        // DELETE: api/Families/F5
+        // DELETE: api/Entregas/6
         [HttpDelete("{id}/hard")]
         public async Task<ActionResult<EntregaDto>> HardDelete(String id)
         {
