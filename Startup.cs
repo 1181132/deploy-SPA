@@ -1,18 +1,20 @@
-﻿using System.Net;
-using DDDSample1.Domain.Armazens;
-using DDDSample1.Domain.Entregas;
-using DDDSample1.Domain.Shared;
-using DDDSample1.Infrastructure;
-using DDDSample1.Infrastructure.Armazens;
-using DDDSample1.Infrastructure.Entregas;
-using DDDSample1.Infrastructure.Shared;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using DDDSample1.Infrastructure;
+using DDDSample1.Infrastructure.Shared;
+using DDDSample1.Domain.Shared;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+using System;
+using DDDSample1.Domain.Armazens;
+using DDDSample1.Domain.Entregas;
+using DDDSample1.Infrastructure.Armazens;
+using DDDSample1.Infrastructure.Entregas;
+
 
 namespace DDDSample1
 {
@@ -28,26 +30,26 @@ namespace DDDSample1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services
                 .AddDbContext<DDDSample1DbContext>(options =>
                     options
                         .UseMySql(Configuration
-                            .GetConnectionString("OtherConnection"),
-                            new MySqlServerVersion(new version(10,7,3)),
+                                .GetConnectionString("OtherConnection"),
+                            new MySqlServerVersion(new Version(10, 7, 3)),
                             o => o.SchemaBehavior(MySqlSchemaBehavior.Ignore))
-                            .ReplaceService<IValueConverterSelector, StronglyEntityIdValueConverterSelector>());
+                        .ReplaceService<IValueConverterSelector, StronglyEntityIdValueConverterSelector>());
 
             var optionsBuilder = new DbContextOptionsBuilder<DDDSample1DbContext>();
 
-            optionsBuilder.UseMySql(Configuration.GetConnectionString("OtherConnection"), new MySqlServerVersion(new version(10,7,3)),o => O.SchemaBehavior(MySqlSchemaBehavior.Ignore));
+            optionsBuilder.UseMySql(Configuration.GetConnectionString("OtherConnection"),
+                new MySqlServerVersion(new Version(10, 7, 3)), o => o.SchemaBehavior(MySqlSchemaBehavior.Ignore));
 
-            using (var dbContext = new DDDSample1DbContext(optionsBuilder.Options)){
-                dbContext.DataBase.EnsureCreated();
+            using (var dbContext = new DDDSample1DbContext(optionsBuilder.Options))
+            {
+                dbContext.Database.EnsureCreated();
             }
 
-            ConfigureMyServices (services);
-
+            ConfigureMyServices(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -70,10 +72,7 @@ namespace DDDSample1
             app.UseAuthorization();
 
             app
-                .UseEndpoints(endpoints =>
-                {
-                    endpoints.MapControllers();
-                });
+                .UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
 
         public void ConfigureMyServices(IServiceCollection services)

@@ -12,7 +12,7 @@ namespace DDDSample1.Infrastructure
 
         public DbSet<Entrega> Entregas { get; set; }
 
-        public DDDSample1DbContext(DbContextOptions options) : base(options)
+        public DDDSample1DbContext(DbContextOptions<DDDSample1DbContext> options) : base(options)
         {
 
         }
