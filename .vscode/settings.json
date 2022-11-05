@@ -1,0 +1,17 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "vsgate-s1.dei.isep.ipp.pt",
+            "port": 10292,
+            "driver": "MariaDB",
+            "username": "root",
+            "password": "IFIyk5n4i0zQ",
+            "name": "ddd",
+            "database": "ddd"
+        }
+    ]
+}

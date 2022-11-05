@@ -20,7 +20,7 @@ namespace DDDSample1.Domain.Armazens
                 throw new BusinessRuleValidationException("Os valores da longitude têm de ser compreendidos entre 180 e -180");
             }
             this.CoordenadaLon = coordenadaLon;
-            if (!validaCoordenadaLon(coordenadaLon))
+            if (!validaCoordenadaLat(coordenadaLat))
             {
                 throw new BusinessRuleValidationException("Os valores da latitude têm de ser compreendidos entre 90 e -90");
             }

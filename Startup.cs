@@ -30,24 +30,28 @@ namespace DDDSample1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+services.AddControllers().AddNewtonsoftJson();
+
             services
                 .AddDbContext<DDDSample1DbContext>(options =>
                     options
                         .UseMySql(Configuration
                                 .GetConnectionString("OtherConnection"),
-                            new MySqlServerVersion(new Version(10, 7, 3)),
+                            new MariaDbServerVersion(new Version(10, 7, 3)),
                             o => o.SchemaBehavior(MySqlSchemaBehavior.Ignore))
                         .ReplaceService<IValueConverterSelector, StronglyEntityIdValueConverterSelector>());
 
             var optionsBuilder = new DbContextOptionsBuilder<DDDSample1DbContext>();
 
-            optionsBuilder.UseMySql(Configuration.GetConnectionString("OtherConnection"),
-                new MySqlServerVersion(new Version(10, 7, 3)), o => o.SchemaBehavior(MySqlSchemaBehavior.Ignore));
+          /*  optionsBuilder.UseMySql(Configuration.GetConnectionString("OtherConnection"),
+                new MariaDbServerVersion(new Version(10, 7, 3)), o => o.SchemaBehavior(MySqlSchemaBehavior.Ignore));
 
             using (var dbContext = new DDDSample1DbContext(optionsBuilder.Options))
             {
                 dbContext.Database.EnsureCreated();
-            }
+            }*/
+            services.AddControllers();
 
             ConfigureMyServices(services);
         }

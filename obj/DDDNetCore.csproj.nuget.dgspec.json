@@ -56,11 +56,9 @@
               "target": "Package",
               "version": "[6.0.10, )"
             },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
+            "Moq": {
               "target": "Package",
-              "version": "[6.0.10, )"
+              "version": "[4.18.2, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
