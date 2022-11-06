@@ -9,9 +9,6 @@ namespace DDDSample1.Domain.Armazens
     public class Armazem : Entity<ArmazemId>, IAggregateRoot
     {
 
-     //   [Key]
-        //public ArmazemId Id { get; set; }
-
         public ArmazemDesignacao Designacao { get; private set; }
 
         public ArmazemEndereco Endereco { get; private set; }
