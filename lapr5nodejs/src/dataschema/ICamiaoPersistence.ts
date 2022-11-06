@@ -1,6 +1,5 @@
 
 export interface ICamiaoPersistence {
-    nameId: string;
     matricula: string;
     tara: number;
     capacidadeCarga: number;

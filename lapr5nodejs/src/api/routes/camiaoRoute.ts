@@ -27,6 +27,10 @@ export default (app: Router) => {
     (req,res,next) => ctrl.createCamiao(req,res,next)
   );
 
+  route.get(
+    '/listar',
+    (req, res, next) => ctrl.listCamioes(req, res, next));
+
   route.put(
     '/update',
     celebrate({

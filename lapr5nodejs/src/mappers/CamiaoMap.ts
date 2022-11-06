@@ -64,4 +64,5 @@ export class CamiaoMap extends Mapper<Camiao> {
     }
     return a;
   }
+  
 }

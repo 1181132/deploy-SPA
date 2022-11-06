@@ -1,12 +1,13 @@
 import { Repo } from "../../core/infra/Repo";
 import { Camiao } from "../../domain/camiaoPackage/camiao";
 import { CamiaoId } from "../../domain/camiaoPackage/camiaoId";
-import { NameId } from "../../domain/camiaoPackage/nameId";
+import { Matricula } from "../../domain/camiaoPackage/matricula";
 
 export default interface ICamiaoRepo extends Repo<Camiao> {
-  exists (camiaoId: CamiaoId | string): Promise<boolean>;
   save(camiao: Camiao): Promise<Camiao>;
-  findById (camiaoId: CamiaoId | string): Promise<Camiao>;
+  findByMatricula(matricula: Matricula | string): Promise<Camiao>;
+  findById(camiaoId: CamiaoId): Promise<Camiao>;
+  findAll(): Promise<Array<Camiao>>;
     
   //findByIds (rolesIds: RoleId[]): Promise<Role[]>;
   //saveCollection (roles: Role[]): Promise<Role[]>;

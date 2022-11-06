@@ -19,22 +19,19 @@ import { Camiao } from '../domain/camiaoPackage/camiao';
 @Service()
 export default class CamiaoService implements ICamiaoService {
   constructor(@Inject(config.repos.camiao.name) private camiaoRepo: ICamiaoRepo) {}
+ 
+  
 
   
-  public async listCamiao(camiaoId: string): Promise<Result<ICamiaoDTO>> {
-    try {
-      const camiao = await this.camiaoRepo.findById(camiaoId);
-
-      if (camiao === null) {
-        return Result.fail<ICamiaoDTO>('Camiao not found');
-      } else {
-        const truckDTOResult = CamiaoMap.toDTO(camiao) as ICamiaoDTO;
-        return Result.ok<ICamiaoDTO>(truckDTOResult);
-      }
-    } catch (e) {
-      throw e;
-    }
+  public async listCamioes(): Promise<Result<ICamiaoDTO[]>> {
+    let valor: ICamiaoDTO[] = [];
+    const camioes = await this.camiaoRepo.findAll();
+    camioes.forEach((camiao) => {
+      valor.push(CamiaoMap.toPersistence(camiao));
+    });
+    return Result.ok<ICamiaoDTO[]>(valor);
   }
+
 
   public async createCamiao(truckDTO: ICamiaoDTO): Promise<Result<ICamiaoDTO>> {
     try {
@@ -78,7 +75,7 @@ export default class CamiaoService implements ICamiaoService {
 
   public async updateCamiao(truckDTO: ICamiaoDTO): Promise<Result<ICamiaoDTO>> {
     try {
-      const truck = await this.camiaoRepo.findById(truckDTO.matricula);
+      const truck = await this.camiaoRepo.findByMatricula(truckDTO.matricula);
 
       if (truck === null) {
         return Result.fail<ICamiaoDTO>('Camiao not found');

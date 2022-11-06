@@ -28,6 +28,18 @@ export default class CamiaoController implements ICamiaoController /* TODO: exte
     }
   };
 
+  public async listCamioes(req: Request, res: Response, next: NextFunction) {
+    try {
+      const camioesOrError = (await this.camiaoServiceInstance.listCamioes()) as Result<ICamiaoDTO[]>;
+      if (camioesOrError.isFailure)
+      {
+        return res.status(402).send();
+      } const camioesDTO = camioesOrError.getValue();
+      return res.json(camioesDTO).status(201);
+    } catch (e) { return next(e); }
+  }
+
+  
   public async updateCamiao(req: Request, res: Response, next: NextFunction) {
     try {
       const camiaoOrError = await this.camiaoServiceInstance.updateCamiao(req.body as ICamiaoDTO) as Result<ICamiaoDTO>;
