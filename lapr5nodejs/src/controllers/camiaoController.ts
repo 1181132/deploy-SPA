@@ -45,11 +45,11 @@ export default class CamiaoController implements ICamiaoController /* TODO: exte
       const camiaoOrError = await this.camiaoServiceInstance.updateCamiao(req.body as ICamiaoDTO) as Result<ICamiaoDTO>;
 
       if (camiaoOrError.isFailure) {
-        return res.status(404).send();
+        return res.status(404).json(camiaoOrError.error);
       }
 
       const camiaoDTO = camiaoOrError.getValue();
-      return res.status(201).json( camiaoDTO );
+      return res.status(202).json( camiaoDTO );
     }
     catch (e) {
       return next(e);

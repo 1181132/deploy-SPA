@@ -32,7 +32,7 @@ export default class CamiaoRepo implements ICamiaoRepo {
   }
 
   public async save(truck: Camiao): Promise<Camiao> {
-    const query = { domainId: truck.id.toString() };
+    const query = { matricula: truck.matricula.value };
 
     const truckDocument = await this.camiaoSchema.findOne(query);
 
@@ -44,7 +44,6 @@ export default class CamiaoRepo implements ICamiaoRepo {
 
         return CamiaoMap.toDomain(truckCreated);
       } else {
-        truckDocument.id = truck.id.toString();
         truckDocument.tara = truck.tara.value;
         truckDocument.matricula = truck.matricula.value;
         truckDocument.capacidadeCarga = truck.capacidadeCarga.value;
@@ -61,17 +60,20 @@ export default class CamiaoRepo implements ICamiaoRepo {
   }
 
 
-  public async findByMatricula(matricula: Matricula): Promise<Camiao> {
 
+
+  public async findByMatricula(matricula: string): Promise<Camiao> {
     const camiaoList = this.findAll();
     var finalCamiao = null;
-    (await camiaoList).forEach((element)=> {
-      if (matricula.value.localeCompare(element.matricula.value) == 0) {
-        finalCamiao => element;
-      }
-    })
+
+    (await camiaoList).forEach((element) => {
+        if (matricula.localeCompare(element.matricula.value) == 0) {
+            finalCamiao = element;
+        }
+    });
     return finalCamiao;
-  }
+}
+  
   
   public async findById(camiaoId: CamiaoId): Promise<Camiao> {
 

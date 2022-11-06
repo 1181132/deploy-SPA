@@ -18,7 +18,7 @@ import { Camiao } from '../domain/camiaoPackage/camiao';
 
 @Service()
 export default class CamiaoService implements ICamiaoService {
-  constructor(@Inject(config.repos.camiao.name) private camiaoRepo: ICamiaoRepo) {}
+  constructor(@Inject(config.repos.camiao.name) private camiaoRepo: ICamiaoRepo) { }
  
   
 
@@ -34,7 +34,11 @@ export default class CamiaoService implements ICamiaoService {
 
 
   public async createCamiao(truckDTO: ICamiaoDTO): Promise<Result<ICamiaoDTO>> {
-    
+    const truckRoute = this.camiaoRepo.findByMatricula(truckDTO.matricula);
+
+    if ((await truckRoute) != null) {
+      return Result.fail<ICamiaoDTO>('Truck already exists');
+    }
     try {
       const tare = await Tara.create(truckDTO.tara).getValue();
       const licensePlate = await Matricula.create(truckDTO.matricula).getValue();
@@ -67,12 +71,7 @@ export default class CamiaoService implements ICamiaoService {
       throw e;
     }
   }
-  tare: Tara;
-  licensePlate: Matricula;
-  capacityCarga: CapacidadeCarga;
-  fullCargaBaterias: CargaTotalBaterias;
-  autonomyCargaMax: AutonomiaCargaMax;
-  timeChargingate80: TempoCarregamento20ate80;
+  
 
   public async updateCamiao(truckDTO: ICamiaoDTO): Promise<Result<ICamiaoDTO>> {
     try {
@@ -81,13 +80,17 @@ export default class CamiaoService implements ICamiaoService {
       if (truck === null) {
         return Result.fail<ICamiaoDTO>('Camiao not found');
       } else {
-        truck.tara.value == truckDTO.tara;
-        truck.matricula.value == truckDTO.matricula;
-        truck.capacidadeCarga.value == truckDTO.capacidadeCarga;
-        truck.cargaTotalBaterias.value== truckDTO.cargaTotalBaterias;
-        truck.autonomiaCargaMax.value == truckDTO.autonomiaCargaMax;
-        truck.tempoCarregamento20ate80.value == truckDTO.tempoCarregamento20ate80;
+        const tara = await Tara.create(truckDTO.tara);
+        const capacidadeCarga = await CapacidadeCarga.create(truckDTO.capacidadeCarga);
+        const cargaTotalBaterias = await CargaTotalBaterias.create(truckDTO.cargaTotalBaterias);
+        const autonomiaCargaMax = await AutonomiaCargaMax.create(truckDTO.autonomiaCargaMax);
+        const tempoCarregamento20ate80 = await TempoCarregamento20ate80.create(truckDTO.tempoCarregamento20ate80);
 
+        truck.props.tara = tara.getValue();
+        truck.props.capacidadeCarga = capacidadeCarga.getValue();
+        truck.props.cargaTotalBaterias = cargaTotalBaterias.getValue();
+        truck.props.autonomiaCargaMax = autonomiaCargaMax.getValue();
+        truck.props.tempoCarregamento20ate80 = tempoCarregamento20ate80.getValue();
         await this.camiaoRepo.save(truck);
 
         const truckDTOResult = CamiaoMap.toDTO(truck) as ICamiaoDTO;
@@ -98,4 +101,3 @@ export default class CamiaoService implements ICamiaoService {
     }
   }
 }
-
