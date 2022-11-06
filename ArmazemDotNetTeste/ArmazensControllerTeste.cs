@@ -274,7 +274,7 @@ public class ArmazensControllerTeste
 
         
         [Fact]
-        public async Task PostArmazemComEmailInvalidoAsync_ShouldReturnBadRequest()
+        public async Task PostArmazemComDesignacaolInvalidoAsync_ShouldReturnBadRequest()
         {
             // Arrange     
             var theController = new ArmazensController(theMockedService);
