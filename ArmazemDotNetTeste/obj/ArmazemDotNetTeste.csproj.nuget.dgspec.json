@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ricar\\OneDrive\\Documentos\\lapr5_2022_g29\\ArmazemDotNetTeste\\ArmazemDotNetTeste.csproj": {}
+    "C:\\Users\\almei\\OneDrive\\Ambiente de Trabalho\\ISEP\\1_Semestre\\2º\\LAPR5\\Projeto\\ArmazemDotNetTeste\\ArmazemDotNetTeste.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ricar\\OneDrive\\Documentos\\lapr5_2022_g29\\ArmazemDotNetTeste\\ArmazemDotNetTeste.csproj": {
+    "C:\\Users\\almei\\OneDrive\\Ambiente de Trabalho\\ISEP\\1_Semestre\\2º\\LAPR5\\Projeto\\ArmazemDotNetTeste\\ArmazemDotNetTeste.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ricar\\OneDrive\\Documentos\\lapr5_2022_g29\\ArmazemDotNetTeste\\ArmazemDotNetTeste.csproj",
+        "projectUniqueName": "C:\\Users\\almei\\OneDrive\\Ambiente de Trabalho\\ISEP\\1_Semestre\\2º\\LAPR5\\Projeto\\ArmazemDotNetTeste\\ArmazemDotNetTeste.csproj",
         "projectName": "ArmazemDotNetTeste",
-        "projectPath": "C:\\Users\\ricar\\OneDrive\\Documentos\\lapr5_2022_g29\\ArmazemDotNetTeste\\ArmazemDotNetTeste.csproj",
-        "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ricar\\OneDrive\\Documentos\\lapr5_2022_g29\\ArmazemDotNetTeste\\obj\\",
+        "projectPath": "C:\\Users\\almei\\OneDrive\\Ambiente de Trabalho\\ISEP\\1_Semestre\\2º\\LAPR5\\Projeto\\ArmazemDotNetTeste\\ArmazemDotNetTeste.csproj",
+        "packagesPath": "C:\\Users\\almei\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\almei\\OneDrive\\Ambiente de Trabalho\\ISEP\\1_Semestre\\2º\\LAPR5\\Projeto\\ArmazemDotNetTeste\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ricar\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\almei\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -26,8 +26,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ricar\\OneDrive\\Documentos\\lapr5_2022_g29\\Armazem_MasterData\\DDDNetCore.csproj": {
-                "projectPath": "C:\\Users\\ricar\\OneDrive\\Documentos\\lapr5_2022_g29\\Armazem_MasterData\\DDDNetCore.csproj"
+              "C:\\Users\\almei\\OneDrive\\Ambiente de Trabalho\\ISEP\\1_Semestre\\2º\\LAPR5\\Projeto\\Armazem_MasterData\\DDDNetCore.csproj": {
+                "projectPath": "C:\\Users\\almei\\OneDrive\\Ambiente de Trabalho\\ISEP\\1_Semestre\\2º\\LAPR5\\Projeto\\Armazem_MasterData\\DDDNetCore.csproj"
               }
             }
           }
@@ -87,17 +87,17 @@
         }
       }
     },
-    "C:\\Users\\ricar\\OneDrive\\Documentos\\lapr5_2022_g29\\Armazem_MasterData\\DDDNetCore.csproj": {
+    "C:\\Users\\almei\\OneDrive\\Ambiente de Trabalho\\ISEP\\1_Semestre\\2º\\LAPR5\\Projeto\\Armazem_MasterData\\DDDNetCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ricar\\OneDrive\\Documentos\\lapr5_2022_g29\\Armazem_MasterData\\DDDNetCore.csproj",
+        "projectUniqueName": "C:\\Users\\almei\\OneDrive\\Ambiente de Trabalho\\ISEP\\1_Semestre\\2º\\LAPR5\\Projeto\\Armazem_MasterData\\DDDNetCore.csproj",
         "projectName": "DDDNetCore",
-        "projectPath": "C:\\Users\\ricar\\OneDrive\\Documentos\\lapr5_2022_g29\\Armazem_MasterData\\DDDNetCore.csproj",
-        "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ricar\\OneDrive\\Documentos\\lapr5_2022_g29\\Armazem_MasterData\\obj\\",
+        "projectPath": "C:\\Users\\almei\\OneDrive\\Ambiente de Trabalho\\ISEP\\1_Semestre\\2º\\LAPR5\\Projeto\\Armazem_MasterData\\DDDNetCore.csproj",
+        "packagesPath": "C:\\Users\\almei\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\almei\\OneDrive\\Ambiente de Trabalho\\ISEP\\1_Semestre\\2º\\LAPR5\\Projeto\\Armazem_MasterData\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ricar\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\almei\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp6.0"

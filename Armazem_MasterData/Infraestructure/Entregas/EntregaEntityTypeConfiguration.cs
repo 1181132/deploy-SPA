@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using DDDSample1.Domain.Entregas;
+using DDDSample1.Domain.Armazens;
 
 namespace DDDSample1.Infrastructure.Entregas
 {
@@ -10,11 +11,10 @@ namespace DDDSample1.Infrastructure.Entregas
         {
             //builder.ToTable("Entregas", SchemaNames.DDDSample1);
             builder.HasKey(b => b.Id);
-            /*builder.OwnsOne(b => b.Data);
+            builder.OwnsOne(b => b.Data);
             builder.OwnsOne(b => b.Massa);
-            builder.OwnsOne(b => b.ArmazemId);
-            builder.OwnsOne(b => b.TempoColocar);
-            builder.OwnsOne(b => b.TempoRetirar);*/
+            //builder.OwnsOne(b => b.TempoColocar);
+            //builder.OwnsOne(b => b.TempoRetirar);
             //builder.Property<bool>("_active").HasColumnName("Active");
         }
     }

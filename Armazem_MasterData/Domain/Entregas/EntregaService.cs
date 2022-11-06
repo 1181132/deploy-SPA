@@ -5,7 +5,7 @@ using DDDSample1.Domain.Armazens;
 
 namespace DDDSample1.Domain.Entregas
 {
-    public class EntregaService
+    public class EntregaService : IEntregaService
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IEntregaRepository _repo;

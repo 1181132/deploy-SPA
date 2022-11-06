@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "eeb7bb16-362b-4e58-9ac4-3c0672fe3ba9",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all Entregas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/Entregas",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Entregas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cria Entrega",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"1\",\r\n    \"dataEntrega\": \"20-10-2022\",\r\n    \"massaEntrega\": 10,\r\n    \"armazemEntrega\":\"533\",\r\n    \"tempoColocarEntrega\":10,\r\n    \"tempoRetirarEntrega\":15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/Entregas",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Entregas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cria Entrega",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"2\",\r\n    \"dataEntrega\": \"20-10-2022\",\r\n    \"massaEntrega\": 10,\r\n    \"armazemEntrega\":\"533\",\r\n    \"tempoColocarEntrega\":10,\r\n    \"tempoRetirarEntrega\":15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/Entregas",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Entregas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cria Entrega Invalida",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"3\",\r\n    \"dataEntrega\": \"29-10-2022\",\r\n    \"massaEntrega\": 10,\r\n    \"armazemEntrega\":\"53\",\r\n    \"tempoColocarEntrega\":10,\r\n    \"tempoRetirarEntrega\":15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/Entregas",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Entregas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Entregas - esperadas 2 entregas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/Entregas",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Entregas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edita Entrega",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"1\",\r\n    \"dataEntrega\": \"23-10-2022\",\r\n    \"massaEntrega\":20,\r\n    \"armazemEntrega\":\"533\",\r\n    \"tempoColocarEntrega\":33,\r\n    \"tempoRetirarEntrega\":70\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/Entregas/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Entregas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edita Entrega - invalido",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"1\",\r\n    \"dataEntrega\": \"23-10-2022\",\r\n    \"massaEntrega\":20,\r\n    \"armazemEntrega\":\"53\",\r\n    \"tempoColocarEntrega\":33,\r\n    \"tempoRetirarEntrega\":55\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/Entregas/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Entregas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -11,9 +11,9 @@ namespace DDDSample1.Controllers
     [ApiController]
     public class EntregasController : ControllerBase
     {
-        private readonly EntregaService _service;
+        private readonly IEntregaService _service;
 
-        public EntregasController(EntregaService service)
+        public EntregasController(IEntregaService service)
         {
             _service = service;
         }

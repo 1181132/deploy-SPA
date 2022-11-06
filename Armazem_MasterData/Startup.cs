@@ -87,7 +87,7 @@ services.AddControllers().AddNewtonsoftJson();
             services.AddTransient<IArmazemService, ArmazemService>();
 
             services.AddTransient<IEntregaRepository, EntregaRepository>();
-            services.AddTransient<EntregaService>();
+            services.AddTransient<IEntregaService, EntregaService>();
         }
     }
 }

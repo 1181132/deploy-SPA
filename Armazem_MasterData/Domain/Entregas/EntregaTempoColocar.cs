@@ -10,10 +10,10 @@ namespace DDDSample1.Domain.Entregas
         public int TempoColocar { get; private set;}
         
         public EntregaTempoColocar(int tempoColocar){
-            if(!validaTempo(tempoColocar)){
-                throw new BusinessRuleValidationException("O valor do tempo tem de ser superior a 0");
-            }
-            this.TempoColocar=tempoColocar;
+           // if(!validaTempo(tempoColocar)){
+             //   throw new BusinessRuleValidationException("O valor do tempo tem de ser superior a 0");
+           // }
+            this.TempoColocar = tempoColocar;
         }
 
         private static bool validaTempo (int tempoColocar){
