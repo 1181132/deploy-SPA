@@ -49,6 +49,10 @@ export default {
     camiao:{
       name: "CamiaoController",
       path: "../controllers/camiaoController"
+    },
+    percurso:{
+      name: "PercursoController",
+      path: "../controllers/percursoController"
     }
   },
 
@@ -64,6 +68,10 @@ export default {
     camiao: {
       name: "CamiaoRepo",
       path: "../repos/camiaoRepo"
+    },
+    percurso:{
+      name: "PercursoRepo",
+      path: "../repos/percursoRepo"
     }
   },
 
@@ -75,6 +83,10 @@ export default {
     camiao: {
       name: "CamiaoService",
       path: "../services/camiaoService"
+    },
+    percurso: {
+      name: "PercursoService",
+      path: "../services/percursoService"
     }
   },
 };

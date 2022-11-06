@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "3863fb8c-2ee2-4bb2-b0c9-880c6f204342",
+		"name": "Percurso",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24129501"
+	},
+	"item": [
+		{
+			"name": "TesteValidoListas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/percurso/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"percurso",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Teste Valido",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Criação de Percurso Valido\",function(){\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"armazem1\": 98,\r\n    \"armazem2\": 99,\r\n    \"cargaExtra\": 99,\r\n    \"distancia\": 99,\r\n    \"tempo\": 99,\r\n    \"energia\": 99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/percurso/inserir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"percurso",
+						"inserir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TesteValidoUpdate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Criação de Percurso Valido\",function(){\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"armazem1\": 1,\r\n    \"armazem2\": 3,\r\n    \"cargaExtra\": 99,\r\n    \"distancia\": 99,\r\n    \"tempo\": 99,\r\n    \"energia\": 99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/percurso/update",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"percurso",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TesteNaoValidoUpdate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Criação de Percurso Valido\",function(){\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"armazem1\": 10000,\r\n    \"armazem2\": 1000,\r\n    \"cargaExtra\": 99,\r\n    \"distancia\": 99,\r\n    \"tempo\": 99,\r\n    \"energia\": 99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/percurso/update",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"percurso",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TesteNaoValido",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Criação de Percurso Valido\",function(){\r",
+							"    pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"armazem1\": -2,\r\n    \"armazem2\": 0,\r\n    \"cargaExtra\": 0,\r\n    \"distancia\": -2,\r\n    \"tempo\": 0,\r\n    \"energia\": -99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/percurso/inserir",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"percurso",
+						"inserir"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

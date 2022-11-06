@@ -1,11 +1,14 @@
 import { Repo } from "../../core/infra/Repo";
-import { Percurso } from "../../domain/percurso";
-import { PercursoId } from "../../domain/percursoId";
+import { Percurso } from "../../domain/percursoPackage/percurso";
+import { PercursoId } from "../../domain/percursoPackage/percursoId";
 
 export default interface IPercursoRepo extends Repo<Percurso> {
   save(percurso: Percurso): Promise<Percurso>;
-  findByDomainId (percursoId: PercursoId | string): Promise<Percurso>;
-    
+  findByArmazens (armazem1: number, armazem2: number): Promise<Percurso>;
+  findAll(): Promise<Percurso[]>;
+
+  //findByArmazem1 (armazem1: number): Promise<Percurso>;
+  //findByArmazem2 (armazem1: number): Promise<Percurso>; 
   //findByIds (percursosIds: PercursoId[]): Promise<Percurso[]>;
   //saveCollection (percursos: Percurso[]): Promise<Percurso[]>;
   //removeByPercursoIds (percursos: PercursoId[]): Promise<any>

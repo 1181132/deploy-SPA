@@ -3,7 +3,8 @@ import dependencyInjectorLoader from './dependencyInjector';
 import mongooseLoader from './mongoose';
 import Logger from './logger';
 
-import config from '../../config';;
+import config from '../../config';import PercursoService from '../services/percursoService';
+;
 
 export default async ({ expressApp }) => {
   const mongoConnection = await mongooseLoader();
@@ -19,6 +20,11 @@ export default async ({ expressApp }) => {
     name: 'camiaoSchema',
     schema: '../persistence/schemas/camiaoSchema',
   };
+
+  const percursoSchema = {
+    name: 'percursoSchema',
+    schema: '../persistence/schemas/percursoSchema',
+  }
 
   const roleSchema = {
     // compare with the approach followed in repos and services
@@ -36,6 +42,11 @@ export default async ({ expressApp }) => {
     path: config.controllers.camiao.path
   }
 
+  const percursoController = {
+    name: config.controllers.percurso.name,
+    path: config.controllers.percurso.path
+  }
+
   const roleRepo = {
     name: config.repos.role.name,
     path: config.repos.role.path
@@ -44,6 +55,11 @@ export default async ({ expressApp }) => {
   const camiaoRepo = {
     name: config.repos.camiao.name,
     path: config.repos.camiao.path
+  }
+
+  const percursoRepo = {
+    name: config.repos.percurso.name,
+    path: config.repos.percurso.path
   }
 
   const userRepo = {
@@ -56,6 +72,11 @@ export default async ({ expressApp }) => {
     path: config.services.camiao.path
   }
 
+  const percursoService = {
+    name: config.services.percurso.name,
+    path: config.services.percurso.path
+  }
+
   const roleService = {
     name: config.services.role.name,
     path: config.services.role.path
@@ -66,20 +87,24 @@ export default async ({ expressApp }) => {
     schemas: [
       userSchema,
       roleSchema,
-      camiaoSchema
+      camiaoSchema,
+      percursoSchema
     ],
     controllers: [
       roleController,
-      camiaoController
+      camiaoController,
+      percursoController
     ],
     repos: [
       roleRepo,
       userRepo,
-      camiaoRepo
+      camiaoRepo,
+      percursoRepo
     ],
     services: [
       roleService,
-      camiaoService
+      camiaoService,
+      percursoService
     ]
   });
   Logger.info('✌️ Schemas, Controllers, Repositories, Services, etc. loaded');
