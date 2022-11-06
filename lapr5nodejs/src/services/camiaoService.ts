@@ -34,6 +34,7 @@ export default class CamiaoService implements ICamiaoService {
 
 
   public async createCamiao(truckDTO: ICamiaoDTO): Promise<Result<ICamiaoDTO>> {
+    
     try {
       const tare = await Tara.create(truckDTO.tara).getValue();
       const licensePlate = await Matricula.create(truckDTO.matricula).getValue();

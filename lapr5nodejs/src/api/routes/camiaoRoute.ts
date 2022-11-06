@@ -16,12 +16,12 @@ export default (app: Router) => {
     '/inserir',
     celebrate({
       body: Joi.object({
-        tara: Joi.number().required(),
-        matricula: Joi.string().required(),
-        capacidadeCarga: Joi.number().required(),
-        cargaTotalBaterias: Joi.number().required(),
-        autonomiaCargaMax: Joi.number().required(),
-        tempoCarregamento20ate80: Joi.number().required()
+        tara: Joi.number().required().greater(0),
+        matricula: Joi.string().required().regex(/([A-Z]{2}-[0-9]{2}-[0-9]{2})|([0-9]{2}-[A-Z]{2}-[0-9]{2})|([0-9]{2}-[0-9]{2}-[A-Z]{2})|([A-Z]{2}-[0-9]{2}-[A-Z]{2})/),
+        capacidadeCarga: Joi.number().required().greater(0),
+        cargaTotalBaterias: Joi.number().required().greater(0),
+        autonomiaCargaMax: Joi.number().required().greater(0),
+        tempoCarregamento20ate80: Joi.number().required().greater(0)
       }),
     }),
     (req,res,next) => ctrl.createCamiao(req,res,next)
@@ -35,12 +35,12 @@ export default (app: Router) => {
     '/update',
     celebrate({
       body: Joi.object({
-        tara: Joi.number().required(),
+        tara: Joi.number().required().greater(0),
         matricula: Joi.string().required(),
-        capacidadeCarga: Joi.number().required(),
-        cargaTotalBaterias: Joi.number().required(),
-        autonomiaCargaMax: Joi.number().required(),
-        tempoCarregamento20ate80: Joi.number().required()
+        capacidadeCarga: Joi.number().required().greater(0),
+        cargaTotalBaterias: Joi.number().required().greater(0),
+        autonomiaCargaMax: Joi.number().required().greater(0),
+        tempoCarregamento20ate80: Joi.number().required().greater(0)
       }),
     }),
     (req,res,next) => ctrl.updateCamiao(req,res,next)

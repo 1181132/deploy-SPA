@@ -45,12 +45,12 @@ export default class CamiaoRepo implements ICamiaoRepo {
         return CamiaoMap.toDomain(truckCreated);
       } else {
         truckDocument.id = truck.id.toString();
-        truckDocument.tara = truck.tara.props.value;
-        truckDocument.matricula = truck.matricula.props.value;
-        truckDocument.capacidadeCarga = truck.capacidadeCarga.props.value;
-        truckDocument.cargaTotalBaterias = truck.cargaTotalBaterias.props.value;
-        truckDocument.autonomiaCargaMax = truck.autonomiaCargaMax.props.value;
-        truckDocument.tempoCarregamento20ate80 = truck.tempoCarregamento20ate80.props.value;
+        truckDocument.tara = truck.tara.value;
+        truckDocument.matricula = truck.matricula.value;
+        truckDocument.capacidadeCarga = truck.capacidadeCarga.value;
+        truckDocument.cargaTotalBaterias = truck.cargaTotalBaterias.value;
+        truckDocument.autonomiaCargaMax = truck.autonomiaCargaMax.value;
+        truckDocument.tempoCarregamento20ate80 = truck.tempoCarregamento20ate80.value;
         await truckDocument.save();
 
         return truck;
