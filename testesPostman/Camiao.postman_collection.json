@@ -1,0 +1,335 @@
+{
+	"info": {
+		"_postman_id": "965151ae-f42a-4a77-9e7c-d55bda1d8805",
+		"name": "Camiao",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24135288"
+	},
+	"item": [
+		{
+			"name": "Teste válido",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Criação de Camião Válido\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tara\": 88,\r\n    \"matricula\": \"87-EA-95\",\r\n    \"capacidadeCarga\": 106,\r\n    \"cargaTotalBaterias\": 80,\r\n    \"autonomiaCargaMax\": 55,\r\n    \"tempoCarregamento20ate80\": 9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/camiao/inserir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"camiao",
+						"inserir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TesteComTaraNãoVálida",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tara\": -2,\r\n    \"matricula\": \"87-EA-95\",\r\n    \"capacidadeCarga\": 106,\r\n    \"cargaTotalBaterias\": 80,\r\n    \"autonomiaCargaMax\": 55,\r\n    \"tempoCarregamento20ate80\": 9\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/camiao/inserir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"camiao",
+						"inserir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TesteComMatriculaNãoVálida",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tara\": 2,\r\n    \"matricula\": \"87A-EA-95\",\r\n    \"capacidadeCarga\": 106,\r\n    \"cargaTotalBaterias\": 80,\r\n    \"autonomiaCargaMax\": 55,\r\n    \"tempoCarregamento20ate80\": 9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/camiao/inserir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"camiao",
+						"inserir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TesteCapacidadeCargaNãoVálida",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tara\": 2,\r\n    \"matricula\": \"87-EA-95\",\r\n    \"capacidadeCarga\": -106,\r\n    \"cargaTotalBaterias\": 80,\r\n    \"autonomiaCargaMax\": 55,\r\n    \"tempoCarregamento20ate80\": 9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/camiao/inserir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"camiao",
+						"inserir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TesteCargaTotalBateriasNãoVálida",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tara\": 2,\r\n    \"matricula\": \"87-EA-85\",\r\n    \"capacidadeCarga\": 106,\r\n    \"cargaTotalBaterias\": -80,\r\n    \"autonomiaCargaMax\": 55,\r\n    \"tempoCarregamento20ate80\": 9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/camiao/inserir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"camiao",
+						"inserir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TesteAutonomiaCargaMaxNãoVálida",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tara\": 2,\r\n    \"matricula\": \"87-EA-85\",\r\n    \"capacidadeCarga\": 106,\r\n    \"cargaTotalBaterias\": 80,\r\n    \"autonomiaCargaMax\": -55,\r\n    \"tempoCarregamento20ate80\": 9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/camiao/inserir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"camiao",
+						"inserir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TesteTempoCarregamento20ate80",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tara\": 2,\r\n    \"matricula\": \"87-EA-85\",\r\n    \"capacidadeCarga\": 106,\r\n    \"cargaTotalBaterias\": 80,\r\n    \"autonomiaCargaMax\": 55,\r\n    \"tempoCarregamento20ate80\": -9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/camiao/inserir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"camiao",
+						"inserir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TesteVálidoListas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/camiao/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"camiao",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TesteVálidoDeUpdate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Update de Camião Válido\",function(){\r",
+							"    pm.response.to.have.status(202);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tara\": 2,\r\n    \"matricula\": \"89-AA-89\",\r\n    \"capacidadeCarga\": 106,\r\n    \"cargaTotalBaterias\": 80,\r\n    \"autonomiaCargaMax\": 55,\r\n    \"tempoCarregamento20ate80\": 9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/camiao/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"camiao",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TesteNãoVálidoDeUpdate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Update de Camião Válido\",function(){\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tara\": 2,\r\n    \"matricula\": \"89-A-89\",\r\n    \"capacidadeCarga\": 106,\r\n    \"cargaTotalBaterias\": 80,\r\n    \"autonomiaCargaMax\": 55,\r\n    \"tempoCarregamento20ate80\": 9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/camiao/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"camiao",
+						"update"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
