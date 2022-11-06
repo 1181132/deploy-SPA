@@ -1,0 +1,417 @@
+{
+	"info": {
+		"_postman_id": "c45838b4-0db8-405f-b5c2-15f73e07bdb8",
+		"name": "LAPR5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24129967"
+	},
+	"item": [
+		{
+			"name": "Remover Base de dados",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/ConfigEnv",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"ConfigEnv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inicializar Base de dados",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/ConfigEnv",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"ConfigEnv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(Get) Retorna todos os armazens - Esperada resposta vazia",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 1500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response content is empty\", function () {\r",
+							"    var res=(_.isEmpty(pm.response));\r",
+							"    pm.expect(res).to.be,true;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/Armazens",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Armazens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post um novo armazem - Armazem 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"asd\",\r\n    \"designacao\": \"algum sitio\",\r\n    \"rua\": \"rua do quadrado\",\r\n    \"numeroPorta\": 1234,\r\n    \"codigoPostal\": \"1224-321\",\r\n    \"cidade\": \"Porto\",\r\n    \"pais\": \"Portugal\",\r\n    \"coordenadaLon\": 50,\r\n    \"coordenadaLat\": 44\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/Armazens",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Armazens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post um novo armazem - Armazem 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"z99\",\r\n    \"designacao\": \"algum sitio sitio\",\r\n    \"rua\": \"rua do rectangulo\",\r\n    \"numeroPorta\": 134,\r\n    \"codigoPostal\": \"1924-331\",\r\n    \"cidade\": \"Lisboa\",\r\n    \"pais\": \"Portugal\",\r\n    \"coordenadaLon\": -30,\r\n    \"coordenadaLat\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/Armazens",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Armazens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post um novo armazem - Armazem 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"a23\",\r\n    \"designacao\": \"algum sitio sitio sitio\",\r\n    \"rua\": \"rua do circulo\",\r\n    \"numeroPorta\": 134,\r\n    \"codigoPostal\": \"1224-331\",\r\n    \"cidade\": \"Porto\",\r\n    \"pais\": \"Portugal\",\r\n    \"coordenadaLon\": 30,\r\n    \"coordenadaLat\": 50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/Armazens",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Armazens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post um novo armazem - Descrição Invalida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Ivalid POST request - Invalida Descição\", function () {    \r",
+							"    pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"c53\",\r\n    \"designacao\": \"algum sitio sitio sitio aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\r\n    \"rua\": \"rua do circulo\",\r\n    \"numeroPorta\": 134,\r\n    \"codigoPostal\": \"1224-331\",\r\n    \"cidade\": \"Porto\",\r\n    \"pais\": \"Portugal\",\r\n    \"coordenadaLon\": 30,\r\n    \"coordenadaLat\": 50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/Armazens",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Armazens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post um novo armazem - Identificação Invalida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Ivalid POST request - Invalida Id\", function () {    \r",
+							"    pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"a%3\",\r\n    \"designacao\": \"algum sitio sitio algum\",\r\n    \"rua\": \"rua do trangulo\",\r\n    \"numeroPorta\": 134,\r\n    \"codigoPostal\": \"1224-331\",\r\n    \"cidade\": \"Porto\",\r\n    \"pais\": \"Portugal\",\r\n    \"coordenadaLon\": 30,\r\n    \"coordenadaLat\": 50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/Armazens",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Armazens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(Get) Retorna todos os armazens - esperados 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"The count of obtained Jogador is three\", function () {\r",
+							"     pm.expect(pm.response.json().length).to.eql(3);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/Armazens",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Armazens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(Put) Alterar a informação de um armazem",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"designacao\": \"mob\",\r\n    \"rua\": \"rua do quadrado\",\r\n    \"numeroPorta\": 1234,\r\n    \"codigoPostal\": \"1224-321\",\r\n    \"cidade\": \"Porto\",\r\n    \"pais\": \"Portugal\",\r\n    \"coordenadaLon\": 50,\r\n    \"coordenadaLat\": 44\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/Armazens/53",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Armazens",
+						"53"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(Get) Retorna todos os armazens - esperados 3 Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"The count of obtained Jogador is three\", function () {\r",
+							"     pm.expect(pm.response.json().length).to.eql(3);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/Armazens",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Armazens"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
