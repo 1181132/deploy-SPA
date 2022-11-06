@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="689px" preserveAspectRatio="none" style="width:1831px;height:689px;background:#FFFFFF;" version="1.1" viewBox="0 0 1831 689" width="1831px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="594.3047" style="stroke:#181818;stroke-width:1.0;" width="10" x="216" y="69.9609"/><rect fill="#FFFFFF" height="533.6016" style="stroke:#181818;stroke-width:1.0;" width="10" x="369" y="100.3125"/><rect fill="#FFFFFF" height="472.8984" style="stroke:#181818;stroke-width:1.0;" width="10" x="522" y="130.6641"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="779" y="161.0156"/><rect fill="#FFFFFF" height="193.6641" style="stroke:#181818;stroke-width:1.0;" width="10" x="779" y="263.9766"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="951" y="294.3281"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="951" y="457.6406"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="951" y="530.6016"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="1368.5" y="397.2891"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="221" x2="221" y1="37.6094" y2="682.2656"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="374" x2="374" y1="37.6094" y2="682.2656"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="526.5" x2="526.5" y1="37.6094" y2="682.2656"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="666" x2="666" y1="230.3203" y2="682.2656"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="784" x2="784" y1="37.6094" y2="682.2656"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="955.5" x2="955.5" y1="37.6094" y2="682.2656"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1119.5" x2="1119.5" y1="363.6328" y2="682.2656"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1373.5" x2="1373.5" y1="37.6094" y2="682.2656"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1591.5" x2="1591.5" y1="496.9453" y2="682.2656"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1748.5" x2="1748.5" y1="569.9063" y2="682.2656"/><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="108" x="167" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="174" y="26.5332">: CamiaoRoute</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="132" x="308" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="118" x="315" y="26.5332">: CamiaoController</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="117" x="468.5" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="475.5" y="26.5332">: CamiaoService</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="104" x="732" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="90" x="739" y="26.5332">: CamiaoRepo</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="97" x="907.5" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="914.5" y="26.5332">: CamiaoMap</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="278" x="1234.5" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="264" x="1241.5" y="26.5332">:Model&lt;ICamiaoPersistence &amp; Document&gt;</text><rect fill="#FFFFFF" height="594.3047" style="stroke:#181818;stroke-width:1.0;" width="10" x="216" y="69.9609"/><rect fill="#FFFFFF" height="533.6016" style="stroke:#181818;stroke-width:1.0;" width="10" x="369" y="100.3125"/><rect fill="#FFFFFF" height="472.8984" style="stroke:#181818;stroke-width:1.0;" width="10" x="522" y="130.6641"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="779" y="161.0156"/><rect fill="#FFFFFF" height="193.6641" style="stroke:#181818;stroke-width:1.0;" width="10" x="779" y="263.9766"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="951" y="294.3281"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="951" y="457.6406"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="951" y="530.6016"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="1368.5" y="397.2891"/><ellipse cx="4.5" cy="69.2109" fill="none" rx="4" ry="4" style="stroke:#181818;stroke-width:1.5;"/><polygon fill="#181818" points="204,65.9609,214,69.9609,204,73.9609,208,69.9609" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="9" x2="210" y1="69.9609" y2="69.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="12" y="65.1045">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="178" x="23" y="65.1045">POST(.../api/camiao/adicionar)</text><polygon fill="#181818" points="357,96.3125,367,100.3125,357,104.3125,361,100.3125" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="226" x2="363" y1="100.3125" y2="100.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="233" y="95.4561">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="88" x="244" y="95.4561">createCamiao()</text><polygon fill="#181818" points="510,126.6641,520,130.6641,510,134.6641,514,130.6641" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="379" x2="516" y1="130.6641" y2="130.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="386" y="125.8076">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="106" x="397" y="125.8076">createCamiao(dto)</text><polygon fill="#181818" points="767,157.0156,777,161.0156,767,165.0156,771,161.0156" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="532" x2="773" y1="161.0156" y2="161.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="539" y="156.1592">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="150" x="550" y="156.1592">findByMatricula(matricula)</text><polygon fill="#181818" points="599,217.3672,609,221.3672,599,225.3672,603,221.3672" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="532" x2="605" y1="221.3672" y2="221.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="539" y="216.5107">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="44" x="550" y="216.5107">create()</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="111" x="611" y="199.0156"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="97" x="618" y="220.5488">camiao:Camiao</text><polygon fill="#181818" points="767,259.9766,777,263.9766,767,267.9766,771,263.9766" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="532" x2="773" y1="263.9766" y2="263.9766"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="539" y="259.1201">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="76" x="550" y="259.1201">save(camiao)</text><polygon fill="#181818" points="939,290.3281,949,294.3281,939,298.3281,943,294.3281" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="789" x2="945" y1="294.3281" y2="294.3281"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="796" y="289.4717">7</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="130" x="807" y="289.4717">toPersistence(camiao)</text><polygon fill="#181818" points="1002.5,350.6797,1012.5,354.6797,1002.5,358.6797,1006.5,354.6797" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="789" x2="1008.5" y1="354.6797" y2="354.6797"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="796" y="349.8232">8</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="44" x="807" y="349.8232">create()</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="210" x="1014.5" y="332.3281"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="196" x="1021.5" y="353.8613">camiaoPer:ICamiaoPersistence</text><polygon fill="#181818" points="1356.5,393.2891,1366.5,397.2891,1356.5,401.2891,1360.5,397.2891" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="789" x2="1362.5" y1="397.2891" y2="397.2891"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="796" y="392.4326">9</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="106" x="807" y="392.4326">create(camiaoPer)</text><polygon fill="#181818" points="939,453.6406,949,457.6406,939,461.6406,943,457.6406" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="784" x2="945" y1="457.6406" y2="457.6406"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="791" y="452.7842">10</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="125" x="809" y="452.7842">toDomain(camiaoPer)</text><polygon fill="#181818" points="1510.5,483.9922,1520.5,487.9922,1510.5,491.9922,1514.5,487.9922" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="956" x2="1516.5" y1="487.9922" y2="487.9922"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="963" y="483.1357">11</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="44" x="981" y="483.1357">create()</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="139" x="1522.5" y="465.6406"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125" x="1529.5" y="487.1738">newCamiao:Camiao</text><polygon fill="#181818" points="939,526.6016,949,530.6016,939,534.6016,943,530.6016" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="532" x2="945" y1="530.6016" y2="530.6016"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="539" y="525.7451">12</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="106" x="557" y="525.7451">toDto(newCamiao)</text><polygon fill="#181818" points="1659.5,556.9531,1669.5,560.9531,1659.5,564.9531,1663.5,560.9531" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="956" x2="1665.5" y1="560.9531" y2="560.9531"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="963" y="556.0967">13</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="44" x="981" y="556.0967">create()</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="154" x="1671.5" y="538.6016"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="1678.5" y="560.1348">newDTO:ICamiaoDTO</text><polygon fill="#181818" points="390,599.5625,380,603.5625,390,607.5625,386,603.5625" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="384" x2="526" y1="603.5625" y2="603.5625"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="396" y="598.7061">14</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="101" x="414" y="598.7061">Sucess(newDTO)</text><polygon fill="#181818" points="237,629.9141,227,633.9141,237,637.9141,233,633.9141" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="231" x2="373" y1="633.9141" y2="633.9141"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="243" y="629.0576">15</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="101" x="261" y="629.0576">Sucess(newDTO)</text><polygon fill="#181818" points="11,660.2656,1,664.2656,11,668.2656,7,664.2656" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="5" x2="220" y1="664.2656" y2="664.2656"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="17" y="659.4092">16</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="101" x="35" y="659.4092">Sucess(newDTO)</text><!--MD5=[abacec35b3efe5ddcea542bc053ab179]
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+hide footbox
+
+participant ": CamiaoRoute" as Route
+participant ": CamiaoController" as Controller
+participant ": CamiaoService" as Service
+participant "camiao:Camiao" as Camiao
+participant ": CamiaoRepo" as Repo
+participant ": CamiaoMap" as MapC
+participant "camiaoPer:ICamiaoPersistence" as Persistance
+participant ":Model<ICamiaoPersistence & Document>" as Model
+participant "newCamiao:Camiao" as New
+participant "newDTO:ICamiaoDTO" as DTO
+
+
+?o-> Route : POST(.../api/camiao/adicionar)
+activate Route
+Route -> Controller: createCamiao()
+activate Controller
+Controller->Service: createCamiao(dto)
+activate Service
+Service->Repo: findByMatricula(matricula)
+activate Repo
+deactivate Repo
+Service -> Camiao** : create()
+Service -> Repo : save(camiao)
+activate Repo
+Repo -> MapC: toPersistence(camiao)
+activate MapC
+deactivate MapC
+Repo -> Persistance**: create()
+Repo -> Model : create(camiaoPer)
+activate Model
+deactivate Model
+Repo -> MapC : toDomain(camiaoPer)
+deactivate Repo
+activate MapC
+MapC -> New** : create()
+deactivate MapC
+Service -> MapC : toDto(newCamiao)
+activate MapC
+MapC -> DTO** : create()
+deactivate MapC
+Service -> Controller : Sucess(newDTO)
+deactivate Service
+Controller -> Route : Sucess(newDTO)
+deactivate Controller
+<- Route:Sucess(newDTO)
+deactivate Route
+
+@enduml
+
+@startuml
+
+autonumber
+hide footbox
+
+participant ": CamiaoRoute" as Route
+participant ": CamiaoController" as Controller
+participant ": CamiaoService" as Service
+participant "camiao:Camiao" as Camiao
+participant ": CamiaoRepo" as Repo
+participant ": CamiaoMap" as MapC
+participant "camiaoPer:ICamiaoPersistence" as Persistance
+participant ":Model<ICamiaoPersistence & Document>" as Model
+participant "newCamiao:Camiao" as New
+participant "newDTO:ICamiaoDTO" as DTO
+
+
+?o-> Route : POST(.../api/camiao/adicionar)
+activate Route
+Route -> Controller: createCamiao()
+activate Controller
+Controller->Service: createCamiao(dto)
+activate Service
+Service->Repo: findByMatricula(matricula)
+activate Repo
+deactivate Repo
+Service -> Camiao** : create()
+Service -> Repo : save(camiao)
+activate Repo
+Repo -> MapC: toPersistence(camiao)
+activate MapC
+deactivate MapC
+Repo -> Persistance**: create()
+Repo -> Model : create(camiaoPer)
+activate Model
+deactivate Model
+Repo -> MapC : toDomain(camiaoPer)
+deactivate Repo
+activate MapC
+MapC -> New** : create()
+deactivate MapC
+Service -> MapC : toDto(newCamiao)
+activate MapC
+MapC -> DTO** : create()
+deactivate MapC
+Service -> Controller : Sucess(newDTO)
+deactivate Service
+Controller -> Route : Sucess(newDTO)
+deactivate Controller
+<- Route:Sucess(newDTO)
+deactivate Route
+
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 18:01:30 BST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

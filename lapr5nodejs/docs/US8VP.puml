@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+hide footbox
+autonumber
+
+participant "camiaoRoute:CamiaoRoute" as route
+participant "camiaoController:CamiaoController" as controller
+participant "camiaoService:CamiaoService" as service
+participant "truckRepo: CamiaoRepo" as repo
+
+
+?o-> route : GET(.../api/camiao/list)
+activate route
+route -> controller: listCamioes()
+activate controller
+controller -> service : listCamioes()
+activate service
+service -> repo : findAll()
+activate repo
+repo --> service : getList
+deactivate repo
+service --> controller: getList
+deactivate service
+controller --> route: getList
+<-- route : getList
+
+@enduml
