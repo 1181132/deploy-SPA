@@ -12,7 +12,7 @@ namespace DDDSample1.Infrastructure.Armazens
             
             //builder.ToTable("Armazens", SchemaNames.DDDSample1);
             builder.HasKey(b => b.Id);
-            builder.OwnsOne(b => b.Designacao);
+            builder.OwnsOne(b => b.Designacao, pl => {pl.Property(c => c.Designacao).IsRequired().HasMaxLength(50);});
             builder.OwnsOne(b => b.Endereco);
             builder.OwnsOne(b => b.Coordenadas);
             //builder.Property<bool>("_active").HasColumnName("Active");
