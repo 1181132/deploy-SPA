@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "effK/qcdhqsL1XVk+5mIJcYzj6lZ7P1FqiaJmSA/gYDQXjV07nkjZTPdKEpCVI32cJ9BHb+lysZtIY290gndkQ==",
+  "dgSpecHash": "8a/hIlwBFAvsupkBDytU4puhhL/IxiHl2C/GwAYH/M2MbSarIMCj31f03ajhUzZU6wZ2Pntf6T8OV+EaJJOqYg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\almei\\OneDrive\\Ambiente de Trabalho\\ISEP\\1_Semestre\\2º\\LAPR5\\Projeto\\Armazem_MasterData\\DDDNetCore.csproj",
+  "projectFilePath": "C:\\Users\\almei\\OneDrive\\Ambiente de Trabalho\\ISEP\\1_Semestre\\2º\\LAPR5\\LAPR\\Armazem_MasterData\\DDDNetCore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\almei\\.nuget\\packages\\castle.core\\5.1.0\\castle.core.5.1.0.nupkg.sha512",
     "C:\\Users\\almei\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
