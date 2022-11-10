@@ -14,13 +14,13 @@ namespace DDDSample1.Domain.Entregas
         public EntregaData(string data){
             if(!validaData(data)){
                 throw new BusinessRuleValidationException("A data não se encontra dentro dos parametros dia,mes,ano (ex: dd-mm-aaaa, dd/mm/aaaa, dd.mm.aaaa)");
-        }
-        this.Data=data;
+                
+            } 
+            this.Data=data;
     }
 
-    private static bool validaData(string data){
-        return Validacoes.ValidaExpressao(data,Constantes.PADRAO_DATA);
-    }
-
+        private static bool validaData(string data){
+            return Validacoes.ValidaExpressao(data,Constantes.PADRAO_DATA);
+        } 
     }
 }

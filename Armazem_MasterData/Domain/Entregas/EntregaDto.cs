@@ -17,14 +17,5 @@ namespace DDDSample1.Domain.Entregas
         public int TempoColocarEntrega { get; set; }
 
         public int TempoRetirarEntrega { get; set; }
-
-       /* public EntregaDto(string Id, string data, int massa, ArmazemId armazemId, int tempoColocar, int tempoRetirar){
-            this.Id=Id;
-            this.Data=data;
-            this.Massa=massa;
-            this.ArmazemId=armazemId;
-            this.TempoColocarEntrega=tempoColocar;
-            this.TempoRetirarEntrega=tempoRetirar;
-        }*/
     }
 }

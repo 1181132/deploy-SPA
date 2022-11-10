@@ -7,17 +7,17 @@ namespace DDDSample1.Domain.Entregas
 {
     [Owned]
     public class EntregaTempoRetirar : IValueObject{
-        public int TempoRetirar { get; private set;}
+        public int TempoRetirarEntrega { get; private set;}
         
-        public EntregaTempoRetirar(int tempoRetirar){
-            if(!validaTempo(tempoRetirar)){
+        public EntregaTempoRetirar(int tempoRetirarEntrega){
+            if(!validaTempo(tempoRetirarEntrega)){
                 throw new BusinessRuleValidationException("O valor do tempo tem de ser superior a 0");
             }
-            this.TempoRetirar=tempoRetirar;
+            this.TempoRetirarEntrega=tempoRetirarEntrega;
         }
 
-        private static bool validaTempo (int tempoRetirar){
-            return tempoRetirar > 0;
+        private static bool validaTempo (int tempoRetirarEntrega){
+            return tempoRetirarEntrega > 0;
         }
     }
     

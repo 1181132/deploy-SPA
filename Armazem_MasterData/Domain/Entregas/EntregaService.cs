@@ -9,11 +9,13 @@ namespace DDDSample1.Domain.Entregas
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IEntregaRepository _repo;
+        private readonly IArmazemRepository _repoArm;
 
-        public EntregaService(IUnitOfWork unitOfWork, IEntregaRepository repo)
+        public EntregaService(IUnitOfWork unitOfWork, IEntregaRepository repo, IArmazemRepository repoArm)
         {
             this._unitOfWork = unitOfWork;
             this._repo = repo;
+            this._repoArm = repoArm;
         }
 
         public async Task<List<EntregaDto>> GetAllAsync()
@@ -23,8 +25,8 @@ namespace DDDSample1.Domain.Entregas
             List<EntregaDto> listDto = list.ConvertAll<EntregaDto>(entrega => new EntregaDto{Id = entrega.Id.AsString(), Data = entrega.Data.Data,
             Massa = entrega.Massa.Massa,
             ArmazemId = entrega.ArmazemId,
-            TempoColocarEntrega = entrega.TempoColocar.TempoColocar,
-            TempoRetirarEntrega = entrega.TempoRetirar.TempoRetirar});
+            TempoColocarEntrega = entrega.TempoColocarEntrega.TempoColocarEntrega,
+            TempoRetirarEntrega = entrega.TempoRetirarEntrega.TempoRetirarEntrega});
 
             return listDto;
         }
@@ -40,28 +42,32 @@ namespace DDDSample1.Domain.Entregas
             Data = entrega.Data.Data,
             Massa = entrega.Massa.Massa,
             ArmazemId = entrega.ArmazemId,
-            TempoColocarEntrega = entrega.TempoColocar.TempoColocar,
-            TempoRetirarEntrega = entrega.TempoRetirar.TempoRetirar};
+            TempoColocarEntrega = entrega.TempoColocarEntrega.TempoColocarEntrega,
+            TempoRetirarEntrega = entrega.TempoRetirarEntrega.TempoRetirarEntrega};
         }
 
         public async Task<EntregaDto> AddAsync(CreatingEntregaDto dto)
         {
+            //alterar para os outros, ver com o da stora o que ha de diferenças
+            await checkArmazemIdAsync(dto.ArmazemId);
             var entrega = new Entrega(dto.Id, dto.Data, dto.Massa, dto.ArmazemId, dto.TempoColocarEntrega, dto.TempoRetirarEntrega);
 
             await this._repo.AddAsync(entrega);
 
             await this._unitOfWork.CommitAsync();
 
-            return new EntregaDto { Id = entrega.Id.AsString(),
+            return new EntregaDto { Id = entrega.Id.AsString(), 
             Data = entrega.Data.Data,
             Massa = entrega.Massa.Massa,
             ArmazemId = entrega.ArmazemId,
-            TempoColocarEntrega = entrega.TempoColocar.TempoColocar,
-            TempoRetirarEntrega = entrega.TempoRetirar.TempoRetirar };
+            TempoColocarEntrega = entrega.TempoColocarEntrega.TempoColocarEntrega,
+            TempoRetirarEntrega = entrega.TempoRetirarEntrega.TempoRetirarEntrega };
         }
 
         public async Task<EntregaDto> UpdateAsync(EntregaDto dto)
         {
+
+            await checkArmazemIdAsync(dto.ArmazemId);
             var entrega = await this._repo.GetByIdAsync(new EntregaId(dto.Id)); 
 
             if (entrega == null)
@@ -81,8 +87,8 @@ namespace DDDSample1.Domain.Entregas
             Data = entrega.Data.Data,
             Massa = entrega.Massa.Massa,
             ArmazemId = entrega.ArmazemId,
-            TempoColocarEntrega = entrega.TempoColocar.TempoColocar,
-            TempoRetirarEntrega = entrega.TempoRetirar.TempoRetirar };
+            TempoColocarEntrega = entrega.TempoColocarEntrega.TempoColocarEntrega,
+            TempoRetirarEntrega = entrega.TempoRetirarEntrega.TempoRetirarEntrega };
         }
 
         public async Task<EntregaDto> InactivateAsync(EntregaId id)
@@ -101,8 +107,8 @@ namespace DDDSample1.Domain.Entregas
             Data = entrega.Data.Data,
             Massa = entrega.Massa.Massa,
             ArmazemId = entrega.ArmazemId,
-            TempoColocarEntrega = entrega.TempoColocar.TempoColocar,
-            TempoRetirarEntrega = entrega.TempoRetirar.TempoRetirar};
+            TempoColocarEntrega = entrega.TempoColocarEntrega.TempoColocarEntrega,
+            TempoRetirarEntrega = entrega.TempoRetirarEntrega.TempoRetirarEntrega};
         }
 
          public async Task<EntregaDto> DeleteAsync(EntregaId id)
@@ -122,8 +128,17 @@ namespace DDDSample1.Domain.Entregas
             Data = entrega.Data.Data,
             Massa = entrega.Massa.Massa,
             ArmazemId = entrega.ArmazemId,
-            TempoColocarEntrega = entrega.TempoColocar.TempoColocar,
-            TempoRetirarEntrega = entrega.TempoRetirar.TempoRetirar};
+            TempoColocarEntrega = entrega.TempoColocarEntrega.TempoColocarEntrega,
+            TempoRetirarEntrega = entrega.TempoRetirarEntrega.TempoRetirarEntrega};
         }
+
+         private async Task checkArmazemIdAsync(ArmazemId armazemId)
+         {
+             var armazem = await _repoArm.GetByIdAsync(armazemId);
+             if (armazem == null)
+             {
+                 throw new BusinessRuleValidationException("Armazem Id inválido");
+             }
+         }
     }
 }

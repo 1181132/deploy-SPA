@@ -16,6 +16,7 @@ namespace dotNetUnitTestes.Entregas
     {
         IUnitOfWork theMockedUW;
         IEntregaRepository theMockedRepo;
+        IArmazemRepository theMockedRepoArma;
         List<Entrega> testList;
 
         public EntregasServiceTeste()
@@ -26,7 +27,7 @@ namespace dotNetUnitTestes.Entregas
             var e1 = new ArmazemEndereco("rua do quadrado",1234,"1224-321","Porto","Portugal");
             var c1 = new ArmazemCoordenadas(50,44);
             var a1 = new Armazem(i1,d1,e1,c1);
-            var ent1 = new Entrega("1", new EntregaData("20-10-2000"),new EntregaMassa(10),a1.Id,new EntregaTempoColocar(10), new EntregaTempoRetirar(15));
+            var ent1 = new Entrega(new EntregaId("1"), new EntregaData("20-10-2000"),new EntregaMassa(10),a1.Id,new EntregaTempoColocar(10), new EntregaTempoRetirar(15));
             testList.Add(ent1);   
 
             var i2 = new ArmazemId("as2");
@@ -34,7 +35,7 @@ namespace dotNetUnitTestes.Entregas
             var e2 = new ArmazemEndereco("rua do triangulo",1235,"1224-322","Coimbra","Portugal");
             var c2 = new ArmazemCoordenadas(-30,60);
             var a2 = new Armazem(i2,d2,e2,c2);
-            var ent2 = new Entrega("2", new EntregaData("20-10-2000"),new EntregaMassa(15),a2.Id,new EntregaTempoColocar(15), new EntregaTempoRetirar(20));
+            var ent2 = new Entrega(new EntregaId("2"), new EntregaData("20-10-2000"),new EntregaMassa(15),a2.Id,new EntregaTempoColocar(15), new EntregaTempoRetirar(20));
             testList.Add(ent2); 
 
             var i3 = new ArmazemId("as3");
@@ -42,7 +43,7 @@ namespace dotNetUnitTestes.Entregas
             var e3 = new ArmazemEndereco("rua do circulo",1236,"1224-323","Madrid","Espanha");
             var c3 = new ArmazemCoordenadas(22,-14);
             var a3 = new Armazem(i3,d3,e3,c3);
-            var ent3 = new Entrega("3", new EntregaData("20-10-2000"),new EntregaMassa(20),a3.Id,new EntregaTempoColocar(20), new EntregaTempoRetirar(25));
+            var ent3 = new Entrega(new EntregaId("3"), new EntregaData("20-10-2000"),new EntregaMassa(20),a3.Id,new EntregaTempoColocar(20), new EntregaTempoRetirar(25));
             testList.Add(ent3); 
             
             var i4 = new ArmazemId("as4");
@@ -50,7 +51,7 @@ namespace dotNetUnitTestes.Entregas
             var e4 = new ArmazemEndereco("rua do teste",1237,"1224-324","Paris","Franca");
             var c4 = new ArmazemCoordenadas(22,-14);
             var novoArmazem = new Armazem(i4,d4,e4,c4);
-            var novaEntrega = new Entrega("4", new EntregaData("20-10-2000"),new EntregaMassa(10),novoArmazem.Id,new EntregaTempoColocar(25), new EntregaTempoRetirar(30));
+            var novaEntrega = new Entrega(new EntregaId("4"), new EntregaData("20-10-2000"),new EntregaMassa(10),novoArmazem.Id,new EntregaTempoColocar(25), new EntregaTempoRetirar(30));
 
             var srv = new Mock<IEntregaRepository>();
             
@@ -76,7 +77,7 @@ namespace dotNetUnitTestes.Entregas
         public async Task GetAllEntregasFromReposAsync_ShouldReturnAllEntregasAsync()
         {
             //Arrange
-            var theService = new EntregaService(theMockedUW, theMockedRepo);
+            var theService = new EntregaService(theMockedUW, theMockedRepo, theMockedRepoArma);
 
             //Act
             var result = await theService.GetAllAsync();
@@ -90,7 +91,7 @@ namespace dotNetUnitTestes.Entregas
         public async Task GetEntregasFromRepoAsync_ShouldReturnNull()
         {
             // Arrange      
-            var theService = new EntregaService(theMockedUW, theMockedRepo);
+            var theService = new EntregaService(theMockedUW, theMockedRepo,theMockedRepoArma);
             var testEntregaId = "5";
 
             // Act
@@ -104,7 +105,7 @@ namespace dotNetUnitTestes.Entregas
         public async Task GetEntregaFromRepoAsync_ShouldReturnTask()
         {
             // Arrange      
-            var theService = new EntregaService(theMockedUW, theMockedRepo);
+            var theService = new EntregaService(theMockedUW, theMockedRepo, theMockedRepoArma);
             var testId = testList[0].Id;
 
             // Act
@@ -118,7 +119,7 @@ namespace dotNetUnitTestes.Entregas
         public async Task GetEntregaFromRepoAsync_ShouldReturnTheRigthOneAsync()
         {
             // Arrange       
-            var theService = new EntregaService(theMockedUW, theMockedRepo);
+            var theService = new EntregaService(theMockedUW, theMockedRepo, theMockedRepoArma);
             var testId = testList[0].Id;
 
             // Act
@@ -133,7 +134,7 @@ namespace dotNetUnitTestes.Entregas
         public async Task PutEntregaNaoExistenteInRepo_ShouldReturnNull()
         {
             // Arrange     
-            var theService = new EntregaService(theMockedUW, theMockedRepo);
+            var theService = new EntregaService(theMockedUW, theMockedRepo, theMockedRepoArma);
             var i1 = new ArmazemId("as1");
             var d1 = new ArmazemDesignacao("Armazem1");
             var e1 = new ArmazemEndereco("rua do quadrado",1234,"1224-321","Porto","Portugal");
@@ -210,7 +211,7 @@ namespace dotNetUnitTestes.Entregas
         public async Task PostValidEntregaInRepoAsync_ShouldReturnEntregaDTO()
         {
             // Arrange     
-            var theService = new EntregaService(theMockedUW, theMockedRepo);
+            var theService = new EntregaService(theMockedUW, theMockedRepo, theMockedRepoArma);
             var i1 = new ArmazemId("as1");
             var d1 = new ArmazemDesignacao("Armazem1");
             var e1 = new ArmazemEndereco("rua do quadrado",1234,"1224-321","Porto","Portugal");
