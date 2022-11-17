@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1f80a1df-6af9-4110-8a6e-fe1f657fc598" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Armazem_MasterData/bin/Debug/netcoreapp6.0/DDDNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Armazem_MasterData/bin/Debug/netcoreapp6.0/DDDNetCore.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Armazem_MasterData/bin/Debug/netcoreapp6.0/DDDNetCore.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Armazem_MasterData/bin/Debug/netcoreapp6.0/DDDNetCore.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Armazem_MasterData/obj/DDDNetCore.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Armazem_MasterData/obj/DDDNetCore.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Armazem_MasterData/obj/DDDNetCore.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Armazem_MasterData/obj/DDDNetCore.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Armazem_MasterData/obj/Debug/netcoreapp6.0/DDDNetCore.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Armazem_MasterData/obj/Debug/netcoreapp6.0/DDDNetCore.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Armazem_MasterData/obj/Debug/netcoreapp6.0/DDDNetCore.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Armazem_MasterData/obj/Debug/netcoreapp6.0/DDDNetCore.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Armazem_MasterData/obj/Debug/netcoreapp6.0/DDDNetCore.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Armazem_MasterData/obj/Debug/netcoreapp6.0/DDDNetCore.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Armazem_MasterData/obj/Debug/netcoreapp6.0/DDDNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Armazem_MasterData/obj/Debug/netcoreapp6.0/DDDNetCore.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Armazem_MasterData/obj/Debug/netcoreapp6.0/DDDNetCore.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Armazem_MasterData/obj/Debug/netcoreapp6.0/DDDNetCore.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Armazem_MasterData/obj/Debug/netcoreapp6.0/DDDNetCore.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Armazem_MasterData/obj/Debug/netcoreapp6.0/DDDNetCore.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Armazem_MasterData/obj/Debug/netcoreapp6.0/project.razor.json" beforeDir="false" afterPath="$PROJECT_DIR$/Armazem_MasterData/obj/Debug/netcoreapp6.0/project.razor.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Armazem_MasterData/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Armazem_MasterData/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Armazem_MasterData/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Armazem_MasterData/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Armazem_MasterData/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Armazem_MasterData/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Armazem_MasterData/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/Armazem_MasterData/obj/staticwebassets.pack.sentinel" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2HJFBUfnhFQG9fqOhTJTfEwjcio" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenDatabaseViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/ricar"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

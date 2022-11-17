@@ -1180,19 +1180,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\almei\\.nuget\\packages\\": {}
+    "C:\\Users\\ricar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\almei\\OneDrive\\Ambiente de Trabalho\\ISEP\\1_Semestre\\2º\\LAPR5\\Projeto\\Armazem_MasterData\\DDDNetCore.csproj",
+      "projectUniqueName": "C:\\Users\\ricar\\OneDrive\\Documentos\\lapr5_2022_g29\\Armazem_MasterData\\DDDNetCore.csproj",
       "projectName": "DDDNetCore",
-      "projectPath": "C:\\Users\\almei\\OneDrive\\Ambiente de Trabalho\\ISEP\\1_Semestre\\2º\\LAPR5\\Projeto\\Armazem_MasterData\\DDDNetCore.csproj",
-      "packagesPath": "C:\\Users\\almei\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\almei\\OneDrive\\Ambiente de Trabalho\\ISEP\\1_Semestre\\2º\\LAPR5\\Projeto\\Armazem_MasterData\\obj\\",
+      "projectPath": "C:\\Users\\ricar\\OneDrive\\Documentos\\lapr5_2022_g29\\Armazem_MasterData\\DDDNetCore.csproj",
+      "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ricar\\OneDrive\\Documentos\\lapr5_2022_g29\\Armazem_MasterData\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\almei\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\ricar\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp6.0"
