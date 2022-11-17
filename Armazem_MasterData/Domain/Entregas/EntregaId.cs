@@ -5,18 +5,18 @@ namespace DDDSample1.Domain.Entregas
 {
     public class EntregaId : EntityId
     {
+        public string Id { get; private set; }
 
         public EntregaId(String value):base(value)
         {
 
         }
-
-        override
-        protected  Object createFromString(String text){
+        
+        protected override Object createFromString(String text){
             return text;
         }
-        override
-        public String AsString(){
+        
+        public override String AsString(){
             return (String) base.Value;
         }
     }
