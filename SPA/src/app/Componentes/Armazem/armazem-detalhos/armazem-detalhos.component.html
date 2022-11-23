@@ -1,0 +1,14 @@
+<div *ngIf="armazem">
+  <h2>{{armazem.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{armazem.id}}</div>
+  <div>
+    <label for="armazem-name">Nome armazem: </label>
+    <input id="armazem-name" [(ngModel)]="armazem.name" placeholder="Armazem name"/><br/>
+    <label for="armazem-coordLat">Coordenada Latitude do Armazem: </label>
+    <input id="armazem-coordLat" [(ngModel)]="armazem.coordLat" placeholder="Armazem coordLon"/><br/>
+    <label for="armazem-coordLon">Coordenada Longitude do Armazem: </label>
+    <input id="armazem-coordLon" [(ngModel)]="armazem.coordLon" placeholder="Armazem coordLon"/><br/>
+  </div>
+  <button type="button" (click)="goBack()">go back</button>
+  <button type="button" (click)="save()">save</button>
+</div>

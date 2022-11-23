@@ -1,0 +1,45 @@
+
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>Criar Armazem</h1>
+    <form (ngSubmit)="onSubmit()" #armazemForm="ngForm"></form>
+    <div class="form-group">
+      <label for="new-armazem">Nome do Armazem: </label>
+      <input type="text" class="form-control" placeholder="Gondomar"
+       id="new-armazem-name" required
+       [(ngModel)]="model.name" name="name"
+       #armazemName="ngModel">
+      <div [hidden]="armazemName.valid || armazemName.pristine"
+               class="alert alert-danger">
+            Nome é requerido
+          </div>
+    </div>
+  
+
+
+  <label for="new-armazem">Coordenada Latitude Armazem: </label>
+  <input type="number" placeholder="0" max="90" min="-90" id="new-armazem-lat" #armazemLat />
+  <label for="new-armazem">Coordenada Longitudde do Armazem: </label>
+  <input type="number" placeholder="0" max="180" min="-180" id="new-armazem-lon" #armazemLon />
+  <label for="new-armazem">Rua: </label>
+  <input type="number" placeholder="Avenida dos Aliados" max="180" min="-180" id="new-armazem-lon" #armazemLon />
+  <label for="new-armazem">Numero de Porta: </label>
+  <input type="number" placeholder="1732" id="new-armazem-lon" #armazemLon />
+  <label for="new-armazem">Codigo Postal: </label>
+  <input type="number" placeholder="0000-000" pattern="^\d{4}-\d{3}?$" id="new-armazem-lon" #armazemLon />
+  <label for="new-armazem">Cidade: </label>
+  <input type="text" placeholder="Porto" id="new-armazem-lon" #armazemCidade />
+  <label for="new-armazem">Pais: </label>
+  <input type="text" placeholder="Portugal" id="new-armazem-lon" #armazemPais />
+  
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button type="button" class="add-button" (click)="add(armazemName.value, 
+  armazemLat.valueAsNumber ,armazemLon.valueAsNumber);
+  ">
+    Adiciona armazem
+  </button>
+  </div>
+</div>
+
+
+<!---<app-armazem-formulario></app-armazem-formulario>-->

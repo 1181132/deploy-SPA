@@ -1,0 +1,12 @@
+<div id="search-component">
+  <label for="search-box">Armazem Search</label>
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+
+  <ul class="search-result">
+    <li *ngFor="let armazem of armazens$ | async" >
+      <a routerLink="/detail/{{armazem.id}}">
+        {{armazem.name}}
+      </a>
+    </li>
+  </ul>
+</div>

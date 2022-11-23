@@ -1,0 +1,20 @@
+<h2> Todos os Armazens</h2>
+
+
+<app-armazem-procura></app-armazem-procura>
+
+
+
+<ul class="armazens">
+  <li *ngFor="let armazem of armazens">
+    <a routerLink="/detail/{{armazem.id}}">
+      <span class="badge">{{armazem.id}}</span> {{armazem.name}}
+    </a>
+    <button type="button" class="delete" title="delete armazem"
+      (click)="delete(armazem)">x</button>
+  </li>
+</ul>
+
+
+
+
