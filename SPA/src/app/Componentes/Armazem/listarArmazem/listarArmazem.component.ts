@@ -18,7 +18,7 @@ export class ListarArmazemComponent implements OnInit {
 
   getArmazens(): void {
     this.armazemService.getArmazens()
-      .subscribe(armazens => this.armazens = armazens);
+      .subscribe((armazens: Armazem[]) => this.armazens = armazens);
   }
   
   delete(armazem: Armazem): void {

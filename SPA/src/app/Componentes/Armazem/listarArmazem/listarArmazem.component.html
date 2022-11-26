@@ -8,7 +8,7 @@
 <ul class="armazens">
   <li *ngFor="let armazem of armazens">
     <a routerLink="/detail/{{armazem.id}}">
-      <span class="badge">{{armazem.id}}</span> {{armazem.name}}
+      <span class="badge">{{armazem.id}}</span> {{armazem.designacao}} 
     </a>
     <button type="button" class="delete" title="delete armazem"
       (click)="delete(armazem)">x</button>

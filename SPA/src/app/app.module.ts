@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm, ReactiveFormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -14,13 +14,14 @@ import { ArmazensComponent } from './Componentes/Armazem/armazens/armazens.compo
 import { ArmazemDetalhosComponent } from './Componentes/Armazem/armazem-detalhos/armazem-detalhos.component';
 import { ArmazemProcuraComponent } from './Componentes/Armazem/armazem-procura/armazem-procura.component';
 import { ListarArmazemComponent } from './Componentes/Armazem/listarArmazem/listarArmazem.component';
-import { ArmazemFormularioComponent } from './Componentes/Armazem/armazem-formulario/armazem-formulario.component';
+//import { ArmazemFormularioComponent } from './Componentes/Armazem/armazem-formulario/armazem-formulario.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
@@ -36,7 +37,7 @@ import { ArmazemFormularioComponent } from './Componentes/Armazem/armazem-formul
     ArmazemDetalhosComponent,
     ArmazemProcuraComponent,
     ListarArmazemComponent,
-    ArmazemFormularioComponent,
+  //  ArmazemFormularioComponent,
   ],
   bootstrap: [ AppComponent ]
 })

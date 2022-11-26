@@ -5,7 +5,7 @@
   <ul class="search-result">
     <li *ngFor="let armazem of armazens$ | async" >
       <a routerLink="/detail/{{armazem.id}}">
-        {{armazem.name}}
+        {{armazem.designacao}}
       </a>
     </li>
   </ul>

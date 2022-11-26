@@ -30,7 +30,7 @@ getArmazens(): Observable<Armazem[]> {
 }
 
 /** GET Armazem by id. Will 404 if id not found */
-getArmazem(id: number): Observable<Armazem> {
+getArmazem(id: string): Observable<Armazem> {
   const url = `${this.armazensUrl}/${id}`;
   return this.http.get<Armazem>(url).pipe(
     catchError(this.handleError<Armazem>(`getArmazem id=${id}`))
@@ -38,7 +38,7 @@ getArmazem(id: number): Observable<Armazem> {
 }
 
 /** PUT: update the Armazem on the server */
-updateHero(armazem: Armazem): Observable<any> {
+updateArmazem(armazem: Armazem): Observable<any> {
   return this.http.put(this.armazensUrl, armazem, this.httpOptions).pipe(
     catchError(this.handleError<Armazem>('updateArmazem'))
   );
@@ -52,7 +52,7 @@ addArmazem(armazem: Armazem): Observable<Armazem> {
 }
 
 /** DELETE: delete the Armazem from the server */
-deleteArmazem(id: number): Observable<Armazem> {
+deleteArmazem(id: string): Observable<Armazem> {
   const url = `${this.armazensUrl}/${id}`;
 
   return this.http.delete<Armazem>(url, this.httpOptions).pipe(
@@ -66,8 +66,8 @@ searchArmazens(term: string): Observable<Armazem[]> {
     // if not search term, return empty hero array.
     return of([]);
   }
-  return this.http.get<Armazem[]>(`${this.armazensUrl}/?name=${term}`).pipe(
-    catchError(this.handleError<Armazem[]>('searchHeroes', []))
+  return this.http.get<Armazem[]>(`${this.armazensUrl}/?designacao=${term}`).pipe(
+    catchError(this.handleError<Armazem[]>('searchArmazens', []))
   );
 }
 

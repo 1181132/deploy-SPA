@@ -1,6 +1,12 @@
 export interface Armazem {
-  id: number;
-  name: string;
-  coordLat: number;
+  id: string;
+  designacao: string;
+  rua : string;
+  numeroPorta : number;
+  codigoPostal: string;
+  cidade : string;
+  pais: string;
   coordLon: number;
+  coordLat: number;
+  
 }
