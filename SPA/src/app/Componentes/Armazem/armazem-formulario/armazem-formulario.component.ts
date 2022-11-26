@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+/* import { Component } from '@angular/core';
 
 
 import { ArmazemK } from '../../../Modelos/armazem2';
@@ -20,4 +20,4 @@ export class ArmazemFormularioComponent {
   newArmazem() {
     this.model = new ArmazemK(19, '', 0,0);
   }
-}
+} */

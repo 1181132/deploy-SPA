@@ -1,45 +1,305 @@
-
 <div class="container">
-  <div [hidden]="submitted">
-    <h1>Criar Armazem</h1>
-    <form (ngSubmit)="onSubmit()" #armazemForm="ngForm"></form>
-    <div class="form-group">
-      <label for="new-armazem">Nome do Armazem: </label>
-      <input type="text" class="form-control" placeholder="Gondomar"
-       id="new-armazem-name" required
-       [(ngModel)]="model.name" name="name"
-       #armazemName="ngModel">
-      <div [hidden]="armazemName.valid || armazemName.pristine"
-               class="alert alert-danger">
-            Nome é requerido
+
+  <h2>Criar Armazem</h2>
+
+  <form [formGroup]="armazemForm" #formDir="ngForm">
+
+    <div [hidden]="formDir.submitted">
+
+      <div class="cross-validation" [class.cross-validation-error]="armazemForm.errors?.['identityRevealed'] && (armazemForm.touched || armazemForm.dirty)">
+        
+        <div class="form-group">
+          <label for="armazemid">ID do Armazem</label>
+          <input type="text" id="armazemId" class="form-control"
+                formControlName="armazemId" placeholder="M13" required #id>
+
+          <div *ngIf="armazemId.invalid && (armazemId.dirty || armazemId.touched)"
+              class="alert alert-danger">
+
+            <div *ngIf="armazemId.errors?.['required']">
+              O id do armazem não pode ser nulo
+            </div>
+
+            <div *ngIf="armazemId.errors?.['maxlength']">
+             O id do armazem nao pode conter mais de 3 caracteres
+            </div>
+
+            <div *ngIf="armazemId.errors?.['pattern']">
+              O id do armazem tem de ser alphanumérico
+             </div>
+      
           </div>
+        </div>
+
+        <div class="form-group">
+          <label for="armazemdesignacao">Designacao do Armazem: </label>
+          <input type="text" id="armazemDesignacao" class="form-control"
+                formControlName="armazemDesignacao" placeholder="Maçarelos" required #designacao>
+
+          <div *ngIf="armazemDesignacao.invalid && (armazemDesignacao.dirty || armazemDesignacao.touched)"
+              class="alert alert-danger">
+
+            <div *ngIf="armazemDesignacao.errors?.['required']">
+              O id do armazem não pode ser nulo
+            </div>
+
+            <div *ngIf="armazemDesignacao.errors?.['maxlength']">
+             O id do armazem nao pode conter mais de 50 caracteres
+            </div>
+      
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="armazemrua">Rua: </label>
+          <input type="text" class="form-control"
+          formControlName="armazemRua" id="armazemRua" placeholder="Avenida dos Aliados" required #rua />
+
+          <div *ngIf="armazemRua.invalid && (armazemRua.dirty || armazemRua.touched)"
+              class="alert alert-danger">
+
+            <div *ngIf="armazemRua.errors?.['maxlength']">
+             O id do armazem nao pode conter mais de 50 caracteres
+            </div>
+      
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="armazemnumeroporta">Numero da Porta </label>
+          <input type="number" class="form-control"
+          formControlName="armazemNumeroPorta" id="armazemNumeroPorta" placeholder="1732" min="1" required #numeroPorta />
+
+          <div *ngIf="armazemNumeroPorta.invalid && (armazemNumeroPorta.dirty || armazemNumeroPorta.touched)"
+              class="alert alert-danger">
+
+            <div *ngIf="armazemNumeroPorta.errors?.['min']">
+             O numero de Porta não pode ser 0 ou negativo
+            </div>
+      
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="armazemcodigopostala">Codigo Postal </label>
+          <input type="text" class="form-control"
+          formControlName="armazemCodigoPostal" id="armazemCodigoPostal" placeholder="0000-000" pattern="^\d{4}-\d{3}?$" required #codigoPostal />
+
+          <div *ngIf="armazemCodigoPostal.invalid && (armazemCodigoPostal.dirty || armazemCodigoPostal.touched)"
+              class="alert alert-danger">
+
+            <div *ngIf="armazemCodigoPostal.errors?.['pattern']">
+             O código postal tem der ter formato válido
+            </div>
+      
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="armazemcidade">Cidade </label>
+          <input type="text" class="form-control"
+          formControlName="armazemCidade" id="armazemCidade" placeholder="Porto" required #cidade/>
+
+          <div *ngIf="armazemCidade.invalid && (armazemCidade.dirty || armazemCidade.touched)"
+              class="alert alert-danger">
+
+            <div *ngIf="armazemCidade.errors?.['maxlength']">
+             O id do armazem nao pode conter mais de 50 caracteres
+            </div>
+      
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="armazempais">País </label>
+          <input type="text" class="form-control"
+          formControlName="armazemPais" id="armazemPais" placeholder="Portugal" required #pais/>
+
+          <div *ngIf="armazemPais.invalid && (armazemPais.dirty || armazemPais.touched)"
+              class="alert alert-danger">
+
+            <div *ngIf="armazemPais.errors?.['maxlength']">
+             O id do armazem nao pode conter mais de 50 caracteres
+            </div>
+      
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="armazemlongitude">Coordenada Longitudde do Armazem </label>
+          <input type="text" class="form-control"
+          formControlName="armazemLongitude" id="armazemPais"
+          type="number" placeholder="0" max="180" min="-180" required #coordLon />
+
+          <div *ngIf="armazemLongitude.invalid && (armazemLongitude.dirty || armazemLongitude.touched)"
+              class="alert alert-danger">
+
+              <div *ngIf="armazemLongitude.errors?.['min']">
+                A longitude não pode ser inferior a -180
+               </div>
+      
+               <div *ngIf="armazemLongitude.errors?.['max']">
+                A longitude não pode ser superior a 180
+               </div>
+      
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="armazemlatitude">Coordenada Latitude Armazem </label>
+          <input type="text" class="form-control"
+          formControlName="armazemLatitude" id="armazemLatitude"
+          type="number" placeholder="0" max="180" min="-180" required #coordLat/>
+
+          <div *ngIf="armazemLatitude.invalid && (armazemLatitude.dirty || armazemLatitude.touched)"
+              class="alert alert-danger">
+
+              <div *ngIf="armazemLatitude.errors?.['min']">
+                A longitude não pode ser inferior a -90
+               </div>
+      
+               <div *ngIf="armazemLatitude.errors?.['max']">
+                A longitude não pode ser superior a 90
+               </div>
+         
+      
+          </div>
+        </div>
+
+      </div>
+
+      <p>Complete o formulário para habilitar o buton Submeter.</p>
+      <button type="submit"
+              class="btn btn-default"
+              [disabled]="armazemForm.invalid" >Submeter
+            </button>
+
+      <button type="button" class="btn btn-default"
+             (click)="formDir.resetForm({})">Restaurar</button>
     </div>
-  
+  </form>
 
-
-  <label for="new-armazem">Coordenada Latitude Armazem: </label>
-  <input type="number" placeholder="0" max="90" min="-90" id="new-armazem-lat" #armazemLat />
-  <label for="new-armazem">Coordenada Longitudde do Armazem: </label>
-  <input type="number" placeholder="0" max="180" min="-180" id="new-armazem-lon" #armazemLon />
-  <label for="new-armazem">Rua: </label>
-  <input type="number" placeholder="Avenida dos Aliados" max="180" min="-180" id="new-armazem-lon" #armazemLon />
-  <label for="new-armazem">Numero de Porta: </label>
-  <input type="number" placeholder="1732" id="new-armazem-lon" #armazemLon />
-  <label for="new-armazem">Codigo Postal: </label>
-  <input type="number" placeholder="0000-000" pattern="^\d{4}-\d{3}?$" id="new-armazem-lon" #armazemLon />
-  <label for="new-armazem">Cidade: </label>
-  <input type="text" placeholder="Porto" id="new-armazem-lon" #armazemCidade />
-  <label for="new-armazem">Pais: </label>
-  <input type="text" placeholder="Portugal" id="new-armazem-lon" #armazemPais />
-  
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button type="button" class="add-button" (click)="add(armazemName.value, 
-  armazemLat.valueAsNumber ,armazemLon.valueAsNumber);
-  ">
-    Adiciona armazem
-  </button>
+  <div class="submitted-message" *ngIf="formDir.submitted">
+    <p>Resgistou um Armazem!</p>
+    <button type="button" (click)="add(id.value,
+    designacao.value, rua.value ,numeroPorta.valueAsNumber,
+    codigoPostal.value,cidade.value,pais.value
+    ,coordLon.valueAsNumber,coordLat.valueAsNumber);formDir.resetForm({})">Criar novo armazem</button>
   </div>
 </div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
+
+
+
+
+
+
+
+<!-- 
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md3">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group" >
+          <label for="armazemId">Id: </label>
+          <input formControlName="armazemId" id="armazemId" type="text" placeholder="M13" class="form-control" />
+
+          <div *ngIf="id.invalid && (id.dirty || id.touched)"
+              class="alert alert-danger">
+
+            <div *ngIf="id.errors?.['required']">
+              Name is required.
+            </div>
+            <div *ngIf="id.errors?.['minlength']">
+              Name must be at least  characters long.
+          </div>
+        </div>
+        </div>
+
+        
+
+        <div class="form-group">
+          <label for="new-armazem">Designacao: </label>
+          <input formControlName="armazemDesignacao" type="text" placeholder="Maçarelos" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label for="new-armazem">Rua: </label>
+          <input type="text" placeholder="Avenida dos Aliados" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label for="new-armazem">Numero de Porta: </label>
+          <input type="text" placeholder="1732" class="form-control" />
+        </div>
+        
+        <div class="form-group">
+          <button class="btn btn-primary">
+            Register
+          </button>
+        </div>
+        
+ <button type="button" class="add-button" (click)="add(id.value,
+  designacao.value, rua.value ,numeroPorta.valueAsNumber,
+  codigoPostal.value,cidade.value,pais.value
+  ,coordLat.valueAsNumber,coordLat.valueAsNumber );formDir.resetForm({})">
+    Adiciona armazem
+  </button>
+      </form>
+    </div>
+  </div>
+</div>
+ -->
+
+
+ 
+
+<!-- <label for="new-armazem">Id: </label>
+
+[ngClass]="{'is-invalid':submitted && registerForm.controls.id.errors}"
+
+<input type="text" placeholder="M13" id="new-armazem-id" #armazemId />
+
+<label for="new-armazem">Designacao: </label>
+<input type="text" placeholder="Maçarelos" id="new-armazem-designacao" #armazemDesignacao />
+
+<label for="new-armazem">Rua: </label>
+<input type="text" placeholder="Avenida dos Aliados" id="new-armazem-rua" #armazemRua />
+
+<label for="new-armazem">Numero de Porta: </label>
+<input type="text" placeholder="1732" id="new-armazem-numeroPorta" #armazemNumeroPorta />
+
+<label for="new-armazem">Codigo Postal: </label>
+<input type="text" placeholder="0000-000" pattern="^\d{4}-\d{3}?$" id="new-armazem-codigoPostal" #armazemCodigoPostal />
+
+<label for="new-armazem">Cidade: </label>
+<input type="text" placeholder="Porto" id="new-armazem-cidade" #armazemCidade />
+
+<label for="new-armazem">Pais: </label>
+<input type="text" placeholder="Portugal" id="new-armazem-pais" #armazemPais />
+
+<label for="new-armazem">Coordenada Longitudde do Armazem: </label>
+<input type="number" placeholder="0" max="180" min="-180" id="new-armazem-lon" #armazemLon />
+
+<label for="new-armazem">Coordenada Latitude Armazem: </label>
+<input type="number" placeholder="0" max="90" min="-90" id="new-armazem-lat" #armazemLat /> -->
+
+
+<!--- (click) passes input value to add() and then clears the input -->
+<!--   <button type="button" class="add-button" (click)="add(armazemId.value,
+  armazemDesignacao.value, armazemRua.value ,armazemNumeroPorta.valueAsNumber,
+  armazemCodigoPostal.value,armazemCidade.value,armazemPais.value
+  ,armazemLon.valueAsNumber,armazemLat.valueAsNumber );">
+    Adiciona armazem
+  </button>
+  </div> -->
 
 
 <!---<app-armazem-formulario></app-armazem-formulario>-->
