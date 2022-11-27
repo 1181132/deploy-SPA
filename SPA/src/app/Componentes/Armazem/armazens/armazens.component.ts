@@ -84,11 +84,11 @@ constructor( private armazemService: ArmazemService) { }
 
 
   add(id:string, designacao: string, rua: string, numeroPorta: number,codigoPostal:string ,cidade: string, pais : string,
-    coordLon: number,coordLat: number): void {
+    coordenadaLon: number,coordenadaLat: number): void {
        designacao = designacao.trim();
        if (!designacao) { return; }
        this.armazemService.addArmazem({id ,designacao, rua ,numeroPorta,codigoPostal,
-         cidade,pais,coordLon, coordLat } as Armazem)
+         cidade,pais,coordenadaLon, coordenadaLat } as Armazem)
          .subscribe((armazem: Armazem) => {
            this.armazens.push(armazem);
          });

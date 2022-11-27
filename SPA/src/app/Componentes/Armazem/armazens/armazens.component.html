@@ -130,7 +130,7 @@
           <label for="armazemlongitude">Coordenada Longitudde do Armazem </label>
           <input type="text" class="form-control"
           formControlName="armazemLongitude" id="armazemPais"
-          type="number" placeholder="0" max="180" min="-180" required #coordLon />
+          type="number" placeholder="0" max="180" min="-180" required #coordenadaLon />
 
           <div *ngIf="armazemLongitude.invalid && (armazemLongitude.dirty || armazemLongitude.touched)"
               class="alert alert-danger">
@@ -150,7 +150,7 @@
           <label for="armazemlatitude">Coordenada Latitude Armazem </label>
           <input type="text" class="form-control"
           formControlName="armazemLatitude" id="armazemLatitude"
-          type="number" placeholder="0" max="180" min="-180" required #coordLat/>
+          type="number" placeholder="0" max="180" min="-180" required #coordenadaLat/>
 
           <div *ngIf="armazemLatitude.invalid && (armazemLatitude.dirty || armazemLatitude.touched)"
               class="alert alert-danger">
@@ -185,7 +185,7 @@
     <button type="button" (click)="add(id.value,
     designacao.value, rua.value ,numeroPorta.valueAsNumber,
     codigoPostal.value,cidade.value,pais.value
-    ,coordLon.valueAsNumber,coordLat.valueAsNumber);formDir.resetForm({})">Criar novo armazem</button>
+    ,coordenadaLon.valueAsNumber,coordenadaLat.valueAsNumber);formDir.resetForm({})">Criar novo armazem</button>
   </div>
 </div>
 

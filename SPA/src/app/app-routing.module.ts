@@ -6,7 +6,7 @@ import { ArmazensComponent } from './Componentes/Armazem/armazens/armazens.compo
 import { ArmazemDetalhosComponent } from './Componentes/Armazem/armazem-detalhos/armazem-detalhos.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+//  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'listarArmazem', component: ListarArmazemComponent },
   { path: 'detail/:id', component: ArmazemDetalhosComponent },
   { path: 'criarArmazem', component: ArmazensComponent },
