@@ -10,11 +10,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { ArmazensComponent } from './Componentes/Armazem/armazens/armazens.component';
+import { ArmazemCriarComponent } from './Componentes/Armazem/armazem-criar/armazem-criarcomponent';
 import { ArmazemDetalhosComponent } from './Componentes/Armazem/armazem-detalhos/armazem-detalhos.component';
 import { ArmazemProcuraComponent } from './Componentes/Armazem/armazem-procura/armazem-procura.component';
-import { ListarArmazemComponent } from './Componentes/Armazem/listarArmazem/listarArmazem.component';
-//import { ArmazemFormularioComponent } from './Componentes/Armazem/armazem-formulario/armazem-formulario.component';
+import { ArmazemListarComponent } from './Componentes/Armazem/armazem-listar/armazem-listar.component';
 
 @NgModule({
   imports: [
@@ -33,11 +32,10 @@ import { ListarArmazemComponent } from './Componentes/Armazem/listarArmazem/list
   ],
   declarations: [
     AppComponent,
-    ArmazensComponent,
+    ArmazemCriarComponent,
     ArmazemDetalhosComponent,
     ArmazemProcuraComponent,
-    ListarArmazemComponent,
-  //  ArmazemFormularioComponent,
+    ArmazemListarComponent,
   ],
   bootstrap: [ AppComponent ]
 })

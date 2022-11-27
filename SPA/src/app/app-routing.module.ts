@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ListarArmazemComponent } from './Componentes/Armazem/listarArmazem/listarArmazem.component';
-import { ArmazensComponent } from './Componentes/Armazem/armazens/armazens.component';
+import { ArmazemListarComponent } from './Componentes/Armazem/armazem-listar/armazem-listar.component';
+import { ArmazemCriarComponent } from './Componentes/Armazem/armazem-criar/armazem-criarcomponent';
 import { ArmazemDetalhosComponent } from './Componentes/Armazem/armazem-detalhos/armazem-detalhos.component';
 
 const routes: Routes = [
 //  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'listarArmazem', component: ListarArmazemComponent },
+  { path: 'listarArmazem', component: ArmazemListarComponent },
   { path: 'detail/:id', component: ArmazemDetalhosComponent },
-  { path: 'criarArmazem', component: ArmazensComponent },
+  { path: 'criarArmazem', component: ArmazemCriarComponent },
 ];
 
 @NgModule({

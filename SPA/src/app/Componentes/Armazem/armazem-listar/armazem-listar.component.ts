@@ -5,10 +5,10 @@ import { ArmazemService } from '../../../Servicos/Armazens/armazem.service';
 
 @Component({
   selector: 'app-listarArmazem',
-  templateUrl: './listarArmazem.component.html',
-  styleUrls: ['./listarArmazem.component.css']
+  templateUrl: './armazem-listar.component.html',
+  styleUrls: ['./armazem-listar.component.css']
 })
-export class ListarArmazemComponent implements OnInit {
+export class ArmazemListarComponent implements OnInit {
   armazens: Armazem[] = [];
 
   constructor(private htppClient: HttpClient, private armazemService: ArmazemService) { }
@@ -16,16 +16,6 @@ export class ListarArmazemComponent implements OnInit {
   ngOnInit(): void {
     this.getArmazens();
   }
-
-
-/*   getArmazens(): void {
-    this.htppClient.get<any>('https://localhost:5001/api/Armazens').subscribe( 
-      (          response: Armazem[]) => {
-        console.log(response);
-        this.armazens = response;
-      }
-    );
-  } */
 
   getArmazens(): void {
     this.armazemService.getArmazens()
