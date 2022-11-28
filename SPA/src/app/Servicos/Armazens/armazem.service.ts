@@ -15,7 +15,8 @@ export class ArmazemService {
   constructor(
     private http: HttpClient) { }
 
-private armazensUrl = 'api/armazens';  // URL to web api
+//private armazensUrl = 'api/armazens';  // URL to web api
+private armazensUrl = 'https://localhost:5001/api/Armazens';  // URL to web api
 
 httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })

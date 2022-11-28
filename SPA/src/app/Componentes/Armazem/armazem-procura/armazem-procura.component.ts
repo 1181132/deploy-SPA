@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Observable, Subject } from 'rxjs';
 
-import {
-   debounceTime, distinctUntilChanged, switchMap
- } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 import { Armazem } from '../../../Modelos/armazem';
 import { ArmazemService } from '../../../Servicos/Armazens/armazem.service';
@@ -12,7 +10,7 @@ import { ArmazemService } from '../../../Servicos/Armazens/armazem.service';
 @Component({
   selector: 'app-armazem-procura',
   templateUrl: './armazem-procura.component.html',
-  styleUrls: ['./armazem-procura.component.css']
+  styleUrls: ['./armazem-procura.component.css'],
 })
 export class ArmazemProcuraComponent implements OnInit {
   armazens$!: Observable<Armazem[]>;
@@ -34,7 +32,7 @@ export class ArmazemProcuraComponent implements OnInit {
       distinctUntilChanged(),
 
       // switch to new search observable each time the term changes
-      switchMap((term: string) => this.armazemService.searchArmazens(term)),
+      switchMap((term: string) => this.armazemService.searchArmazens(term))
     );
   }
 }

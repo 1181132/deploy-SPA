@@ -113,7 +113,7 @@
           <label for="armazemlongitude">Coordenada Longitudde do Armazem </label>
           <input type="text" class="form-control"
           formControlName="armazemLongitude" id="armazemPais"
-          type="number" [(ngModel)]="armazem.coordLon" placeholder="0" max="180" min="-180" required #coordLon />
+          type="number" [(ngModel)]="armazem.coordenadaLon" placeholder="0" max="180" min="-180" required #coordLon />
 
           <div *ngIf="armazemLongitude.invalid && (armazemLongitude.dirty || armazemLongitude.touched)"
               class="alert alert-danger">
@@ -133,7 +133,7 @@
           <label for="armazemlatitude">Coordenada Latitude Armazem </label>
           <input type="text" class="form-control"
           formControlName="armazemLatitude" id="armazemLatitude"
-          type="number" [(ngModel)]="armazem.coordLat" placeholder="0" max="180" min="-180" required #coordLat/>
+          type="number" [(ngModel)]="armazem.coordenadaLat" placeholder="0" max="180" min="-180" required #coordLat/>
 
           <div *ngIf="armazemLatitude.invalid && (armazemLatitude.dirty || armazemLatitude.touched)"
               class="alert alert-danger">
