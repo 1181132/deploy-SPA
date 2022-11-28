@@ -1,4 +1,4 @@
-
+/* 
 import * as sinon from 'sinon'
 import { DomainEvents } from '../DomainEvents';
 import { MockJobCreatedEvent } from './mocks/events/mockJobCreatedEvent'
@@ -137,3 +137,4 @@ describe('Domain Events', () => {
     })
   });
 });
+ */

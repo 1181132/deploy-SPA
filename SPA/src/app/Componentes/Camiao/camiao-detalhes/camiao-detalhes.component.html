@@ -1,0 +1,191 @@
+<div *ngIf="camiao">
+  <h2>{{ camiao.matricula | uppercase }} Detalhes</h2>
+  <div><span>Matricula: </span>{{ camiao.matricula }}</div>
+
+  <div class="container">
+    <h2>Editar Camião</h2>
+
+    <form [formGroup]="camiaoForm" #formDir="ngForm">
+      <div [hidden]="formDir.submitted">
+        <div
+          class="cross-validation"
+          [class.cross-validation-error]="camiaoForm.errors?.['identityRevealed'] && (camiaoForm.touched || camiaoForm.dirty)"
+        >
+          <div class="form-group">
+            <label for="camiaotara">Tara</label>
+            <input
+              type="number"
+              id="camiaoTara"
+              class="form-control"
+              formControlName="camiaoTara"
+              placeholder="1"
+              min="1"
+              required
+              #tara
+            />
+
+            <div
+              *ngIf="
+                camiaoTara.invalid && (camiaoTara.dirty || camiaoTara.touched)
+              "
+              class="alert alert-danger"
+            >
+              <div *ngIf="camiaoTara.errors?.['required']">
+                A Tara do camião não pode ser nula
+              </div>
+
+              <div *ngIf="camiaoTara.errors?.['min']">
+                A Tara do camião tem de ser maior que 1
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="camiaocapacidadeCarga">Capacidade de Carga: </label>
+            <input
+              type="number"
+              class="form-control"
+              formControlName="camiaoCapacidadeCarga"
+              id="camiaoCapacidadeCarga"
+              placeholder="10000"
+              required
+              min="1"
+              #capacidadeCarga
+            />
+
+            <div
+              *ngIf="
+                camiaoCapacidadeCarga.invalid &&
+                (camiaoCapacidadeCarga.dirty || camiaoCapacidadeCarga.touched)
+              "
+              class="alert alert-danger"
+            >
+              <div *ngIf="camiaoCapacidadeCarga.errors?.['required']">
+                A Capacidade de Carga do camião não pode ser nula
+              </div>
+
+              <div *ngIf="camiaoCapacidadeCarga.errors?.['min']">
+                A Capacidade de Carga do camião tem de ser maior que 1
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="camiaocargaTotalBaterias">Carga Total Baterias: </label>
+            <input
+              type="number"
+              class="form-control"
+              formControlName="camiaoCargaTotalBaterias"
+              id="camiaoCargaTotalBaterias"
+              placeholder="100"
+              required
+              min="1"
+              #cargaTotalBaterias
+            />
+
+            <div
+              *ngIf="
+                camiaoCargaTotalBaterias.invalid &&
+                (camiaoCargaTotalBaterias.dirty ||
+                  camiaoCargaTotalBaterias.touched)
+              "
+              class="alert alert-danger"
+            >
+              <div *ngIf="camiaoCargaTotalBaterias.errors?.['required']">
+                A Capacidade de Carga Total das baterias do camião não pode ser
+                nula
+              </div>
+
+              <div *ngIf="camiaoCargaTotalBaterias.errors?.['min']">
+                A Capacidade de Carga Total das baterias do camião tem de ser
+                maior que 1
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="camiaoautonomiaCargaMax"
+              >Autonomia com Carga Máxima
+            </label>
+            <input
+              type="number"
+              class="form-control"
+              formControlName="camiaoAutonomiaCargaMax"
+              id="camiaoAutonomiaCargaMax"
+              placeholder="1732"
+              min="1"
+              required
+              #autonomiaCargaMax
+            />
+
+            <div
+              *ngIf="
+                camiaoAutonomiaCargaMax.invalid &&
+                (camiaoAutonomiaCargaMax.dirty ||
+                  camiaoAutonomiaCargaMax.touched)
+              "
+              class="alert alert-danger"
+            >
+              <div *ngIf="camiaoAutonomiaCargaMax.errors?.['min']">
+                A autonomia com carga máxima não pode ser 1
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="camiaotempocarregamento20ate80"
+              >Tempo de Carregamento</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              formControlName="camiaoTempoCarregamento20ate80"
+              id="camiaoTempoCarregamento20ate80"
+              placeholder="456"
+              required
+              min="1"
+              #tempoCarregamento20ate80
+            />
+            <div
+              *ngIf="
+                camiaoTempoCarregamento20ate80.invalid &&
+                (camiaoTempoCarregamento20ate80.dirty ||
+                  camiaoTempoCarregamento20ate80.touched)
+              "
+              class="alert alert-danger"
+            >
+              <div *ngIf="camiaoTempoCarregamento20ate80.errors?.['min']">
+                O tempo de carregamento rápido não pode ser 1
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Edite o formulário correctamente para poder habilitar o butom Guardar.
+        </p>
+        <button
+          type="submit"
+          class="btn btn-default"
+          [disabled]="camiaoForm.invalid"
+        >
+          Guardar
+        </button>
+
+        <button
+          type="button"
+          class="btn btn-default"
+          (click)="formDir.resetForm({})"
+        >
+          Restaurar
+        </button>
+      </div>
+    </form>
+
+    <div class="submitted-message" *ngIf="formDir.submitted">
+      <p>Tem a certeza que quer editar o armazem</p>
+      <button type="button" (click)="guardar()">Guardar</button>
+    </div>
+  </div>
+  <button type="button" (click)="voltar()">Voltar</button>
+</div>
