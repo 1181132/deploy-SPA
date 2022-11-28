@@ -1,0 +1,20 @@
+<p>Lista dos Camiões</p>
+
+<app-camiao-procura></app-camiao-procura>
+
+
+
+<ul class="camiaos">
+  <li *ngFor="let camiao of camiaos">
+    <a routerLink="/detalhe/{{camiao.matricula}}">
+      <span class="badge">{{camiao.matricula}}</span> 
+    </a>
+    <button type="button" class="delete" title="delete camiao"
+      (click)="delete(camiao)">x</button>
+  </li>
+</ul>
+
+
+
+
+
