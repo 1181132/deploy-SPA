@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ArmazemCriarComponent } from './armazem-criarcomponent';
+import { ArmazemCriarComponent } from './armazem-criar.component';
 
 describe('ArmazemFormularioComponent', () => {
   let component: ArmazemCriarComponent;

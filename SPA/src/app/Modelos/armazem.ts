@@ -6,7 +6,7 @@ export interface Armazem {
   codigoPostal: string;
   cidade : string;
   pais: string;
-  coordenadaLon: number;
   coordenadaLat: number;
-  
+  coordenadaLon: number;
+  altura: number;
 }

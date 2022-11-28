@@ -14,13 +14,13 @@ namespace DDDSample1.Controllers
             _context = context;
         }
 
-        [HttpDelete]
-        public ActionResult<string> DropDB()
+ //       [HttpDelete]
+/*         public ActionResult<string> DropDB()
         {
            _context.Database.EnsureDeleted();
 
            return Ok("Todas as informações fora removidas.");
-        }
+        } */
         [HttpPost]
         public ActionResult<string> CreateDB()
         {

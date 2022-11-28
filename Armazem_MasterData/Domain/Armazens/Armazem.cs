@@ -15,6 +15,8 @@ namespace DDDSample1.Domain.Armazens
 
         public ArmazemCoordenadas Coordenadas { get; private set; }
 
+        public ArmazemAltura Altura { get; private set; }
+
         public bool Active { get; private set; }
 
         protected Armazem()
@@ -26,13 +28,15 @@ namespace DDDSample1.Domain.Armazens
             ArmazemId id,
             ArmazemDesignacao designacao,
             ArmazemEndereco endereco,
-            ArmazemCoordenadas coordenadas
+            ArmazemCoordenadas coordenadas,
+            ArmazemAltura altura
         )
         {
             this.Id = id;
             this.Designacao = designacao;
             this.Endereco = endereco;
             this.Coordenadas = coordenadas;
+            this.Altura = altura;
             this.Active = true;
         }
 
@@ -46,7 +50,7 @@ namespace DDDSample1.Domain.Armazens
         public void ChangeArmazemEnderco(ArmazemEndereco endereco)
         {
             if (!this.Active)
-                throw new BusinessRuleValidationException("It is not possible to change the endereco para um inactivo armazem.");
+                throw new BusinessRuleValidationException("Não é possível alterar o endereco para um inactivo armazem.");
             this.Endereco = endereco;
         }
 
@@ -57,13 +61,23 @@ namespace DDDSample1.Domain.Armazens
             this.Coordenadas = coordenadas;
         }
 
-        public void ChangeAllFields(ArmazemDesignacao designacao, ArmazemEndereco endereco ,ArmazemCoordenadas coordenadas)
+        public void ChangeArmazemAltura(ArmazemAltura altura)
+        {
+            if (!this.Active)
+                throw new BusinessRuleValidationException("Não é possível alterar a altura para um inactivo armazem.");
+            this.Altura = altura;
+        }
+
+        public void ChangeAllFields(ArmazemDesignacao designacao, ArmazemEndereco endereco ,ArmazemCoordenadas coordenadas,
+        ArmazemAltura altura)
         {
             if (!this.Active)
                 throw new BusinessRuleValidationException("Não é possível alterar todos os parametros para um inativo armazem.");
             this.Designacao = designacao;
             this.Endereco = endereco;
             this.Coordenadas = coordenadas;
+            this.Altura = altura;
+
         }
 
         public void MarkAsInative()

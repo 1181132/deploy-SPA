@@ -50,16 +50,19 @@ constructor( private armazemService: ArmazemService) { }
         Validators.required,
         Validators.maxLength(50)
       ]),
+      armazemLatitude: new FormControl('', [
+        Validators.required,
+        Validators.max(90),
+        Validators.min(-90)
+      ]),
       armazemLongitude: new FormControl('', [
         Validators.required,
         Validators.max(180),
         Validators.min(-180)
       ]),
-        armazemLatitude: new FormControl('', [
-        Validators.required,
-        Validators.max(90),
-        Validators.min(-90)])                 
-
+      armazemAltura: new FormControl('', [
+        Validators.required
+      ])                 
     })    
    
   }
@@ -78,17 +81,19 @@ constructor( private armazemService: ArmazemService) { }
 
   get armazemPais() { return this.armazemForm.get('armazemPais')!; }
 
+  get armazemLatitude() { return this.armazemForm.get('armazemLatitude')!; }
+
   get armazemLongitude() { return this.armazemForm.get('armazemLongitude')!; }
 
-  get armazemLatitude() { return this.armazemForm.get('armazemLatitude')!; }
+  get armazemAltura() { return this.armazemForm.get('armazemAltura')!; }
 
 
   add(id:string, designacao: string, rua: string, numeroPorta: number,codigoPostal:string ,cidade: string, pais : string,
-    coordenadaLon: number,coordenadaLat: number): void {
+    coordenadaLat: number, coordenadaLon: number, altura: number): void {
        designacao = designacao.trim();
        if (!designacao) { return; }
        this.armazemService.addArmazem({id ,designacao, rua ,numeroPorta,codigoPostal,
-         cidade,pais,coordenadaLon, coordenadaLat } as Armazem)
+         cidade,pais,coordenadaLat,coordenadaLon, altura  } as Armazem)
          .subscribe((armazem: Armazem) => {
            this.armazens.push(armazem);
          });

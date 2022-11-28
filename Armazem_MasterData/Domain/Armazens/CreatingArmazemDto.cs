@@ -10,6 +10,8 @@ namespace DDDSample1.Domain.Armazens
 
         public ArmazemCoordenadas Coordenadas { get; set; }
 
+        public ArmazemAltura Altura { get; set;}
+
         public CreatingArmazemDto(
             string id,
             string designacao,
@@ -18,8 +20,9 @@ namespace DDDSample1.Domain.Armazens
             string codigoPostal,
             string cidade,
             string pais,
-            int coordenadaLon,
-            int coordenadaLat
+            double coordenadaLat,
+            double coordenadaLon,          
+            double altura 
         )
         {
             this.Id = new ArmazemId(id);
@@ -31,7 +34,9 @@ namespace DDDSample1.Domain.Armazens
                     cidade,
                     pais);
             this.Coordenadas =
-                new ArmazemCoordenadas(coordenadaLon, coordenadaLat);
+                new ArmazemCoordenadas(coordenadaLat, coordenadaLon);
+
+            this.Altura = new ArmazemAltura(altura);
         }
     }
 }
