@@ -12,14 +12,11 @@ const routes: Routes = [
 //  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'listarArmazem', component: ArmazemListarComponent },
   { path: 'detail/:id', component: ArmazemDetalhosComponent },
-<<<<<<< HEAD
-  { path: 'criarArmazem', component: ArmazensComponent },
+  { path: 'criarArmazem', component: ArmazemCriarComponent },
   { path: 'criarCamião', component: CamiaoCriarComponent },
   { path: 'listarCamião', component: CamiaoListarComponent },
   { path: 'detalhe/:matricula', component: CamiaoDetalhesComponent}
-=======
-  { path: 'criarArmazem', component: ArmazemCriarComponent },
->>>>>>> 4265d09aafa21b872dbb62279b67142621a4cae5
+
 ];
 
 @NgModule({
