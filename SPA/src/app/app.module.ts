@@ -14,6 +14,10 @@ import { ArmazemCriarComponent } from './Componentes/Armazem/armazem-criar/armaz
 import { ArmazemDetalhosComponent } from './Componentes/Armazem/armazem-detalhos/armazem-detalhos.component';
 import { ArmazemProcuraComponent } from './Componentes/Armazem/armazem-procura/armazem-procura.component';
 import { ArmazemListarComponent } from './Componentes/Armazem/armazem-listar/armazem-listar.component';
+import { EntregaCriarComponent } from './Componentes/Entrega/entrega-criar/entrega-criar.component';
+import { EntregaDetalhesComponent } from './Componentes/Entrega/entrega-detalhes/entrega-detalhes.component';
+import { EntregaListarComponent } from './Componentes/Entrega/entrega-listar/entrega-listar.component';
+import { EntregaProcuraComponent } from './Componentes/Entrega/entrega-procura/entrega-procura.component';
 
 @NgModule({
   imports: [
@@ -36,6 +40,10 @@ import { ArmazemListarComponent } from './Componentes/Armazem/armazem-listar/arm
     ArmazemDetalhosComponent,
     ArmazemProcuraComponent,
     ArmazemListarComponent,
+    EntregaCriarComponent,
+    EntregaDetalhesComponent,
+    EntregaListarComponent,
+    EntregaProcuraComponent,
   ],
   bootstrap: [ AppComponent ]
 })
