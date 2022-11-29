@@ -13,8 +13,6 @@ import { AppComponent } from './app.component';
 import { ArmazemCriarComponent } from './Componentes/Armazem/armazem-criar/armazem-criarcomponent';
 import { ArmazemDetalhosComponent } from './Componentes/Armazem/armazem-detalhos/armazem-detalhos.component';
 import { ArmazemProcuraComponent } from './Componentes/Armazem/armazem-procura/armazem-procura.component';
-<<<<<<< HEAD
-import { ListarArmazemComponent } from './Componentes/Armazem/listarArmazem/listarArmazem.component';
 import { CamiaoDetalhesComponent } from './Componentes/Camiao/camiao-detalhes/camiao-detalhes.component';
 import { CamiaoCriarComponent } from './Componentes/Camiao/camiao-criar/camiao-criar.component';
 import { CamiaoProcuraComponent } from './Componentes/Camiao/camiao-procura/camiao-procura.component';
@@ -23,11 +21,9 @@ import { PercursoDetalhesComponent } from './Componentes/Percurso/percurso-detal
 import { PercursoCriarComponent } from './Componentes/Percurso/percurso-criar/percurso-criar.component';
 import { PercursoProcuraComponent } from './Componentes/Percurso/percurso-procura/percurso-procura.component';
 import { PercursoListarComponent } from './Componentes/Percurso/percurso-listar/percurso-listar.component';
+import { ArmazemListarComponent } from './Componentes/Armazem/armazem-listar/armazem-listar.component';
 
 //import { ArmazemFormularioComponent } from './Componentes/Armazem/armazem-formulario/armazem-formulario.component';
-=======
-import { ArmazemListarComponent } from './Componentes/Armazem/armazem-listar/armazem-listar.component';
->>>>>>> 4265d09aafa21b872dbb62279b67142621a4cae5
 
 @NgModule({
   imports: [
@@ -40,23 +36,15 @@ import { ArmazemListarComponent } from './Componentes/Armazem/armazem-listar/arm
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
-<<<<<<< HEAD
    /*  HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ) */
-=======
- //   HttpClientInMemoryWebApiModule.forRoot(
- //     InMemoryDataService, { dataEncapsulation: false }
- //   )
->>>>>>> 4265d09aafa21b872dbb62279b67142621a4cae5
   ],
   declarations: [
     AppComponent,
     ArmazemCriarComponent,
     ArmazemDetalhosComponent,
     ArmazemProcuraComponent,
-<<<<<<< HEAD
-    ListarArmazemComponent,
     CamiaoDetalhesComponent,
     CamiaoCriarComponent,
     CamiaoProcuraComponent,
@@ -66,9 +54,7 @@ import { ArmazemListarComponent } from './Componentes/Armazem/armazem-listar/arm
     PercursoProcuraComponent,
     PercursoListarComponent,
   //  ArmazemFormularioComponent,
-=======
     ArmazemListarComponent,
->>>>>>> 4265d09aafa21b872dbb62279b67142621a4cae5
   ],
   bootstrap: [ AppComponent ]
 })

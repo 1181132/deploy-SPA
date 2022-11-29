@@ -20,7 +20,20 @@ import { Camiao } from '../domain/camiaoPackage/camiao';
 export default class CamiaoService implements ICamiaoService {
   constructor(@Inject(config.repos.camiao.name) private camiaoRepo: ICamiaoRepo) { }
  
-  
+  async getCamiao(matricula: string): Promise<Result<ICamiaoDTO>> {
+    try {
+      let camiao = await this.camiaoRepo.findByMatricula(matricula);
+
+      if (camiao === null) {
+        return Result.fail<ICamiaoDTO>('Camiao nao encontrado');
+      } else {
+        const camiaoDTOResult = CamiaoMap.toDTO(camiao) as ICamiaoDTO;
+        return Result.ok<ICamiaoDTO>(camiaoDTOResult);
+      }
+    } catch (e) {
+      throw e;
+    }
+  }
 
   
   public async listCamioes(): Promise<Result<ICamiaoDTO[]>> {

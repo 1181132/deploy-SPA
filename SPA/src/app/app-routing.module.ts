@@ -7,19 +7,21 @@ import { ArmazemDetalhosComponent } from './Componentes/Armazem/armazem-detalhos
 import { CamiaoCriarComponent } from './Componentes/Camiao/camiao-criar/camiao-criar.component';
 import { CamiaoListarComponent } from './Componentes/Camiao/camiao-listar/camiao-listar.component';
 import { CamiaoDetalhesComponent } from './Componentes/Camiao/camiao-detalhes/camiao-detalhes.component';
+import { PercursoListarComponent } from './Componentes/Percurso/percurso-listar/percurso-listar.component';
+import { PercursoDetalhesComponent } from './Componentes/Percurso/percurso-detalhes/percurso-detalhes.component';
+import { PercursoCriarComponent } from './Componentes/Percurso/percurso-criar/percurso-criar.component';
 
 const routes: Routes = [
 //  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'listarArmazem', component: ArmazemListarComponent },
   { path: 'detail/:id', component: ArmazemDetalhosComponent },
-<<<<<<< HEAD
-  { path: 'criarArmazem', component: ArmazensComponent },
   { path: 'criarCamião', component: CamiaoCriarComponent },
   { path: 'listarCamião', component: CamiaoListarComponent },
-  { path: 'detalhe/:matricula', component: CamiaoDetalhesComponent}
-=======
+  { path: 'detalhe/:matricula', component: CamiaoDetalhesComponent},
   { path: 'criarArmazem', component: ArmazemCriarComponent },
->>>>>>> 4265d09aafa21b872dbb62279b67142621a4cae5
+  { path: 'listarPercurso', component: PercursoListarComponent },
+  { path: 'detalhe/:armazem1', component: PercursoDetalhesComponent},
+  { path: 'criarPercurso', component: PercursoCriarComponent },
 ];
 
 @NgModule({

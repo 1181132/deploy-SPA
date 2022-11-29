@@ -8,14 +8,12 @@ import { __values } from 'tslib';
 @Component({
   selector: 'app-armazens',
   templateUrl: 'armazem-criar.component.html',
-  styleUrls: ['./armazem-criar.component.css']
+  styleUrls: ['./armazem-criar.component.css'],
 })
-
-
 export class ArmazemCriarComponent implements OnInit {
   armazens: Armazem[] = [];
 
-constructor( private armazemService: ArmazemService) { }
+  constructor(private armazemService: ArmazemService) {}
 
   armazemForm!: FormGroup;
 
@@ -24,73 +22,110 @@ constructor( private armazemService: ArmazemService) { }
       armazemId: new FormControl('', [
         Validators.required,
         Validators.pattern('[a-zA-Z0-9]{3}'),
-        Validators.maxLength(3)
+        Validators.maxLength(3),
       ]),
       armazemDesignacao: new FormControl('', [
         Validators.required,
-        Validators.maxLength(50)
+        Validators.maxLength(50),
       ]),
       armazemRua: new FormControl('', [
         Validators.required,
-        Validators.maxLength(50)
+        Validators.maxLength(50),
       ]),
       armazemNumeroPorta: new FormControl('', [
         Validators.required,
-        Validators.min(1)
+        Validators.min(1),
       ]),
       armazemCodigoPostal: new FormControl('', [
         Validators.required,
-        Validators.pattern("[0-9]{4}-[0-9]{3}")
+        Validators.pattern('[0-9]{4}-[0-9]{3}'),
       ]),
       armazemCidade: new FormControl('', [
         Validators.required,
-        Validators.maxLength(50)
+        Validators.maxLength(50),
       ]),
       armazemPais: new FormControl('', [
         Validators.required,
-        Validators.maxLength(50)
+        Validators.maxLength(50),
       ]),
       armazemLongitude: new FormControl('', [
         Validators.required,
         Validators.max(180),
-        Validators.min(-180)
+        Validators.min(-180),
       ]),
-        armazemLatitude: new FormControl('', [
+      armazemLatitude: new FormControl('', [
         Validators.required,
         Validators.max(90),
-        Validators.min(-90)])                 
-
-    })    
-   
+        Validators.min(-90),
+      ]),
+    });
   }
 
-  get armazemId() { return this.armazemForm.get('armazemId')!; }
+  get armazemId() {
+    return this.armazemForm.get('armazemId')!;
+  }
 
-  get armazemDesignacao() { return this.armazemForm.get('armazemDesignacao')!; }
+  get armazemDesignacao() {
+    return this.armazemForm.get('armazemDesignacao')!;
+  }
 
-  get armazemRua() { return this.armazemForm.get('armazemRua')!; }
+  get armazemRua() {
+    return this.armazemForm.get('armazemRua')!;
+  }
 
-  get armazemNumeroPorta() { return this.armazemForm.get('armazemNumeroPorta')!; }
+  get armazemNumeroPorta() {
+    return this.armazemForm.get('armazemNumeroPorta')!;
+  }
 
-  get armazemCodigoPostal() { return this.armazemForm.get('armazemCodigoPostal')!; }
+  get armazemCodigoPostal() {
+    return this.armazemForm.get('armazemCodigoPostal')!;
+  }
 
-  get armazemCidade() { return this.armazemForm.get('armazemCidade')!; }
+  get armazemCidade() {
+    return this.armazemForm.get('armazemCidade')!;
+  }
 
-  get armazemPais() { return this.armazemForm.get('armazemPais')!; }
+  get armazemPais() {
+    return this.armazemForm.get('armazemPais')!;
+  }
 
-  get armazemLongitude() { return this.armazemForm.get('armazemLongitude')!; }
+  get armazemLongitude() {
+    return this.armazemForm.get('armazemLongitude')!;
+  }
 
-  get armazemLatitude() { return this.armazemForm.get('armazemLatitude')!; }
+  get armazemLatitude() {
+    return this.armazemForm.get('armazemLatitude')!;
+  }
 
-
-  add(id:string, designacao: string, rua: string, numeroPorta: number,codigoPostal:string ,cidade: string, pais : string,
-    coordenadaLon: number,coordenadaLat: number): void {
-       designacao = designacao.trim();
-       if (!designacao) { return; }
-       this.armazemService.addArmazem({id ,designacao, rua ,numeroPorta,codigoPostal,
-         cidade,pais,coordenadaLon, coordenadaLat } as Armazem)
-         .subscribe((armazem: Armazem) => {
-           this.armazens.push(armazem);
-         });
-     }  
+  add(
+    id: string,
+    designacao: string,
+    rua: string,
+    numeroPorta: number,
+    codigoPostal: string,
+    cidade: string,
+    pais: string,
+    coordenadaLon: number,
+    coordenadaLat: number
+  ): void {
+    designacao = designacao.trim();
+    if (!designacao) {
+      return;
+    }
+    this.armazemService
+      .addArmazem({
+        id,
+        designacao,
+        rua,
+        numeroPorta,
+        codigoPostal,
+        cidade,
+        pais,
+        coordenadaLon,
+        coordenadaLat,
+      } as Armazem)
+      .subscribe((armazem: Armazem) => {
+        this.armazens.push(armazem);
+      });
+  }
 }

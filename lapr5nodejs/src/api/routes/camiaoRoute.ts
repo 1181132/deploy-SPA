@@ -30,6 +30,7 @@ export default (app: Router) => {
   route.get(
     '/listar',
     (req, res, next) => ctrl.listCamioes(req, res, next));
+  
 
   route.put(
     '/update',

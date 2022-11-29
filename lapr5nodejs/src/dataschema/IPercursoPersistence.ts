@@ -1,7 +1,7 @@
 
 export interface IPercursoPersistence {
-  armazem1: number;
-  armazem2: number;
+  armazem1: string;
+  armazem2: string;
   distancia: number;
   tempo: number;
   energia: number;

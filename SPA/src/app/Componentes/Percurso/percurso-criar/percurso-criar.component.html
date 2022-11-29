@@ -1,0 +1,227 @@
+<div class="container">
+  <h2>Criar Percurso</h2>
+
+  <form [formGroup]="percursoForm" #formDir="ngForm">
+    <div [hidden]="formDir.submitted">
+      <div
+        class="cross-validation"
+        [class.cross-validation-error]="percursoForm.errors?.['identityRevealed'] && (percursoForm.touched || percursoForm.dirty)"
+      >
+        <div class="form-group">
+          <label for="percursoArmazem1">ID do Armazem1</label>
+          <input
+            type="text"
+            id="percursoArmazem1"
+            class="form-control"
+            formControlName="percursoArmazem1"
+            placeholder="M13"
+            required
+            #armazem1
+          />
+
+          <div
+            *ngIf="percursoArmazem1.invalid && (percursoArmazem1.dirty || percursoArmazem1.touched)"
+            class="alert alert-danger"
+          >
+            <div *ngIf="percursoArmazem1.errors?.['required']">
+              O id do armazem não pode ser nulo
+            </div>
+
+            <div *ngIf="percursoArmazem1.errors?.['maxlength']">
+              O id do armazem nao pode conter mais de 3 caracteres
+            </div>
+
+            <div *ngIf="percursoArmazem1.errors?.['pattern']">
+              O id do armazem tem de ser alphanumérico
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="percursoArmazem2">ID do Armazem2</label>
+          <input
+            type="text"
+            id="percursoArmazem2"
+            class="form-control"
+            formControlName="percursoArmazem2"
+            placeholder="M13"
+            required
+            #armazem2
+          />
+
+          <div
+            *ngIf="percursoArmazem2.invalid && (percursoArmazem2.dirty || percursoArmazem2.touched)"
+            class="alert alert-danger"
+          >
+            <div *ngIf="percursoArmazem2.errors?.['required']">
+              O id do armazem não pode ser nulo
+            </div>
+
+            <div *ngIf="percursoArmazem2.errors?.['maxlength']">
+              O id do armazem nao pode conter mais de 3 caracteres
+            </div>
+
+            <div *ngIf="percursoArmazem2.errors?.['pattern']">
+              O id do armazem tem de ser alphanumérico
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="percursoDistancia">Distancia: </label>
+          <input
+            type="number"
+            class="form-control"
+            formControlName="percursoDistancia"
+            id="percursoDistancia"
+            placeholder="15"
+            required
+            #distancia
+          />
+
+          <div
+            *ngIf="
+            percursoDistancia.invalid &&
+              (percursoDistancia.dirty || percursoDistancia.touched)
+            "
+            class="alert alert-danger"
+          >
+            <div *ngIf="percursoDistancia.errors?.['required']">
+              O id do armazem não pode ser nulo
+            </div>
+
+            <div *ngIf="percursoDistancia.errors?.['min']">
+              A distância tem de ser pelo menos 1m
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="percursoTempo">Tempo </label>
+          <input
+            type="number"
+            class="form-control"
+            formControlName="percursoTempo"
+            id="percursoTempo"
+            placeholder="1732"
+            min="1"
+            required
+            #tempo
+          />
+
+          <div
+            *ngIf="
+            percursoTempo.invalid &&
+              (percursoTempo.dirty || percursoTempo.touched)
+            "
+            class="alert alert-danger"
+          >
+            <div *ngIf="percursoTempo.errors?.['required']">
+              O tempo tem de ser pelo menos 00:01 min
+            </div>
+
+            <div *ngIf="percursoTempo.errors?.['min']">
+              O tempo tem de ser pelo menos 00:01 min
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="percursoEnergia">Energia </label>
+          <input
+            type="number"
+            class="form-control"
+            formControlName="percursoEnergia"
+            id="percursoEnergia"
+            placeholder="1"
+            required
+            #energia
+          />
+
+          <div
+            *ngIf="
+            percursoEnergia.invalid &&
+              (percursoEnergia.dirty || percursoEnergia.touched)
+            "
+            class="alert alert-danger"
+          >
+            <div *ngIf="percursoEnergia.errors?.['required']">
+              A energia tem de ser pelo menos 1kw
+            </div>
+
+            <div *ngIf="percursoEnergia.errors?.['min']">
+              A energia tem de ser pelo menos 1kw
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="percursoCargaExtra">cargaExtra </label>
+          <input
+            type="number"
+            class="form-control"
+            formControlName="percursoCargaExtra"
+            id="percursoCargaExtra"
+            placeholder="7"
+            required
+            #cargaExtra
+          />
+
+          <div
+            *ngIf="
+            percursoCargaExtra.invalid &&
+              (percursoCargaExtra.dirty || percursoCargaExtra.touched)
+            "
+            class="alert alert-danger"
+          >
+            <div *ngIf="percursoCargaExtra.errors?.['required']">
+              A energia tem de ser pelo menos 1kw
+            </div>
+
+            <div *ngIf="percursoCargaExtra.errors?.['min']">
+              A energia tem de ser pelo menos 1kw
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p>Complete o formulário para habilitar o buton Submeter.</p>
+      <button
+        type="submit"
+        class="btn btn-default"
+        [disabled]="percursoForm.invalid"
+      >
+        Submeter
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-default"
+        (click)="formDir.resetForm({})"
+      >
+        Restaurar
+      </button>
+    </div>
+  </form>
+
+  <div class="submitted-message" *ngIf="formDir.submitted">
+    <p>Resgistou um Percurso!</p>
+    <button
+      type="button"
+      (click)="
+        add(
+          armazem1.value,
+          armazem2.value,
+          distancia.valueAsNumber,
+          tempo.valueAsNumber,
+          energia.valueAsNumber,
+          cargaExtra.valueAsNumber
+
+        );
+        formDir.resetForm({})
+      "
+    >
+      Criar novo Percurso
+    </button>
+  </div>
+</div>

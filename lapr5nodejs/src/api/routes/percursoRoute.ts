@@ -16,8 +16,8 @@ export default (app: Router) => {
     '/inserir',
     celebrate({
       body: Joi.object({
-        armazem1: Joi.number().required().greater(0),
-        armazem2: Joi.number().required().greater(0),
+        armazem1: Joi.string().required(),
+        armazem2: Joi.string().required(),
         distancia: Joi.number().required().greater(0),
         tempo: Joi.number().required().greater(0),
         energia: Joi.number().required().greater(0),
