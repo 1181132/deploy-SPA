@@ -7,6 +7,9 @@ import { ArmazemDetalhosComponent } from './Componentes/Armazem/armazem-detalhos
 import { CamiaoCriarComponent } from './Componentes/Camiao/camiao-criar/camiao-criar.component';
 import { CamiaoListarComponent } from './Componentes/Camiao/camiao-listar/camiao-listar.component';
 import { CamiaoDetalhesComponent } from './Componentes/Camiao/camiao-detalhes/camiao-detalhes.component';
+import { PercursoListarComponent } from './Componentes/Percurso/percurso-listar/percurso-listar.component';
+import { PercursoDetalhesComponent } from './Componentes/Percurso/percurso-detalhes/percurso-detalhes.component';
+import { PercursoCriarComponent } from './Componentes/Percurso/percurso-criar/percurso-criar.component';
 
 const routes: Routes = [
 //  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -15,7 +18,10 @@ const routes: Routes = [
   { path: 'criarArmazem', component: ArmazemCriarComponent },
   { path: 'criarCamião', component: CamiaoCriarComponent },
   { path: 'listarCamião', component: CamiaoListarComponent },
-  { path: 'detalhe/:matricula', component: CamiaoDetalhesComponent}
+  { path: 'detalhe/:matricula', component: CamiaoDetalhesComponent},
+  { path: 'listarPercurso', component: PercursoListarComponent },
+  { path: 'detalhe/:armazem1', component: PercursoDetalhesComponent},
+  { path: 'criarPercurso', component: PercursoCriarComponent },
 
 ];
 

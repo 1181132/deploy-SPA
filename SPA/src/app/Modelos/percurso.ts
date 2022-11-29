@@ -1,5 +1,4 @@
-
-export default interface IPercursoDTO {
+export interface Percurso{
     armazem1: string;
     armazem2: string;
     distancia: number;

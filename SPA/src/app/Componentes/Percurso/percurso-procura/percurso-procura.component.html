@@ -1,0 +1,12 @@
+<div id="search-component">
+    <label for="search-box">Percurso Search</label>
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+  
+    <ul class="search-result">
+      <li *ngFor="let percurso of percursos$ | async" >
+        <a routerLink="/detail/{{percurso.armazem1}}">
+          {{percurso.armazem1}}
+        </a>
+      </li>
+    </ul>
+  </div>

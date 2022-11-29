@@ -14,14 +14,17 @@ import { ArmazemCriarComponent } from './Componentes/Armazem/armazem-criar/armaz
 import { ArmazemDetalhosComponent } from './Componentes/Armazem/armazem-detalhos/armazem-detalhos.component';
 import { ArmazemProcuraComponent } from './Componentes/Armazem/armazem-procura/armazem-procura.component';
 import { ArmazemListarComponent } from './Componentes/Armazem/armazem-listar/armazem-listar.component';
+
 import { CamiaoDetalhesComponent } from './Componentes/Camiao/camiao-detalhes/camiao-detalhes.component';
 import { CamiaoCriarComponent } from './Componentes/Camiao/camiao-criar/camiao-criar.component';
 import { CamiaoProcuraComponent } from './Componentes/Camiao/camiao-procura/camiao-procura.component';
 import { CamiaoListarComponent } from './Componentes/Camiao/camiao-listar/camiao-listar.component';
-/* import { PercursoDetalhesComponent } from './Componentes/Percurso/percurso-detalhes/percurso-detalhes.component';
+import { PercursoDetalhesComponent } from './Componentes/Percurso/percurso-detalhes/percurso-detalhes.component';
 import { PercursoCriarComponent } from './Componentes/Percurso/percurso-criar/percurso-criar.component';
 import { PercursoProcuraComponent } from './Componentes/Percurso/percurso-procura/percurso-procura.component';
-import { PercursoListarComponent } from './Componentes/Percurso/percurso-listar/percurso-listar.component'; */
+import { PercursoListarComponent } from './Componentes/Percurso/percurso-listar/percurso-listar.component';
+
+
 
 @NgModule({
   imports: [
@@ -37,9 +40,6 @@ import { PercursoListarComponent } from './Componentes/Percurso/percurso-listar/
    /*  HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ) */
- //   HttpClientInMemoryWebApiModule.forRoot(
- //     InMemoryDataService, { dataEncapsulation: false }
- //   )
   ],
   declarations: [
     AppComponent,
@@ -51,10 +51,10 @@ import { PercursoListarComponent } from './Componentes/Percurso/percurso-listar/
     CamiaoCriarComponent,
     CamiaoProcuraComponent,
     CamiaoListarComponent,
-/*     PercursoDetalhesComponent,
+    PercursoDetalhesComponent,
     PercursoCriarComponent,
     PercursoProcuraComponent,
-    PercursoListarComponent, */
+    PercursoListarComponent,
   ],
   bootstrap: [ AppComponent ]
 })
