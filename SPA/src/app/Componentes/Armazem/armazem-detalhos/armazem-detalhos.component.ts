@@ -49,16 +49,19 @@ export class ArmazemDetalhosComponent implements OnInit {
         Validators.required,
         Validators.maxLength(50)
       ]),
+      armazemLatitude: new FormControl('', [
+        Validators.required,
+        Validators.max(90),
+        Validators.min(-90)
+      ]),
       armazemLongitude: new FormControl('', [
         Validators.required,
         Validators.max(180),
         Validators.min(-180)
       ]),
-        armazemLatitude: new FormControl('', [
-        Validators.required,
-        Validators.max(90),
-        Validators.min(-90)])                 
-
+      armazemAltura: new FormControl('', [
+        Validators.required
+      ])       
     })    
   }
 
@@ -93,8 +96,10 @@ export class ArmazemDetalhosComponent implements OnInit {
 
   get armazemPais() { return this.armazemForm.get('armazemPais')!; }
 
+  get armazemLatitude() { return this.armazemForm.get('armazemLatitude')!; }
+
   get armazemLongitude() { return this.armazemForm.get('armazemLongitude')!; }
 
-  get armazemLatitude() { return this.armazemForm.get('armazemLatitude')!; }
+  get armazemAltura() { return this.armazemForm.get('armazemAltura')!; }
 
 }

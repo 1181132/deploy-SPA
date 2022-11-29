@@ -18,8 +18,10 @@ namespace DDDSample1.Domain.Armazens
 
         public string Pais { get; set; }
 
-        public int CoordenadaLon { get; set; }
+        public double CoordenadaLat { get; set; }
 
-        public int CoordenadaLat { get; set; }
+        public double CoordenadaLon { get; set; }
+
+        public double Altura { get; set; }
     }
 }

@@ -15,6 +15,7 @@ namespace DDDSample1.Infrastructure.Armazens
             builder.OwnsOne(b => b.Designacao, pl => {pl.Property(c => c.Designacao).IsRequired().HasMaxLength(50);});
             builder.OwnsOne(b => b.Endereco);
             builder.OwnsOne(b => b.Coordenadas);
+            builder.OwnsOne(b => b.Altura);
             //builder.Property<bool>("_active").HasColumnName("Active");
         }
     }

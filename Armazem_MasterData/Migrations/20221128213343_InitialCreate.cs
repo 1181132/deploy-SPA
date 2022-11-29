@@ -4,7 +4,7 @@
 
 namespace DDDNetCore.Migrations
 {
-    public partial class AddBlogCreatedTimestamp : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -17,7 +17,7 @@ namespace DDDNetCore.Migrations
                 {
                     Id = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Designacao_Designacao = table.Column<string>(type: "longtext", nullable: true)
+                    Designacao_Designacao = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Endereco_Rua = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -28,8 +28,9 @@ namespace DDDNetCore.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Endereco_Pais = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Coordenadas_CoordenadaLon = table.Column<int>(type: "int", nullable: true),
-                    Coordenadas_CoordenadaLat = table.Column<int>(type: "int", nullable: true),
+                    Coordenadas_CoordenadaLat = table.Column<double>(type: "double", nullable: true),
+                    Coordenadas_CoordenadaLon = table.Column<double>(type: "double", nullable: true),
+                    Altura_Altura = table.Column<double>(type: "double", nullable: true),
                     Active = table.Column<bool>(type: "tinyint(1)", nullable: false)
                 },
                 constraints: table =>
@@ -49,8 +50,8 @@ namespace DDDNetCore.Migrations
                     Massa_Massa = table.Column<int>(type: "int", nullable: true),
                     ArmazemId = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    TempoColocar_TempoColocar = table.Column<int>(type: "int", nullable: true),
-                    TempoRetirar_TempoRetirar = table.Column<int>(type: "int", nullable: true),
+                    TempoColocarEntrega_TempoColocarEntrega = table.Column<int>(type: "int", nullable: true),
+                    TempoRetirarEntrega_TempoRetirarEntrega = table.Column<int>(type: "int", nullable: true),
                     Active = table.Column<bool>(type: "tinyint(1)", nullable: false)
                 },
                 constraints: table =>

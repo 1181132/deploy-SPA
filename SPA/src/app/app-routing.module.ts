@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ArmazemListarComponent } from './Componentes/Armazem/armazem-listar/armazem-listar.component';
-import { ArmazemCriarComponent } from './Componentes/Armazem/armazem-criar/armazem-criarcomponent';
+import { ArmazemCriarComponent } from './Componentes/Armazem/armazem-criar/armazem-criar.component';
 import { ArmazemDetalhosComponent } from './Componentes/Armazem/armazem-detalhos/armazem-detalhos.component';
 import { CamiaoCriarComponent } from './Componentes/Camiao/camiao-criar/camiao-criar.component';
 import { CamiaoListarComponent } from './Componentes/Camiao/camiao-listar/camiao-listar.component';

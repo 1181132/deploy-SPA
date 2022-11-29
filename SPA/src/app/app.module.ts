@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { ArmazemCriarComponent } from './Componentes/Armazem/armazem-criar/armazem-criarcomponent';
+import { ArmazemCriarComponent } from './Componentes/Armazem/armazem-criar/armazem-criar.component';
 import { ArmazemDetalhosComponent } from './Componentes/Armazem/armazem-detalhos/armazem-detalhos.component';
 import { ArmazemProcuraComponent } from './Componentes/Armazem/armazem-procura/armazem-procura.component';
 import { CamiaoDetalhesComponent } from './Componentes/Camiao/camiao-detalhes/camiao-detalhes.component';

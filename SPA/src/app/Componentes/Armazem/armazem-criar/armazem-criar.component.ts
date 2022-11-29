@@ -48,17 +48,30 @@ export class ArmazemCriarComponent implements OnInit {
         Validators.required,
         Validators.maxLength(50),
       ]),
+      armazemLatitude: new FormControl('', [
+        Validators.required,
+        Validators.max(90),
+        Validators.min(-90)
+      ]),
       armazemLongitude: new FormControl('', [
         Validators.required,
         Validators.max(180),
         Validators.min(-180),
       ]),
+<<<<<<< HEAD:SPA/src/app/Componentes/Armazem/armazem-criar/armazem-criarcomponent.ts
       armazemLatitude: new FormControl('', [
         Validators.required,
         Validators.max(90),
         Validators.min(-90),
       ]),
     });
+=======
+      armazemAltura: new FormControl('', [
+        Validators.required
+      ])                 
+    })    
+   
+>>>>>>> c48dab24e2d5a994972c1bfebcef545cc8fd1736:SPA/src/app/Componentes/Armazem/armazem-criar/armazem-criar.component.ts
   }
 
   get armazemId() {
@@ -85,6 +98,7 @@ export class ArmazemCriarComponent implements OnInit {
     return this.armazemForm.get('armazemCidade')!;
   }
 
+<<<<<<< HEAD:SPA/src/app/Componentes/Armazem/armazem-criar/armazem-criarcomponent.ts
   get armazemPais() {
     return this.armazemForm.get('armazemPais')!;
   }
@@ -92,11 +106,19 @@ export class ArmazemCriarComponent implements OnInit {
   get armazemLongitude() {
     return this.armazemForm.get('armazemLongitude')!;
   }
+=======
+  get armazemLatitude() { return this.armazemForm.get('armazemLatitude')!; }
+
+  get armazemLongitude() { return this.armazemForm.get('armazemLongitude')!; }
+
+  get armazemAltura() { return this.armazemForm.get('armazemAltura')!; }
+>>>>>>> c48dab24e2d5a994972c1bfebcef545cc8fd1736:SPA/src/app/Componentes/Armazem/armazem-criar/armazem-criar.component.ts
 
   get armazemLatitude() {
     return this.armazemForm.get('armazemLatitude')!;
   }
 
+<<<<<<< HEAD:SPA/src/app/Componentes/Armazem/armazem-criar/armazem-criarcomponent.ts
   add(
     id: string,
     designacao: string,
@@ -128,4 +150,16 @@ export class ArmazemCriarComponent implements OnInit {
         this.armazens.push(armazem);
       });
   }
+=======
+  add(id:string, designacao: string, rua: string, numeroPorta: number,codigoPostal:string ,cidade: string, pais : string,
+    coordenadaLat: number, coordenadaLon: number, altura: number): void {
+       designacao = designacao.trim();
+       if (!designacao) { return; }
+       this.armazemService.addArmazem({id ,designacao, rua ,numeroPorta,codigoPostal,
+         cidade,pais,coordenadaLat,coordenadaLon, altura  } as Armazem)
+         .subscribe((armazem: Armazem) => {
+           this.armazens.push(armazem);
+         });
+     }  
+>>>>>>> c48dab24e2d5a994972c1bfebcef545cc8fd1736:SPA/src/app/Componentes/Armazem/armazem-criar/armazem-criar.component.ts
 }
