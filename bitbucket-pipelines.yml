@@ -1,39 +1,35 @@
-name: ElectriGo C.I.
+#  Template .NET Core build
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+#  This template allows you to validate your .NET Core package.
+#  The workflow allows running tests and code linting on the default branch.
 
-jobs:
-  build-all: 
-                          
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 6.0.x
+# To run your pipeline on a Windows machine, create a self-hosted Windows runner.
+# For instructions on setting up a Windows runner, see https://support.atlassian.com/bitbucket-cloud/docs/set-up-runners-for-windows/
 
-    - name: Build & Test .NET
-      run: echo 'Building and Testing .NET' 
-        && dotnet restore 'Gestão Armazém/DDDNetCore.csproj' 
-        && dotnet build --no-restore --configuration Release 'Gestão Armazém/DDDNetCore.csproj'
-        && dotnet restore 'GestãoArmazénsTests/GestãoArmazénsTests.csproj'
-        && dotnet build --no-restore --configuration Release 'GestãoArmazénsTests/GestãoArmazénsTests.csproj'
-        && dotnet test --no-build --configuration Release 'GestãoArmazénsTests/GestãoArmazénsTests.csproj'
-    
-    - name: Setup Node
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16.18.x
-        cache: 'npm'
-      
-    - name: Build & Test Node
-      run: echo 'Building and Testing Node'
-        && npm install nodemon --save
-        && npm start 'Logistica/config.js'
+image: mcr.microsoft.com/dotnet/core/sdk:3.1
 
+pipelines:
+  default:
+    - parallel:
+        - step:
+            name: Build and Test
+            caches:
+              - dotnetcore
+            script:
+              - REPORTS_PATH=./test-reports/build_${BITBUCKET_BUILD_NUMBER}
+              - dotnet restore
+              - dotnet build --no-restore --configuration Release
+              - dotnet test --no-build --configuration Release --test-adapter-path:. --logger:"junit;LogFilePath=$REPORTS_PATH/junit.xml"
+        - step:
+            name: Lint the code
+            caches:
+              - dotnetcore
+            script:
+              - export SOLUTION_NAME=HelloProject
+              - export REPORTS_PATH=linter-reports
+              - dotnet new tool-manifest
+              - dotnet tool install JetBrains.ReSharper.GlobalTools
+              - dotnet tool restore
+              - dotnet jb inspectcode ${SOLUTION_NAME}.sln --output="${REPORTS_PATH}/jb-${BITBUCKET_BUILD_NUMBER}.xml"
+            artifacts:
+              - linter-reports/**
