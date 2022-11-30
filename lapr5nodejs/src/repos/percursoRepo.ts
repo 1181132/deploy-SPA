@@ -66,7 +66,7 @@ export default class PercursoRepo implements IPercursoRepo {
     }
   }
 
-  public async findByArmazens (armazem1: string, armazem2 : string): Promise<Percurso>{
+  public async findByArmazens (armazem1: number, armazem2 : number): Promise<Percurso>{
     const percursoList = this.findAll();
     var finalPercurso = null;
 

@@ -19,6 +19,10 @@ import { ArmazemCriarComponent } from './Componentes/Armazem/armazem-criar/armaz
 import { ArmazemDetalhosComponent } from './Componentes/Armazem/armazem-detalhos/armazem-detalhos.component';
 import { ArmazemProcuraComponent } from './Componentes/Armazem/armazem-procura/armazem-procura.component';
 import { ArmazemListarComponent } from './Componentes/Armazem/armazem-listar/armazem-listar.component';
+import { EntregaCriarComponent } from './Componentes/Entrega/entrega-criar/entrega-criar.component';
+import { EntregaDetalhesComponent } from './Componentes/Entrega/entrega-detalhes/entrega-detalhes.component';
+import { EntregaListarComponent } from './Componentes/Entrega/entrega-listar/entrega-listar.component';
+import { EntregaProcuraComponent } from './Componentes/Entrega/entrega-procura/entrega-procura.component';
 import { CamiaoDetalhesComponent } from './Componentes/Camiao/camiao-detalhes/camiao-detalhes.component';
 import { CamiaoCriarComponent } from './Componentes/Camiao/camiao-criar/camiao-criar.component';
 import { CamiaoProcuraComponent } from './Componentes/Camiao/camiao-procura/camiao-procura.component';
@@ -59,6 +63,10 @@ import { ElementoLigacaoComponent } from './Componentes/Rede-viaria/elemento-lig
     ArmazemDetalhosComponent,
     ArmazemProcuraComponent,
     ArmazemListarComponent,
+    EntregaCriarComponent,
+    EntregaDetalhesComponent,
+    EntregaListarComponent,
+    EntregaProcuraComponent,
     CamiaoDetalhesComponent,
     CamiaoCriarComponent,
     CamiaoProcuraComponent,

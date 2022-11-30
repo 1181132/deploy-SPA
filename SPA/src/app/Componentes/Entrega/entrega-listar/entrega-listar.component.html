@@ -1,0 +1,16 @@
+<h2>Todos as Entregas</h2>
+
+
+<app-entrega-procura></app-entrega-procura>
+
+
+
+<ul class="entregas">
+    <li *ngFor="let entrega of entregas">
+        <a routerLink="/detail/{{entrega.id}}">
+            <span class="badge">{{entrega.id}}</span>
+            <!--{{entrega.id}}-->
+        </a>
+        <button type="button" class="delete" title="delete entrega" (click)="delete(entrega)">x</button>
+    </li>
+</ul>

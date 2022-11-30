@@ -5,11 +5,11 @@ import { Result } from "../../core/logic/Result";
 
 
 interface Armazem1Props{
-  value: string;
+  value: number;
 }
 
 export class Armazem1 extends ValueObject<Armazem1Props> {
-  get value (): string {
+  get value (): number {
     return this.props.value;
   }
   
@@ -17,8 +17,8 @@ export class Armazem1 extends ValueObject<Armazem1Props> {
     super(props);
   }
 
-  public static create ( armazem: string): Result<Armazem1> {
-    const guardResult = Guard.againstNullOrUndefined(Armazem1, 'armazem1');
+  public static create ( armazem: number): Result<Armazem1> {
+    const guardResult = Guard.againstNullOrUndefined(Armazem1, 'capacidadeCarga');
     if (!guardResult.succeeded) {
       return Result.fail<Armazem1>(guardResult.message);
     } else {

@@ -1,0 +1,147 @@
+<div class="container">
+
+    <h2>Criar Entrega</h2>
+
+    <form [formGroup]="entregaForm" #formDir="ngForm">
+
+        <div [hidden]="formDir.submitted">
+
+            <div class="cross-validation"
+                [class.cross-validation-error]="entregaForm.errors?.['identityRevealed'] && (entregaForm.touched || entregaForm.dirty)">
+
+                <div class="form-group">
+                    <label for="entregaid">ID da Entrega</label>
+                    <input type="text" id="entregaId" class="form-control" formControlName="entregaId"
+                        placeholder="4456" min="1" required #id>
+
+                    <div *ngIf="entregaId.invalid && (entregaId.dirty || entregaId.touched)" class="alert alert-danger">
+
+                        <div *ngIf="entregaId.errors?.['required']">
+                            O id da entrega não pode ser nulo
+                        </div>
+
+                        <div *ngIf="entregaId.errors?.['min']">
+                            O id da entrega não pode ser 0 ou negativo
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="entregadata">Data da Entrega: </label>
+                <input type="text" id="entregaData" class="form-control" formControlName="entregaData"
+                    placeholder="DD-MM-AAAA ou DD.MM.AAAA ou DD/MM/AAAA" required #data>
+
+                <div *ngIf="entregaData.invalid && (entregaData.dirty || entregaData.touched)"
+                    class="alert alert-danger">
+
+                    <div *ngIf="entregaData.errors?.['required']">
+                        A data da entrega não pode ser nula
+                    </div>
+
+                    <div *ngIf="entregaData.errors?.['pattern']">
+                        A data da entrega tem de ser no formato dd.mm.aaaa ou dd-mm-aaaa ou dd/mm/aaaa
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="entregamassa">Massa da Entrega </label>
+                <input type="number" class="form-control" formControlName="entregaMassa" id="entregaMassa"
+                    placeholder="200" min="1" required #massa />
+
+                <div *ngIf="entregaMassa.invalid && (entregaMassa.dirty || entregaMassa.touched)"
+                    class="alert alert-danger">
+
+                    <div *ngIf="entregaMassa.errors?.['required']">
+                        A massa da entrega não pode ser nulo
+                    </div>
+
+                    <div *ngIf="entregaMassa.errors?.['min']">
+                        A massa da entrega não pode ser 0 ou negativo
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="entregaarmazemid">Id do Armazem da Entrega </label>
+                <input type="text" id="entregaArmazemId" class="form-control" formControlName="entregaArmazemId"
+                    placeholder="M13" required #armazemId>
+
+                <div *ngIf="entregaArmazemId.invalid && (entregaArmazemId.dirty || entregaArmazemId.touched)"
+                    class="alert alert-danger">
+
+                    <div *ngIf="entregaArmazemId.errors?.['required']">
+                        O id do armazem da entrega não pode ser nulo
+                    </div>
+
+                    <div *ngIf="entregaArmazemId.errors?.['maxlength']">
+                        O id do armazem da entrega nao pode conter mais de 3 caracteres
+                    </div>
+
+                    <div *ngIf="entregaArmazemId.errors?.['pattern']">
+                        O id do armazem da entrega tem de ser alphanumérico
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="entregatempocolocar">Tempo Colocar a Entrega </label>
+                <input type="number" class="form-control" formControlName="entregaTempoColocar" id="entregaTempoColocar"
+                    placeholder="15" min="1" required #tempoColocar />
+
+                <div *ngIf="entregaTempoColocarEntrega.invalid && (entregaTempoColocarEntrega.dirty || entregaTempoColocarEntrega.touched)"
+                    class="alert alert-danger">
+
+                    <div *ngIf="entregaTempoColocarEntrega.errors?.['required']">
+                        O tempo de colocar a entrega não pode ser nulo
+                    </div>
+
+                    <div *ngIf="entregaTempoColocarEntrega.errors?.['min']">
+                        O tempo de colocar a entrega não pode ser 0 ou negativo
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="entregatemporetirar">Tempo Retirar a Entrega </label>
+                <input type="number" class="form-control" formControlName="entregaTempoRetirar" id="entregatemporetirar"
+                    placeholder="30" min="1" required #tempoRetirar />
+
+                <div *ngIf="entregaTempoRetirarEntrega.invalid && (entregaTempoRetirarEntrega.dirty || entregaTempoRetirarEntrega.touched)"
+                    class="alert alert-danger">
+
+                    <div *ngIf="entregaTempoRetirarEntrega.errors?.['required']">
+                        O tempo de retirar a entrega não pode ser nulo
+                    </div>
+
+                    <div *ngIf="entregaTempoRetirarEntrega.errors?.['min']">
+                        O tempo de retirar a entrega não pode ser 0 ou negativo
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <p>Complete o formulário para habilitar o botão Submeter.</p>
+            <button type="submit" class="btn btn-default" [disabled]="entregaForm.invalid">Submeter
+            </button>
+
+            <button type="button" class="btn btn-default" (click)="formDir.resetForm({})">Restaurar</button>
+        </div>
+    </form>
+
+    <div class="submitted-message" *ngIf="formDir.submitted">
+        <p>Registou uma Entrega!</p>
+        <button type="button" (click)="add(id.value,
+      data.value, massa.valueAsNumber ,armazemId.value, tempoColocar.valueAsNumber,tempoRetirar.valueAsNumber);
+      formDir.resetForm({})">Criar nova entrega</button>
+    </div>
+</div>
