@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DDDNetCore.Migrations
 {
     [DbContext(typeof(DDDSample1DbContext))]
-    [Migration("20221105154842_AddBlogCreatedTimestamp")]
-    partial class AddBlogCreatedTimestamp
+    [Migration("20221128213343_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -51,16 +51,32 @@ namespace DDDNetCore.Migrations
 
             modelBuilder.Entity("DDDSample1.Domain.Armazens.Armazem", b =>
                 {
+                    b.OwnsOne("DDDSample1.Domain.Armazens.ArmazemAltura", "Altura", b1 =>
+                        {
+                            b1.Property<string>("ArmazemId")
+                                .HasColumnType("varchar(255)");
+
+                            b1.Property<double>("Altura")
+                                .HasColumnType("double");
+
+                            b1.HasKey("ArmazemId");
+
+                            b1.ToTable("Armazens");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ArmazemId");
+                        });
+
                     b.OwnsOne("DDDSample1.Domain.Armazens.ArmazemCoordenadas", "Coordenadas", b1 =>
                         {
                             b1.Property<string>("ArmazemId")
                                 .HasColumnType("varchar(255)");
 
-                            b1.Property<int>("CoordenadaLat")
-                                .HasColumnType("int");
+                            b1.Property<double>("CoordenadaLat")
+                                .HasColumnType("double");
 
-                            b1.Property<int>("CoordenadaLon")
-                                .HasColumnType("int");
+                            b1.Property<double>("CoordenadaLon")
+                                .HasColumnType("double");
 
                             b1.HasKey("ArmazemId");
 
@@ -76,7 +92,9 @@ namespace DDDNetCore.Migrations
                                 .HasColumnType("varchar(255)");
 
                             b1.Property<string>("Designacao")
-                                .HasColumnType("longtext");
+                                .IsRequired()
+                                .HasMaxLength(50)
+                                .HasColumnType("varchar(50)");
 
                             b1.HasKey("ArmazemId");
 
@@ -113,6 +131,8 @@ namespace DDDNetCore.Migrations
                             b1.WithOwner()
                                 .HasForeignKey("ArmazemId");
                         });
+
+                    b.Navigation("Altura");
 
                     b.Navigation("Coordenadas");
 
@@ -155,12 +175,12 @@ namespace DDDNetCore.Migrations
                                 .HasForeignKey("EntregaId");
                         });
 
-                    b.OwnsOne("DDDSample1.Domain.Entregas.EntregaTempoColocar", "TempoColocar", b1 =>
+                    b.OwnsOne("DDDSample1.Domain.Entregas.EntregaTempoColocar", "TempoColocarEntrega", b1 =>
                         {
                             b1.Property<string>("EntregaId")
                                 .HasColumnType("varchar(255)");
 
-                            b1.Property<int>("TempoColocar")
+                            b1.Property<int>("TempoColocarEntrega")
                                 .HasColumnType("int");
 
                             b1.HasKey("EntregaId");
@@ -171,12 +191,12 @@ namespace DDDNetCore.Migrations
                                 .HasForeignKey("EntregaId");
                         });
 
-                    b.OwnsOne("DDDSample1.Domain.Entregas.EntregaTempoRetirar", "TempoRetirar", b1 =>
+                    b.OwnsOne("DDDSample1.Domain.Entregas.EntregaTempoRetirar", "TempoRetirarEntrega", b1 =>
                         {
                             b1.Property<string>("EntregaId")
                                 .HasColumnType("varchar(255)");
 
-                            b1.Property<int>("TempoRetirar")
+                            b1.Property<int>("TempoRetirarEntrega")
                                 .HasColumnType("int");
 
                             b1.HasKey("EntregaId");
@@ -191,9 +211,9 @@ namespace DDDNetCore.Migrations
 
                     b.Navigation("Massa");
 
-                    b.Navigation("TempoColocar");
+                    b.Navigation("TempoColocarEntrega");
 
-                    b.Navigation("TempoRetirar");
+                    b.Navigation("TempoRetirarEntrega");
                 });
 #pragma warning restore 612, 618
         }

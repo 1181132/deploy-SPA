@@ -3,20 +3,22 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { Percurso } from 'src/app/Modelos/percurso';
+import { PercursoService } from 'src/app/Servicos/Percurso/percurso.service';
 
-import { Armazem } from '../../../Modelos/armazem';
-import { ArmazemService } from '../../../Servicos/Armazens/armazem.service';
+
+
 
 @Component({
-  selector: 'app-armazem-procura',
-  templateUrl: './armazem-procura.component.html',
-  styleUrls: ['./armazem-procura.component.css'],
+  selector: 'app-percurso-procura',
+  templateUrl: './percurso-procura.component.html',
+  styleUrls: ['./percurso-procura.component.css']
 })
-export class ArmazemProcuraComponent implements OnInit {
-  armazens$!: Observable<Armazem[]>;
+export class PercursoProcuraComponent {
+  percursos$!: Observable<Percurso[]>;
   private searchTerms = new Subject<string>();
 
-  constructor(private armazemService: ArmazemService) {}
+  constructor(private percursoService: PercursoService) {}
 
   // Push a search term into the observable stream.
   search(term: string): void {
@@ -24,7 +26,7 @@ export class ArmazemProcuraComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.armazens$ = this.searchTerms.pipe(
+    this.percursos$ = this.searchTerms.pipe(
       // wait 300ms after each keystroke before considering the term
       debounceTime(300),
 
@@ -32,7 +34,8 @@ export class ArmazemProcuraComponent implements OnInit {
       distinctUntilChanged(),
 
       // switch to new search observable each time the term changes
-      switchMap((term: string) => this.armazemService.searchArmazens(term))
+      switchMap((term: string) => this.percursoService.searchPercurso(term))
     );
   }
+
 }

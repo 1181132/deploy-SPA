@@ -1,22 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Observable, Subject } from 'rxjs';
 
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
-import { Armazem } from '../../../Modelos/armazem';
-import { ArmazemService } from '../../../Servicos/Armazens/armazem.service';
+import { Camiao } from 'src/app/Modelos/camiao';
+import { CamiaoService } from 'src/app/Servicos/Camiao/camiao.service';
 
 @Component({
-  selector: 'app-armazem-procura',
-  templateUrl: './armazem-procura.component.html',
-  styleUrls: ['./armazem-procura.component.css'],
+  selector: 'app-camiao-procura',
+  templateUrl: './camiao-procura.component.html',
+  styleUrls: ['./camiao-procura.component.css'],
 })
-export class ArmazemProcuraComponent implements OnInit {
-  armazens$!: Observable<Armazem[]>;
+export class CamiaoProcuraComponent implements OnInit {
+  camiaos$!: Observable<Camiao[]>;
   private searchTerms = new Subject<string>();
 
-  constructor(private armazemService: ArmazemService) {}
+  constructor(private camiaoService: CamiaoService) {}
 
   // Push a search term into the observable stream.
   search(term: string): void {
@@ -24,7 +23,7 @@ export class ArmazemProcuraComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.armazens$ = this.searchTerms.pipe(
+    this.camiaos$ = this.searchTerms.pipe(
       // wait 300ms after each keystroke before considering the term
       debounceTime(300),
 
@@ -32,7 +31,7 @@ export class ArmazemProcuraComponent implements OnInit {
       distinctUntilChanged(),
 
       // switch to new search observable each time the term changes
-      switchMap((term: string) => this.armazemService.searchArmazens(term))
+      switchMap((term: string) => this.camiaoService.searchCamiao(term))
     );
   }
 }

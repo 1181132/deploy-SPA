@@ -109,25 +109,6 @@
           </div>
         </div>
 
-        <div class="form-group">
-          <label for="armazemlongitude">Coordenada Longitudde do Armazem </label>
-          <input type="text" class="form-control"
-          formControlName="armazemLongitude" id="armazemPais"
-          type="number" [(ngModel)]="armazem.coordenadaLon" placeholder="0" max="180" min="-180" required #coordLon />
-
-          <div *ngIf="armazemLongitude.invalid && (armazemLongitude.dirty || armazemLongitude.touched)"
-              class="alert alert-danger">
-
-              <div *ngIf="armazemLongitude.errors?.['min']">
-                A longitude não pode ser inferior a -180
-               </div>
-      
-               <div *ngIf="armazemLongitude.errors?.['max']">
-                A longitude não pode ser superior a 180
-               </div>
-      
-          </div>
-        </div>
 
         <div class="form-group">
           <label for="armazemlatitude">Coordenada Latitude Armazem </label>
@@ -146,6 +127,40 @@
                 A longitude não pode ser superior a 90
                </div>
          
+      
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="armazemlongitude">Coordenada Longitude do Armazem </label>
+          <input type="text" class="form-control"
+          formControlName="armazemLongitude" id="armazemPais"
+          type="number" [(ngModel)]="armazem.coordenadaLon" placeholder="0" max="180" min="-180" required #coordLon />
+
+          <div *ngIf="armazemLongitude.invalid && (armazemLongitude.dirty || armazemLongitude.touched)"
+              class="alert alert-danger">
+
+              <div *ngIf="armazemLongitude.errors?.['min']">
+                A longitude não pode ser inferior a -180
+               </div>
+      
+               <div *ngIf="armazemLongitude.errors?.['max']">
+                A longitude não pode ser superior a 180
+               </div>
+      
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="armazemaltura">Armazem Altura</label>
+          <input type="text" class="form-control"
+          formControlName="armazemAltura" id="armazemAltura"
+          type="number" [(ngModel)]="armazem.altura" placeholder="0" required #altura/>
+
+          <div *ngIf="armazemAltura.invalid && (armazemAltura.dirty || armazemAltura.touched)"
+              class="alert alert-danger">         
       
           </div>
         </div>

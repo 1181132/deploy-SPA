@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ArmazemCriarComponent } from './armazem-criarcomponent';
+import { CamiaoDetalhesComponent } from './camiao-detalhes.component';
 
-describe('ArmazemFormularioComponent', () => {
-  let component: ArmazemCriarComponent;
-  let fixture: ComponentFixture<ArmazemCriarComponent>;
+describe('CamiaoDetalhesComponent', () => {
+  let component: CamiaoDetalhesComponent;
+  let fixture: ComponentFixture<CamiaoDetalhesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ArmazemCriarComponent ]
+      declarations: [ CamiaoDetalhesComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ArmazemCriarComponent);
+    fixture = TestBed.createComponent(CamiaoDetalhesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

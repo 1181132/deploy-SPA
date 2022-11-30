@@ -1,0 +1,19 @@
+<h2>Todos os Percursos</h2>
+
+
+<app-armazem-procura></app-armazem-procura>
+
+
+
+<ul class="percursos">
+  <li *ngFor="let percurso of percursos">
+    <a routerLink="/detail/{{percurso.armazem1}}">
+      <span class="badge">{{percurso.armazem1}}</span> {{percurso.armazem2}} 
+    </a>
+    <button type="button" class="delete" title="delete percurso"
+      (click)="delete(percurso)">x</button>
+  </li>
+</ul>
+
+
+
