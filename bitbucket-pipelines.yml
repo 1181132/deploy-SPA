@@ -16,20 +16,8 @@ pipelines:
             caches:
               - dotnetcore
             script:
-              - REPORTS_PATH=./test-reports/build_${BITBUCKET_BUILD_NUMBER}
-              - dotnet restore
-              - dotnet build --no-restore --configuration Release
-              - dotnet test --no-build --configuration Release --test-adapter-path:. --logger:"junit;LogFilePath=$REPORTS_PATH/junit.xml"
-        - step:
-            name: Lint the code
-            caches:
-              - dotnetcore
-            script:
-              - export SOLUTION_NAME=HelloProject
-              - export REPORTS_PATH=linter-reports
-              - dotnet new tool-manifest
-              - dotnet tool install JetBrains.ReSharper.GlobalTools
-              - dotnet tool restore
-              - dotnet jb inspectcode ${SOLUTION_NAME}.sln --output="${REPORTS_PATH}/jb-${BITBUCKET_BUILD_NUMBER}.xml"
-            artifacts:
-              - linter-reports/**
+              - dotnet restore 'Armazem_MasterData/DDDNetCore.csproj' 
+              - dotnet build --no-restore --configuration Release 'Armazem_MasterData/DDDNetCore.csproj'
+              - dotnet restore 'ArmazemDotNetTeste/ArmazemDotNetTeste.csproj'
+              - dotnet build --no-restore --configuration Release 'ArmazemDotNetTeste/ArmazemDotNetTeste.csproj'
+              - dotnet test --no-build --configuration Release 'ArmazemDotNetTeste/ArmazemDotNetTeste.csproj'
