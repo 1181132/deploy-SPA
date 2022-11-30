@@ -10,6 +10,7 @@ import { CamiaoDetalhesComponent } from './Componentes/Camiao/camiao-detalhes/ca
 import { PercursoListarComponent } from './Componentes/Percurso/percurso-listar/percurso-listar.component';
 import { PercursoDetalhesComponent } from './Componentes/Percurso/percurso-detalhes/percurso-detalhes.component';
 import { PercursoCriarComponent } from './Componentes/Percurso/percurso-criar/percurso-criar.component';
+import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.component';
 
 const routes: Routes = [
 //  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'listarPercurso', component: PercursoListarComponent },
   { path: 'detalhe/:armazem1', component: PercursoDetalhesComponent},
   { path: 'criarPercurso', component: PercursoCriarComponent },
+  { path: 'redeViaria', component: RedeViariaComponent },
 
 ];
 
