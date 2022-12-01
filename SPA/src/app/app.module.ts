@@ -12,7 +12,6 @@ import { NgtMeshBasicMaterialModule} from '@angular-three/core/materials';
 import { NgtBufferGeometryModule} from '@angular-three/core/geometries';
 
 import { AppRoutingModule } from './app-routing.module';
-import * as _ from 'underscore';
 
 import { AppComponent } from './app.component';
 import { ArmazemCriarComponent } from './Componentes/Armazem/armazem-criar/armazem-criar.component';
@@ -31,10 +30,9 @@ import { PercursoDetalhesComponent } from './Componentes/Percurso/percurso-detal
 import { PercursoCriarComponent } from './Componentes/Percurso/percurso-criar/percurso-criar.component';
 import { PercursoProcuraComponent } from './Componentes/Percurso/percurso-procura/percurso-procura.component';
 import { PercursoListarComponent } from './Componentes/Percurso/percurso-listar/percurso-listar.component';
-import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.component';
-import { ArcoComponent } from './Componentes/Rede-viaria/arco/arco.component';
-import { ElementoLigacaoComponent } from './Componentes/Rede-viaria/elemento-ligacao/elemento-ligacao.component';
-//import { NoComponent } from './Componentes/Rede-viaria/no/no.component';
+//import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.component';
+//import { ArcoComponent } from './Componentes/Rede-viaria/arco/arco.component';
+//import { ElementoLigacaoComponent } from './Componentes/Rede-viaria/elemento-ligacao/elemento-ligacao.component';
 
 
 
@@ -75,10 +73,9 @@ import { ElementoLigacaoComponent } from './Componentes/Rede-viaria/elemento-lig
     PercursoCriarComponent,
     PercursoProcuraComponent,
     PercursoListarComponent,
-    RedeViariaComponent,
-    ArcoComponent,
-    ElementoLigacaoComponent,
- //  NoComponent,
+//    RedeViariaComponent,
+//    ArcoComponent,
+//    ElementoLigacaoComponent,
   ],
   bootstrap: [ AppComponent ]
 })
