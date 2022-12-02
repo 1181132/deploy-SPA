@@ -4,17 +4,11 @@ import { FormsModule, NgForm, ReactiveFormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
-//import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-//import { InMemoryDataService } from './in-memory-data.service';
-//import { NgtCursorModule} from '@angular-three/core';
-//import { NgtMeshModule} from '@angular-three/core/meshes';
-//import { NgtMeshBasicMaterialModule} from '@angular-three/core/materials';
-//import { NgtBufferGeometryModule} from '@angular-three/core/geometries';
-
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { ArmazemCriarComponent } from './Componentes/Armazem/armazem-criar/armazem-criar.component';
+//import { ArmazemService} from './Servicos/Armazens/armazem.service'
 import { ArmazemDetalhosComponent } from './Componentes/Armazem/armazem-detalhos/armazem-detalhos.component';
 import { ArmazemProcuraComponent } from './Componentes/Armazem/armazem-procura/armazem-procura.component';
 import { ArmazemListarComponent } from './Componentes/Armazem/armazem-listar/armazem-listar.component';
@@ -30,21 +24,14 @@ import { PercursoDetalhesComponent } from './Componentes/Percurso/percurso-detal
 import { PercursoCriarComponent } from './Componentes/Percurso/percurso-criar/percurso-criar.component';
 import { PercursoProcuraComponent } from './Componentes/Percurso/percurso-procura/percurso-procura.component';
 import { PercursoListarComponent } from './Componentes/Percurso/percurso-listar/percurso-listar.component';
-<<<<<<< HEAD
-import { ArmazemListarComponent } from './Componentes/Armazem/armazem-listar/armazem-listar.component';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import { SidebarComponent } from './Componentes/sidebar/sidebar.component';
-import { HomeComponent } from './home/home.component';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { MatButtonModule } from '@angular/material/button';
-=======
-//import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.component';
-//import { ArcoComponent } from './Componentes/Rede-viaria/arco/arco.component';
-//import { ElementoLigacaoComponent } from './Componentes/Rede-viaria/elemento-ligacao/elemento-ligacao.component';
-
->>>>>>> 6d83eef8711ac0886f6198caed82f64167b16c00
+import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.component';
+// import {MatSidenavModule} from '@angular/material/sidenav';
+// import {MatToolbarModule} from '@angular/material/toolbar';
+// import { SidebarComponent } from './Componentes/sidebar/sidebar.component';
+// import { HomeComponent } from './home/home.component';
+// import { MatIconModule } from '@angular/material/icon';
+// import { MatListModule } from '@angular/material/list';
+// import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -55,18 +42,11 @@ import { MatButtonModule } from '@angular/material/button';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-<<<<<<< HEAD
-    MatToolbarModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatButtonModule
-=======
-    //NgtCursorModule,
-    //NgtMeshModule,
-    //NgtMeshBasicMaterialModule,
-    //NgtBufferGeometryModule,
->>>>>>> 6d83eef8711ac0886f6198caed82f64167b16c00
+  //  MatToolbarModule,
+  //  MatSidenavModule,
+  //  MatIconModule,
+  //  MatListModule,
+ //   MatButtonModule
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
@@ -74,6 +54,9 @@ import { MatButtonModule } from '@angular/material/button';
       InMemoryDataService, { dataEncapsulation: false }
     ) */
   ],
+ // providers: [
+//    ArmazemService,
+//  ],
   declarations: [
     AppComponent,
     ArmazemCriarComponent,
@@ -92,17 +75,10 @@ import { MatButtonModule } from '@angular/material/button';
     PercursoCriarComponent,
     PercursoProcuraComponent,
     PercursoListarComponent,
-<<<<<<< HEAD
-  //  ArmazemFormularioComponent,
+    RedeViariaComponent,
     ArmazemListarComponent,
-  SidebarComponent,
-    HomeComponent,
-    
-=======
-//    RedeViariaComponent,
-//    ArcoComponent,
-//    ElementoLigacaoComponent,
->>>>>>> 6d83eef8711ac0886f6198caed82f64167b16c00
+ // SidebarComponent,
+ //   HomeComponent,
   ],
   bootstrap: [ AppComponent ]
 })
