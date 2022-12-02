@@ -1,7 +1,7 @@
 
 export default interface IPercursoDTO {
-    armazem1: string;
-    armazem2: string;
+    armazem1: number;
+    armazem2: number;
     distancia: number;
     tempo: number;
     energia: number;

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Armazem } from "./Modelos/armazem.js"
+import { Entrega } from './Modelos/entrega.js';
 
 @Injectable({
   providedIn: 'root',
