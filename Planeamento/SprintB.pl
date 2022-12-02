@@ -444,7 +444,6 @@ calcularTempoColocacao([Head|Tail], Result):-
 
 %tempo de viagem (+TruckName, +CurrCap, +Route, +WeightList, +ListUnloadingTime, -TravelTime)
 tempoDeViagem(_, _, [_|[]], [], [], 0).
-% isto devia parar quando fosse vazia a tail e não acontece isso
 
 tempoDeViagem(TruckName, CurrCap, [Head1A, Head1B|Tail1], [Head2|Tail2], [Head3|Tail3], TravelTime):-
     calcularPesoMaximoCamiao(TruckName, TruckMaxWeight),
@@ -476,9 +475,6 @@ tempoDeViagem(TruckName, CurrCap, [Head1A, Head1B|Tail1], [Head2|Tail2], [Head3|
     TempVar5 is TempVar4 + RechargeTime,
     TravelTime is Head3 + TempVar5.
 
-
-
-%allRoutesTravelTime(+TruckName, +ListDeliveriesID, -RouteList, -TravelTimeList)
 %tempo de todas as rotas 
 tempoDeTodasRotas(TruckName, ListDeliveriesID, RouteList, TravelTimeList):-
     armazemVisitar(ListDeliveriesID, ListStopsID),
@@ -535,5 +531,5 @@ atualiza(LAPermutados,Time):-
 tempo_min(_,TempoMin),
 ((Time<TempoMin,!,retract(tempo_min(_,_)),
 assertz(tempo_min(LAPermutados,Time)),
-write('Tempo='),write(Time), write(' '),write(LAPermutados),nl)
+write('Tempo='),write(Time), write('Entregas ='),write(LAPermutados),nl)
 ;true).
