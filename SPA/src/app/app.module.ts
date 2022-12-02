@@ -6,10 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 //import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 //import { InMemoryDataService } from './in-memory-data.service';
-import { NgtCursorModule} from '@angular-three/core';
-import { NgtMeshModule} from '@angular-three/core/meshes';
-import { NgtMeshBasicMaterialModule} from '@angular-three/core/materials';
-import { NgtBufferGeometryModule} from '@angular-three/core/geometries';
+//import { NgtCursorModule} from '@angular-three/core';
+//import { NgtMeshModule} from '@angular-three/core/meshes';
+//import { NgtMeshBasicMaterialModule} from '@angular-three/core/materials';
+//import { NgtBufferGeometryModule} from '@angular-three/core/geometries';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -44,10 +44,10 @@ import { PercursoListarComponent } from './Componentes/Percurso/percurso-listar/
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    NgtCursorModule,
-    NgtMeshModule,
-    NgtMeshBasicMaterialModule,
-    NgtBufferGeometryModule,
+    //NgtCursorModule,
+    //NgtMeshModule,
+    //NgtMeshBasicMaterialModule,
+    //NgtBufferGeometryModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
