@@ -15,15 +15,16 @@ import { CamiaoDetalhesComponent } from './Componentes/Camiao/camiao-detalhes/ca
 import { PercursoListarComponent } from './Componentes/Percurso/percurso-listar/percurso-listar.component';
 import { PercursoDetalhesComponent } from './Componentes/Percurso/percurso-detalhes/percurso-detalhes.component';
 import { PercursoCriarComponent } from './Componentes/Percurso/percurso-criar/percurso-criar.component';
-//import { RedeComponent } from './Componentes/Rede-viaria/rede/rede.component';
 import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.component';
+//import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
 //  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-//  { path: 'listarArmazem', component: ArmazemListarComponent },
-//  { path: 'detail/:id', component: ArmazemDetalhosComponent },
-//  { path: 'criarArmazem', component: ArmazemCriarComponent },
-{ path: 'armzens', loadChildren: () => import('./Componentes/Armazem/armazem.module').then(m => m.ArmazemModule)},
+ // { path: 'home' , component: HomeComponent},
+  { path: 'listarArmazem', component: ArmazemListarComponent },
+  { path: 'detail/:id', component: ArmazemDetalhosComponent },
+  { path: 'criarArmazem', component: ArmazemCriarComponent },
+ // { path: 'armzens', loadChildren: () => import('./Componentes/Armazem/armazem.module').then(m => m.ArmazemModule)},
   { path: 'listarEntrega', component: EntregaListarComponent},
   { path: 'detail/id', component :EntregaDetalhesComponent},
   { path: 'criarEntrega', component: EntregaCriarComponent},

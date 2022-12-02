@@ -7,11 +7,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-//import { ArmazemCriarComponent } from './Componentes/Armazem/armazem-criar/armazem-criar.component';
-import { ArmazemService} from './Servicos/Armazens/armazem.service'
-//import { ArmazemDetalhosComponent } from './Componentes/Armazem/armazem-detalhos/armazem-detalhos.component';
-//import { ArmazemProcuraComponent } from './Componentes/Armazem/armazem-procura/armazem-procura.component';
-//import { ArmazemListarComponent } from './Componentes/Armazem/armazem-listar/armazem-listar.component';
+import { ArmazemCriarComponent } from './Componentes/Armazem/armazem-criar/armazem-criar.component';
+//import { ArmazemService} from './Servicos/Armazens/armazem.service'
+import { ArmazemDetalhosComponent } from './Componentes/Armazem/armazem-detalhos/armazem-detalhos.component';
+import { ArmazemProcuraComponent } from './Componentes/Armazem/armazem-procura/armazem-procura.component';
+import { ArmazemListarComponent } from './Componentes/Armazem/armazem-listar/armazem-listar.component';
 import { EntregaCriarComponent } from './Componentes/Entrega/entrega-criar/entrega-criar.component';
 import { EntregaDetalhesComponent } from './Componentes/Entrega/entrega-detalhes/entrega-detalhes.component';
 import { EntregaListarComponent } from './Componentes/Entrega/entrega-listar/entrega-listar.component';
@@ -24,11 +24,14 @@ import { PercursoDetalhesComponent } from './Componentes/Percurso/percurso-detal
 import { PercursoCriarComponent } from './Componentes/Percurso/percurso-criar/percurso-criar.component';
 import { PercursoProcuraComponent } from './Componentes/Percurso/percurso-procura/percurso-procura.component';
 import { PercursoListarComponent } from './Componentes/Percurso/percurso-listar/percurso-listar.component';
-//import { RedeComponent } from './Componentes/Rede-viaria/rede/rede.component';
 import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.component';
-//import { ArcoComponent } from './Componentes/Rede-viaria/arco/arco.component';
-//import { ElementoLigacaoComponent } from './Componentes/Rede-viaria/elemento-ligacao/elemento-ligacao.component';
-
+// import {MatSidenavModule} from '@angular/material/sidenav';
+// import {MatToolbarModule} from '@angular/material/toolbar';
+// import { SidebarComponent } from './Componentes/sidebar/sidebar.component';
+// import { HomeComponent } from './home/home.component';
+// import { MatIconModule } from '@angular/material/icon';
+// import { MatListModule } from '@angular/material/list';
+// import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -39,6 +42,11 @@ import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.compo
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
+  //  MatToolbarModule,
+  //  MatSidenavModule,
+  //  MatIconModule,
+  //  MatListModule,
+ //   MatButtonModule
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
@@ -46,15 +54,15 @@ import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.compo
       InMemoryDataService, { dataEncapsulation: false }
     ) */
   ],
-  providers: [
-    ArmazemService,
-  ],
+ // providers: [
+//    ArmazemService,
+//  ],
   declarations: [
     AppComponent,
-   // ArmazemCriarComponent,
-  //  ArmazemDetalhosComponent,
- //   ArmazemProcuraComponent,
- //   ArmazemListarComponent,
+    ArmazemCriarComponent,
+    ArmazemDetalhosComponent,
+    ArmazemProcuraComponent,
+    ArmazemListarComponent,
     EntregaCriarComponent,
     EntregaDetalhesComponent,
     EntregaListarComponent,
@@ -68,8 +76,9 @@ import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.compo
     PercursoProcuraComponent,
     PercursoListarComponent,
     RedeViariaComponent,
-//    ArcoComponent,
-//    ElementoLigacaoComponent,
+    ArmazemListarComponent,
+ // SidebarComponent,
+ //   HomeComponent,
   ],
   bootstrap: [ AppComponent ]
 })

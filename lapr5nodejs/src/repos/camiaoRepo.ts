@@ -65,9 +65,10 @@ export default class CamiaoRepo implements ICamiaoRepo {
   public async findByMatricula(matricula: string): Promise<Camiao> {
     const camiaoList = this.findAll();
     var finalCamiao = null;
+    console.log(matricula);
 
     (await camiaoList).forEach((element) => {
-        if (matricula.localeCompare(element.matricula.value) == 0) {
+        if (matricula===(element.matricula.value)) {
             finalCamiao = element;
         }
     });
