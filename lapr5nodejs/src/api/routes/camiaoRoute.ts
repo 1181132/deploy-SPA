@@ -30,6 +30,14 @@ export default (app: Router) => {
   route.get(
     '/listar',
     (req, res, next) => ctrl.listCamioes(req, res, next));
+<<<<<<< HEAD
+  
+    route.get(
+      '/matricula',
+      (req, res, next) => ctrl.getCamiao(req, res, next));
+  
+=======
+>>>>>>> 6d83eef8711ac0886f6198caed82f64167b16c00
 
   route.put(
     '/update',
@@ -45,6 +53,8 @@ export default (app: Router) => {
     }),
     (req,res,next) => ctrl.updateCamiao(req,res,next)
   );
-
+  
+    
+    
   
 };

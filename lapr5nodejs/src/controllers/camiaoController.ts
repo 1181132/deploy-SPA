@@ -2,7 +2,9 @@ import { Request, Response, NextFunction } from 'express';
 import { Inject, Service } from 'typedi';
 import config from "../../config";
 import { Result } from "../core/logic/Result";
+import { Matricula } from '../domain/camiaoPackage/matricula';
 import ICamiaoDTO from '../dto/ICamiaoDTO';
+import { CamiaoMap } from '../mappers/CamiaoMap';
 import ICamiaoService from '../services/IServices/ICamiaoService';
 import ICamiaoController from './IControllers/ICamiaoController';
 
@@ -22,6 +24,20 @@ export default class CamiaoController implements ICamiaoController /* TODO: exte
 
       const camiaoDTO = camiaoOrError.getValue();
       return res.json( camiaoDTO ).status(201);
+    }
+    catch (e) {
+      return next(e);
+    }
+  };
+
+  public async getCamiao(req: Request, res: Response, next: NextFunction) {
+    try {
+      const camiaoOrError = await this.camiaoServiceInstance.getCamiao(req.body) as Result<ICamiaoDTO>;
+      
+      if (camiaoOrError.isFailure) {
+        return res.status(402).send();
+      }
+      return res.json( camiaoOrError ).status(201);
     }
     catch (e) {
       return next(e);

@@ -14,10 +14,15 @@ import { CamiaoDetalhesComponent } from './Componentes/Camiao/camiao-detalhes/ca
 import { PercursoListarComponent } from './Componentes/Percurso/percurso-listar/percurso-listar.component';
 import { PercursoDetalhesComponent } from './Componentes/Percurso/percurso-detalhes/percurso-detalhes.component';
 import { PercursoCriarComponent } from './Componentes/Percurso/percurso-criar/percurso-criar.component';
+<<<<<<< HEAD
+import { HomeComponent } from './home/home.component';
+=======
 //import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.component';
+>>>>>>> 6d83eef8711ac0886f6198caed82f64167b16c00
 
 const routes: Routes = [
 //  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'home' , component: HomeComponent},
   { path: 'listarArmazem', component: ArmazemListarComponent },
   { path: 'detail/:id', component: ArmazemDetalhosComponent },
   { path: 'criarArmazem', component: ArmazemCriarComponent },
