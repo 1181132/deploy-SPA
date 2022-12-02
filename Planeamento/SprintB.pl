@@ -533,3 +533,18 @@ tempo_min(_,TempoMin),
 assertz(tempo_min(LAPermutados,Time)),
 write('Tempo='),write(Time), write('Entregas ='),write(LAPermutados),nl)
 ;true).
+
+
+%retorna o tempo de todas viagens
+calcularTempoTodasViagens(ListDelivery,Time):-
+findall(PermListStopsID, permutation(ListDelivery, PermListStopsID), AllPermStopsID),
+leitorHead(AllPermStopsID).
+
+
+% predicado faz o for de todas as permutacoes
+leitorHead([]).
+
+leitorHead([X|Xs]):- 
+calcularTempoDeViagem(X,T),
+write('Tempo='),write(T), write(' Entregas ='),write(X),nl,
+leitorHead(Xs). %start
