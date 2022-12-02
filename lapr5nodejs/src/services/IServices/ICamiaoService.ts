@@ -6,4 +6,5 @@ export default interface ICamiaoService  {
   createCamiao(camiaoDTO: ICamiaoDTO): Promise<Result<ICamiaoDTO>>;
   updateCamiao(camiaoDTO: ICamiaoDTO): Promise<Result<ICamiaoDTO>>;
   getCamiao(matricula: string): Promise<Result<ICamiaoDTO>>;
+  
 }

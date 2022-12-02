@@ -22,6 +22,13 @@ import { PercursoCriarComponent } from './Componentes/Percurso/percurso-criar/pe
 import { PercursoProcuraComponent } from './Componentes/Percurso/percurso-procura/percurso-procura.component';
 import { PercursoListarComponent } from './Componentes/Percurso/percurso-listar/percurso-listar.component';
 import { ArmazemListarComponent } from './Componentes/Armazem/armazem-listar/armazem-listar.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { SidebarComponent } from './Componentes/sidebar/sidebar.component';
+import { HomeComponent } from './home/home.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
 
 //import { ArmazemFormularioComponent } from './Componentes/Armazem/armazem-formulario/armazem-formulario.component';
 
@@ -33,6 +40,11 @@ import { ArmazemListarComponent } from './Componentes/Armazem/armazem-listar/arm
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatButtonModule
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
@@ -55,6 +67,9 @@ import { ArmazemListarComponent } from './Componentes/Armazem/armazem-listar/arm
     PercursoListarComponent,
   //  ArmazemFormularioComponent,
     ArmazemListarComponent,
+  SidebarComponent,
+    HomeComponent,
+    
   ],
   bootstrap: [ AppComponent ]
 })

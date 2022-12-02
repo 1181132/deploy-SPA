@@ -31,6 +31,10 @@ export default (app: Router) => {
     '/listar',
     (req, res, next) => ctrl.listCamioes(req, res, next));
   
+    route.get(
+      '/matricula',
+      (req, res, next) => ctrl.getCamiao(req, res, next));
+  
 
   route.put(
     '/update',
@@ -46,6 +50,8 @@ export default (app: Router) => {
     }),
     (req,res,next) => ctrl.updateCamiao(req,res,next)
   );
-
+  
+    
+    
   
 };

@@ -58,7 +58,7 @@ export class CamiaoDetalhesComponent implements OnInit{
   }
 
   getCamiao(): void {
-    const id = this.route.snapshot.paramMap.get('id')!;
+    const id = this.route.snapshot.paramMap.get('matricula')!;
     this.camiaoService.getCamiao(id)
       .subscribe((camiao: Camiao | undefined) => this.camiao = camiao);
   }
