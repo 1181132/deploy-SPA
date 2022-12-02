@@ -4,20 +4,14 @@ import { FormsModule, NgForm, ReactiveFormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
-//import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-//import { InMemoryDataService } from './in-memory-data.service';
-import { NgtCursorModule} from '@angular-three/core';
-import { NgtMeshModule} from '@angular-three/core/meshes';
-import { NgtMeshBasicMaterialModule} from '@angular-three/core/materials';
-import { NgtBufferGeometryModule} from '@angular-three/core/geometries';
-
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { ArmazemCriarComponent } from './Componentes/Armazem/armazem-criar/armazem-criar.component';
-import { ArmazemDetalhosComponent } from './Componentes/Armazem/armazem-detalhos/armazem-detalhos.component';
-import { ArmazemProcuraComponent } from './Componentes/Armazem/armazem-procura/armazem-procura.component';
-import { ArmazemListarComponent } from './Componentes/Armazem/armazem-listar/armazem-listar.component';
+//import { ArmazemCriarComponent } from './Componentes/Armazem/armazem-criar/armazem-criar.component';
+import { ArmazemService} from './Servicos/Armazens/armazem.service'
+//import { ArmazemDetalhosComponent } from './Componentes/Armazem/armazem-detalhos/armazem-detalhos.component';
+//import { ArmazemProcuraComponent } from './Componentes/Armazem/armazem-procura/armazem-procura.component';
+//import { ArmazemListarComponent } from './Componentes/Armazem/armazem-listar/armazem-listar.component';
 import { EntregaCriarComponent } from './Componentes/Entrega/entrega-criar/entrega-criar.component';
 import { EntregaDetalhesComponent } from './Componentes/Entrega/entrega-detalhes/entrega-detalhes.component';
 import { EntregaListarComponent } from './Componentes/Entrega/entrega-listar/entrega-listar.component';
@@ -30,7 +24,8 @@ import { PercursoDetalhesComponent } from './Componentes/Percurso/percurso-detal
 import { PercursoCriarComponent } from './Componentes/Percurso/percurso-criar/percurso-criar.component';
 import { PercursoProcuraComponent } from './Componentes/Percurso/percurso-procura/percurso-procura.component';
 import { PercursoListarComponent } from './Componentes/Percurso/percurso-listar/percurso-listar.component';
-//import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.component';
+//import { RedeComponent } from './Componentes/Rede-viaria/rede/rede.component';
+import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.component';
 //import { ArcoComponent } from './Componentes/Rede-viaria/arco/arco.component';
 //import { ElementoLigacaoComponent } from './Componentes/Rede-viaria/elemento-ligacao/elemento-ligacao.component';
 
@@ -44,10 +39,6 @@ import { PercursoListarComponent } from './Componentes/Percurso/percurso-listar/
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    NgtCursorModule,
-    NgtMeshModule,
-    NgtMeshBasicMaterialModule,
-    NgtBufferGeometryModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
@@ -55,12 +46,15 @@ import { PercursoListarComponent } from './Componentes/Percurso/percurso-listar/
       InMemoryDataService, { dataEncapsulation: false }
     ) */
   ],
+  providers: [
+    ArmazemService,
+  ],
   declarations: [
     AppComponent,
-    ArmazemCriarComponent,
-    ArmazemDetalhosComponent,
-    ArmazemProcuraComponent,
-    ArmazemListarComponent,
+   // ArmazemCriarComponent,
+  //  ArmazemDetalhosComponent,
+ //   ArmazemProcuraComponent,
+ //   ArmazemListarComponent,
     EntregaCriarComponent,
     EntregaDetalhesComponent,
     EntregaListarComponent,
@@ -73,7 +67,7 @@ import { PercursoListarComponent } from './Componentes/Percurso/percurso-listar/
     PercursoCriarComponent,
     PercursoProcuraComponent,
     PercursoListarComponent,
-//    RedeViariaComponent,
+    RedeViariaComponent,
 //    ArcoComponent,
 //    ElementoLigacaoComponent,
   ],
