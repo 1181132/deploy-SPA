@@ -514,24 +514,23 @@ tempoRetirarEntrega(ListDelivery,UnloadingTime),
 tempoDeViagem(TruckName,InicialEnergy,AllList,ListFinalWeights,UnloadingTime,Time).
 
 
-% calcula tempos de viagens permutando lista de entregas
-seq_min(ListDelivery,Time):-
-(run(ListDelivery);true),
-tempo_min(ListDelivery,Time).
-
-run(ListDelivery):-
+% calcula o menor tempo de viagens permutando lista de entregas
+calcularMenorTempoTodasViagens(ListDelivery,Time):-get_time(ITI),
 retractall(tempo_min(_,_)),
 assertz(tempo_min(_,100000)),
-permutation(ListDelivery,LAPermutados),
-calcularTempoDeViagem(LAPermutados,Time),
-atualiza(LAPermutados,Time),
-fail.
+findall(PermListStopsID, permutation(ListDelivery, PermListStopsID), AllPermStopsID),
+leitorHead(AllPermStopsID),
+get_time(ITF),
+    write(' solucoes encontradas em '),
+    IT is ITF-ITI,
+    write(IT).
+
 
 atualiza(LAPermutados,Time):-
 tempo_min(_,TempoMin),
 ((Time<TempoMin,!,retract(tempo_min(_,_)),
 assertz(tempo_min(LAPermutados,Time)),
-write('Tempo='),write(Time), write('Entregas ='),write(LAPermutados),nl)
+write('Tempo='),write(Time), write(' Entregas ='),write(LAPermutados),nl)
 ;true).
 
 
@@ -546,5 +545,6 @@ leitorHead([]).
 
 leitorHead([X|Xs]):- 
 calcularTempoDeViagem(X,T),
-write('Tempo='),write(T), write(' Entregas ='),write(X),nl,
+armazemVisitar(X,Warehouses),
+atualiza(Warehouses,T),
 leitorHead(Xs). %start
