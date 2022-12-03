@@ -6,24 +6,36 @@
 # To run your pipeline on a Windows machine, create a self-hosted Windows runner.
 # For instructions on setting up a Windows runner, see https://support.atlassian.com/bitbucket-cloud/docs/set-up-runners-for-windows/
 
+image: node:19.2
+
+
 pipelines:
   branches:
     master:
+      - step:
+          name: 'Build app'
+          caches:
+            - node
+          script:
+            - npm install --quiet
+            - npm run build --progress=false
+          artifacts:
+            - dist/**
+      - step:
+          name: 'Create zip'
+          script:
+            - tar czfv application.tgz dist -C angular.io-example .
+          artifacts:
+            - application.tgz
       -step:
-        name: Deploy to production
-        image: node:19.2
-        deployment: production
-        caches:
-          - node
-        script:
-          - cd SPA
-          - npm install
-          - npm install -g @angular/cli
-          - ng build --configuration production
+          name: 'Deploy to Heroku in production'
+          deployment: production
+          script:
           - pipe: atlassian/heroku-deploy:1.2.1
             variables:
               HEROKU_API_KEY: $HEROKU_API_KEY
               HEROKU_APP_NAME: $HEROKU_APP_NAME
+              ZIP_FILE: "application.tgz"
       # - step:
       #     name: Build and Test
       #     image: mcr.microsoft.com/dotnet/sdk:6.0
