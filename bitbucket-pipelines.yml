@@ -8,12 +8,11 @@
 
 image: node:19.2
 
-
 pipelines:
   branches:
     master:
       - step:
-          name: 'Build app'
+          name: "Build app"
           caches:
             - node
           script:
@@ -22,20 +21,20 @@ pipelines:
           artifacts:
             - dist/**
       - step:
-          name: 'Create zip'
+          name: "Create zip"
           script:
             - tar czfv application.tgz dist -C angular.io-example .
           artifacts:
             - application.tgz
-      -step:
-          name: 'Deploy to Heroku in production'
+      - step:
+          name: "Deploy to Heroku in production"
           deployment: production
           script:
-          - pipe: atlassian/heroku-deploy:1.2.1
-            variables:
-              HEROKU_API_KEY: $HEROKU_API_KEY
-              HEROKU_APP_NAME: $HEROKU_APP_NAME
-              ZIP_FILE: "application.tgz"
+            - pipe: atlassian/heroku-deploy:1.2.1
+              variables:
+                HEROKU_API_KEY: $HEROKU_API_KEY
+                HEROKU_APP_NAME: $HEROKU_APP_NAME
+                ZIP_FILE: "application.tgz"
       # - step:
       #     name: Build and Test
       #     image: mcr.microsoft.com/dotnet/sdk:6.0
