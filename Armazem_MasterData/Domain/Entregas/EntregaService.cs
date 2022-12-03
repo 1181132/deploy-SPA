@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using DDDSample1.Domain.Shared;
 using DDDSample1.Domain.Armazens;
+using System;
 
 namespace DDDSample1.Domain.Entregas
 {
@@ -24,7 +25,7 @@ namespace DDDSample1.Domain.Entregas
             
             List<EntregaDto> listDto = list.ConvertAll<EntregaDto>(entrega => new EntregaDto{Id = entrega.Id.AsString(), Data = entrega.Data.Data,
             Massa = entrega.Massa.Massa,
-            ArmazemId = entrega.ArmazemId,
+            ArmazemId = entrega.ArmazemId.AsString(),
             TempoColocarEntrega = entrega.TempoColocarEntrega.TempoColocarEntrega,
             TempoRetirarEntrega = entrega.TempoRetirarEntrega.TempoRetirarEntrega});
 
@@ -41,7 +42,7 @@ namespace DDDSample1.Domain.Entregas
             return new EntregaDto{Id = entrega.Id.AsString(),
             Data = entrega.Data.Data,
             Massa = entrega.Massa.Massa,
-            ArmazemId = entrega.ArmazemId,
+            ArmazemId = entrega.ArmazemId.AsString(),
             TempoColocarEntrega = entrega.TempoColocarEntrega.TempoColocarEntrega,
             TempoRetirarEntrega = entrega.TempoRetirarEntrega.TempoRetirarEntrega};
         }
@@ -49,8 +50,8 @@ namespace DDDSample1.Domain.Entregas
         public async Task<EntregaDto> AddAsync(CreatingEntregaDto dto)
         {
             //alterar para os outros, ver com o da stora o que ha de diferenças
-            await checkArmazemIdAsync(dto.ArmazemId);
-            var entrega = new Entrega(dto.Id, dto.Data, dto.Massa, dto.ArmazemId, dto.TempoColocarEntrega, dto.TempoRetirarEntrega);
+            await checkArmazemIdAsync(dto.ArmazemId.AsString());
+            var entrega = new Entrega(dto.Id, dto.Data, dto.Massa, dto.ArmazemId.AsString(), dto.TempoColocarEntrega, dto.TempoRetirarEntrega);
 
             await this._repo.AddAsync(entrega);
 
@@ -59,7 +60,7 @@ namespace DDDSample1.Domain.Entregas
             return new EntregaDto { Id = entrega.Id.AsString(), 
             Data = entrega.Data.Data,
             Massa = entrega.Massa.Massa,
-            ArmazemId = entrega.ArmazemId,
+            ArmazemId = entrega.ArmazemId.AsString(),
             TempoColocarEntrega = entrega.TempoColocarEntrega.TempoColocarEntrega,
             TempoRetirarEntrega = entrega.TempoRetirarEntrega.TempoRetirarEntrega };
         }
@@ -75,18 +76,18 @@ namespace DDDSample1.Domain.Entregas
 
             // change all field
             //entrega.ChangeDataEntrega(dto.Description); nao sei se se poe um a um, ou um para todos como embaixo
-            entrega.ChangeDataEntrega(new EntregaData(dto.Data));
-            entrega.ChangeMassaEntrega(new EntregaMassa(dto.Massa));
+            entrega.ChangeDataEntrega(dto.Data);
+            entrega.ChangeMassaEntrega(dto.Massa);
             entrega.ChangeArmazemEntrega(dto.ArmazemId);
-            entrega.ChangeTempoColocarEntrega(new EntregaTempoColocar(dto.TempoColocarEntrega));
-            entrega.ChangeTempoRetirarEntrega(new EntregaTempoRetirar(dto.TempoRetirarEntrega));
+            entrega.ChangeTempoColocarEntrega(dto.TempoColocarEntrega);
+            entrega.ChangeTempoRetirarEntrega(dto.TempoRetirarEntrega);
             
             await this._unitOfWork.CommitAsync();
 
             return new EntregaDto { Id = entrega.Id.AsString(),
             Data = entrega.Data.Data,
             Massa = entrega.Massa.Massa,
-            ArmazemId = entrega.ArmazemId,
+            ArmazemId = entrega.ArmazemId.AsString(),
             TempoColocarEntrega = entrega.TempoColocarEntrega.TempoColocarEntrega,
             TempoRetirarEntrega = entrega.TempoRetirarEntrega.TempoRetirarEntrega };
         }
@@ -106,7 +107,7 @@ namespace DDDSample1.Domain.Entregas
             return new EntregaDto { Id = entrega.Id.AsString(),
             Data = entrega.Data.Data,
             Massa = entrega.Massa.Massa,
-            ArmazemId = entrega.ArmazemId,
+            ArmazemId = entrega.ArmazemId.AsString(),
             TempoColocarEntrega = entrega.TempoColocarEntrega.TempoColocarEntrega,
             TempoRetirarEntrega = entrega.TempoRetirarEntrega.TempoRetirarEntrega};
         }
@@ -127,14 +128,14 @@ namespace DDDSample1.Domain.Entregas
             return new EntregaDto { Id = entrega.Id.AsString(),
             Data = entrega.Data.Data,
             Massa = entrega.Massa.Massa,
-            ArmazemId = entrega.ArmazemId,
+            ArmazemId = entrega.ArmazemId.AsString(),
             TempoColocarEntrega = entrega.TempoColocarEntrega.TempoColocarEntrega,
             TempoRetirarEntrega = entrega.TempoRetirarEntrega.TempoRetirarEntrega};
         }
 
-         private async Task checkArmazemIdAsync(ArmazemId armazemId)
+         private async Task checkArmazemIdAsync(String armazemId)
          {
-             var armazem = await _repoArm.GetByIdAsync(armazemId);
+             var armazem = await _repoArm.GetByIdAsync(new ArmazemId(armazemId));
              if (armazem == null)
              {
                  throw new BusinessRuleValidationException("Armazem Id inválido");

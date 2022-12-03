@@ -33,7 +33,8 @@ public class ArmazensControllerTeste
                 Cidade = "Braga",
                 Pais = "Portugal",
                 CoordenadaLon = 20,
-                CoordenadaLat = 14
+                CoordenadaLat = 14,
+                Altura = 100
             });
 
             testList.Add(new ArmazemDto(){
@@ -45,7 +46,8 @@ public class ArmazensControllerTeste
                 Cidade = "Porto",
                 Pais = "Portugal",
                 CoordenadaLon = 30,
-                CoordenadaLat = -12
+                CoordenadaLat = -12,
+                Altura = 200
             });
 
             testList.Add(new ArmazemDto(){
@@ -57,7 +59,8 @@ public class ArmazensControllerTeste
                 Cidade = "Lisboa",
                 Pais = "Portugal",
                 CoordenadaLon = -30,
-                CoordenadaLat = -42
+                CoordenadaLat = -42,
+                Altura = 300
             });
 
             var armazemAtualizado= new ArmazemDto(){
@@ -69,7 +72,8 @@ public class ArmazensControllerTeste
                 Cidade= "Madrid",
                 Pais= "Espanha",
                 CoordenadaLon = -45,
-                CoordenadaLat = 50
+                CoordenadaLat = 50,
+                Altura = 400
             };
             
             var novoArmazem = new ArmazemDto(){
@@ -81,7 +85,8 @@ public class ArmazensControllerTeste
                 Cidade = "teste cidade",
                 Pais = "teste pais",
                 CoordenadaLon = 10,
-                CoordenadaLat = -10
+                CoordenadaLat = -10,
+                Altura = 500
             };
 
             var srv = new Mock<IArmazemService>();
@@ -171,7 +176,8 @@ public class ArmazensControllerTeste
                 Cidade = "Braga",
                 Pais = "Portugal",
                 CoordenadaLon = 20,
-                CoordenadaLat = 14
+                CoordenadaLat = 14,
+                Altura = 600
             };
 
             // Act
@@ -281,7 +287,7 @@ public class ArmazensControllerTeste
 
             var armazemComDesignacaoInvalida = new CreatingArmazemDto("as5",
                 "DESIGNACAOINVALIDA" ,
-                "rua do quadrado", 1234,"1224-321","Porto","Portugal",50,44
+                "rua do quadrado", 1234,"1224-321","Porto","Portugal",50,44,250
             );
             
             // Act
@@ -297,7 +303,7 @@ public class ArmazensControllerTeste
             // Arrange     
             var theController = new ArmazensController(theMockedService);
             var novoArmazem = new CreatingArmazemDto("as5","Armazem5" ,
-                "rua do piramide", 1334,"1234-321","Braga","Portugal",20,14
+                "rua do piramide", 1334,"1234-321","Braga","Portugal",20,14,250
             );
  
             // Act

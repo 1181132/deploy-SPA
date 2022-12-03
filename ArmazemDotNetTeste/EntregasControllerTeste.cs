@@ -29,19 +29,21 @@ public class EntregasControllerTeste
             var d1 = new ArmazemDesignacao("Armazem1");
             var e1 = new ArmazemEndereco("rua do quadrado",1234,"1224-321","Porto","Portugal");
             var c1 = new ArmazemCoordenadas(50,44);
-            var a1 = new Armazem(i1,d1,e1,c1);
+            var al1 = new ArmazemAltura(200);
+            var a1 = new Armazem(i1,d1,e1,c1,al1);
             
             var i2 = new ArmazemId("as2");
             var d2 = new ArmazemDesignacao("Armazem1");
             var e2 = new ArmazemEndereco("rua do quadrado",1234,"1224-321","Porto","Portugal");
             var c2 = new ArmazemCoordenadas(50,44);
-            var a2 = new Armazem(i2,d2,e2,c2);
+            var al2 = new ArmazemAltura(300);
+            var a2 = new Armazem(i2,d2,e2,c2,al2);
 
             testList.Add(new EntregaDto(){
                 Id = "1",
                 Data = "20-10-2022",
                 Massa = 10,
-                ArmazemId = a1.Id,
+                ArmazemId = a1.Id.AsString(),
                 TempoColocarEntrega = 10,
                 TempoRetirarEntrega = 15
             });
@@ -50,7 +52,7 @@ public class EntregasControllerTeste
                 Id = "2",
                 Data = "20-10-2022",
                 Massa = 20,
-                ArmazemId = a1.Id,
+                ArmazemId = a1.Id.AsString(),
                 TempoColocarEntrega = 20,
                 TempoRetirarEntrega = 25
             });
@@ -59,7 +61,7 @@ public class EntregasControllerTeste
                 Id = "3",
                 Data = "20-10-2022",
                 Massa = 30,
-                ArmazemId = a1.Id,
+                ArmazemId = a1.Id.AsString(),
                 TempoColocarEntrega = 30,
                 TempoRetirarEntrega = 35
             });
@@ -68,7 +70,7 @@ public class EntregasControllerTeste
                 Id=testList[0].Id,
                 Data = testList[0].Data,
                 Massa= testList[0].Massa, 
-                ArmazemId = a1.Id,
+                ArmazemId = a1.Id.AsString(),
                 TempoColocarEntrega = 20,
                 TempoRetirarEntrega = 30
             };
@@ -77,7 +79,7 @@ public class EntregasControllerTeste
                 Id="6" ,
                 Data = "20-11-2000" ,
                 Massa = 55 ,
-                ArmazemId = a2.Id ,
+                ArmazemId = a2.Id.AsString() ,
                 TempoColocarEntrega = 10 ,
                 TempoRetirarEntrega = 40
             };
@@ -163,13 +165,14 @@ public class EntregasControllerTeste
             var d1 = new ArmazemDesignacao("Armazem1");
             var e1 = new ArmazemEndereco("rua do quadrado",1234,"1224-321","Porto","Portugal");
             var c1 = new ArmazemCoordenadas(50,44);
-            var a1 = new Armazem(i1,d1,e1,c1);
+            var al1 = new ArmazemAltura(200);
+            var a1 = new Armazem(i1,d1,e1,c1,al1);
 
             var novaInfo = new EntregaDto()
             {
                 Id=testEntregaNaoExistenteId,
                 Massa = 10,
-                ArmazemId = a1.Id,
+                ArmazemId = a1.Id.AsString(),
                 Data = "20-10-2020",
                 TempoColocarEntrega = 10,
                 TempoRetirarEntrega = 10
@@ -221,14 +224,15 @@ public class EntregasControllerTeste
             var d1 = new ArmazemDesignacao("Armazem1");
             var e1 = new ArmazemEndereco("rua do quadrado",1234,"1224-321","Porto","Portugal");
             var c1 = new ArmazemCoordenadas(50,44);
-            var a1 = new Armazem(i1,d1,e1,c1);
+            var al1 = new ArmazemAltura(200);
+            var a1 = new Armazem(i1,d1,e1,c1,al1);
 
             var novaInfo = new EntregaDto()
             {
                 Id=testEntregaExistenteId,
                 Data = "20-10-2020",
                 Massa = 10,
-                ArmazemId = a1.Id,
+                ArmazemId = a1.Id.AsString(),
                 TempoColocarEntrega = 10,
                 TempoRetirarEntrega = 10
             };
@@ -252,14 +256,15 @@ public class EntregasControllerTeste
             var d1 = new ArmazemDesignacao("Armazem1");
             var e1 = new ArmazemEndereco("rua do quadrado",1234,"1224-321","Porto","Portugal");
             var c1 = new ArmazemCoordenadas(50,44);
-            var a1 = new Armazem(i1,d1,e1,c1);
+            var al1 = new ArmazemAltura(200);
+            var a1 = new Armazem(i1,d1,e1,c1,al1);
 
             var novaInfo = new EntregaDto()
             {
                 Id=testEntregaExistenteId,
                 Data = "20-10-2022",
                 Massa = 10,
-                ArmazemId = a1.Id,
+                ArmazemId = a1.Id.AsString(),
                 TempoColocarEntrega = 20,
                 TempoRetirarEntrega = 30
             };
@@ -329,9 +334,10 @@ public class EntregasControllerTeste
             var d1 = new ArmazemDesignacao("Armazem1");
             var e1 = new ArmazemEndereco("rua do quadrado",1234,"1224-321","Porto","Portugal");
             var c1 = new ArmazemCoordenadas(50,44);
-            var a1 = new Armazem(i1,d1,e1,c1);
+            var al1 = new ArmazemAltura(200);
+            var a1 = new Armazem(i1,d1,e1,c1,al1);
 
-            var novaEntrega = new CreatingEntregaDto("77","30-06-2023",10,a1.Id,15,20);
+            var novaEntrega = new CreatingEntregaDto("77","30-06-2023",10,a1.Id.AsString(),15,20);
  
             // Act
             var response = await theController.Create(novaEntrega);

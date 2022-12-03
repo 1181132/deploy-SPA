@@ -5,7 +5,7 @@ namespace DDDSample1.Domain.Entregas
 {
     public class EntregaId : EntityId
     {
-        public string Id { get; private set; }
+        public String Id { get; private set; }
 
         public EntregaId(String value):base(value)
         {

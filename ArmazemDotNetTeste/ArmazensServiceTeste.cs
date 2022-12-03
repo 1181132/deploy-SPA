@@ -24,28 +24,32 @@ namespace dotNetUnitTestes.Armazens
             var d1 = new ArmazemDesignacao("Armazem1");
             var e1 = new ArmazemEndereco("rua do quadrado",1234,"1224-321","Porto","Portugal");
             var c1 = new ArmazemCoordenadas(50,44);
-            var a1 = new Armazem(i1,d1,e1,c1);
+            var al1 = new ArmazemAltura(200);
+            var a1 = new Armazem(i1,d1,e1,c1,al1);
             testList.Add(a1);   
 
             var i2 = new ArmazemId("as2");
             var d2 = new ArmazemDesignacao("Armazem1");
             var e2 = new ArmazemEndereco("rua do triangulo",1235,"1224-322","Coimbra","Portugal");
             var c2 = new ArmazemCoordenadas(-30,60);
-            var a2 = new Armazem(i2,d2,e2,c2);
+            var al2 = new ArmazemAltura(300);
+            var a2 = new Armazem(i2,d2,e2,c2,al2);
             testList.Add(a2); 
 
             var i3 = new ArmazemId("as3");
             var d3 = new ArmazemDesignacao("Armazem3");
             var e3 = new ArmazemEndereco("rua do circulo",1236,"1224-323","Madrid","Espanha");
             var c3 = new ArmazemCoordenadas(22,-14);
-            var a3 = new Armazem(i3,d3,e3,c3);
+            var al3 = new ArmazemAltura(400);
+            var a3 = new Armazem(i3,d3,e3,c3,al3);
             testList.Add(a3); 
             
             var i4 = new ArmazemId("as4");
             var d4 = new ArmazemDesignacao("ArmazemTeste");
             var e4 = new ArmazemEndereco("rua do teste",1237,"1224-324","Paris","Franca");
             var c4 = new ArmazemCoordenadas(22,-14);
-            var novoArmazem = new Armazem(i4,d4,e4,c4);
+            var al4 = new ArmazemAltura(500);
+            var novoArmazem = new Armazem(i4,d4,e4,c4,al4);
             var srv = new Mock<IArmazemRepository>();
             
             srv.Setup(x => x.GetAllAsync()).Returns(Task.FromResult(testList));
@@ -165,7 +169,8 @@ namespace dotNetUnitTestes.Armazens
                 Cidade = "Braga",
                 Pais = "Portugal",
                 CoordenadaLon = 20,
-                CoordenadaLat = 14
+                CoordenadaLat = 14,
+                Altura = 500
             };
 
             // Act
@@ -192,7 +197,8 @@ namespace dotNetUnitTestes.Armazens
                 Cidade = "Braga",
                 Pais = "Portugal",
                 CoordenadaLon = 20,
-                CoordenadaLat = 14
+                CoordenadaLat = 14,
+                Altura = 500
             };
 
             // Act
@@ -233,7 +239,7 @@ namespace dotNetUnitTestes.Armazens
             // Arrange     
             var theService = new ArmazemService(theMockedUW, theMockedRepo);
             var novoArmazem = new CreatingArmazemDto("gfd","Armazem5" ,
-                "rua do piramide", 1334,"1234-321","Braga","Portugal",20,14);
+                "rua do piramide", 1334,"1234-321","Braga","Portugal",20,14,500);
  
             // Act
             var response = await theService.AddAsync(novoArmazem);
