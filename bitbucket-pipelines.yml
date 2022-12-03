@@ -16,10 +16,10 @@ pipelines:
               - dotnetcore
             script:
              - cd Armazem_MasterData
-             - dotnet restore 'DDDNetCore.csproj' 
+           #  - dotnet restore 'DDDNetCore.csproj' 
              - dotnet build --no-restore --configuration Release 'Armazem_MasterData/DDDNetCore.csproj'
              - cd ..
              - cd ArmazemDotNetTeste
-             - dotnet restore ArmazemDotNetTeste.csproj'
+         #    - dotnet restore ArmazemDotNetTeste.csproj'
              - dotnet build --no-restore --configuration Release 'ArmazemDotNetTeste.csproj'
              - dotnet test --no-build --configuration Release 'ArmazemDotNetTeste.csproj'
