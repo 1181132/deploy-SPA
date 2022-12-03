@@ -22,11 +22,11 @@ pipelines:
              - dotnet restore 
              - dotnet build
              - dotnet test
-            - cd ..
-            - cd ArmazemDotNetTeste
-            - dotnet restore 
-            - dotnet build
-            - dotnet test
+             - cd ..
+             - cd ArmazemDotNetTeste
+             - dotnet restore 
+             - dotnet build
+             - dotnet test
 
 
       # - step:
