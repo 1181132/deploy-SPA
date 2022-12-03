@@ -39,26 +39,26 @@ pipelines:
                 - npm run
                 # - npm test
 
-          - step:
-              name: Installation & Build & Deploy SPA
-              image: node:19.2
-              caches:
-                - node
-              script:
-                - cd SPA
-                - npm install
-                - npm install -g @angular/cli@
-                - ng build --configuration production
-                - ng serve --open
+          # - step:
+          #     name: Installation & Build & Deploy SPA
+          #     image: node:19.2
+          #     caches:
+          #       - node
+          #     script:
+          #       - cd SPA
+          #       - npm install
+          #       - npm install -g @angular/cli@
+          #       - ng build --configuration production
+          #       - ng serve --open
 
-          - step:
-              name: Deploy to Heroku in production
-              deployment: production
-              script:
-                - pipe: atlassian/heroku-deploy:1.2.1
-                  variables:
-                    HEROKU_API_KEY: $HEROKU_API_KEY
-                    HEROKU_APP_NAME: $HEROKU_APP_NAME
+          # - step:
+          #     name: Deploy to Heroku in production
+          #     deployment: production
+          #     script:
+          #       - pipe: atlassian/heroku-deploy:1.2.1
+          #         variables:
+          #           HEROKU_API_KEY: $HEROKU_API_KEY
+          #           HEROKU_APP_NAME: $HEROKU_APP_NAME
 
         # - step:
         #     name: Installation & Build & Deploy
