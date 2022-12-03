@@ -9,18 +9,18 @@ namespace DDDSample1.Domain.Entregas
     [Owned]
     public class EntregaData : IValueObject{
         
-        public string Data { get; private set;}
+        public String Data { get; private set;}
 
-        public EntregaData(string data){
-            if(!validaData(data)){
+        public EntregaData(String data){
+           /* if(!validaData(data)){
                 throw new BusinessRuleValidationException("A data não se encontra dentro dos parametros dia,mes,ano (ex: dd-mm-aaaa, dd/mm/aaaa, dd.mm.aaaa)");
                 
-            } 
+            } */
             this.Data=data;
     }
 
-        private static bool validaData(string data){
+        /*private static bool validaData(String data){
             return Validacoes.ValidaExpressao(data,Constantes.PADRAO_DATA);
-        } 
+        } */
     }
 }

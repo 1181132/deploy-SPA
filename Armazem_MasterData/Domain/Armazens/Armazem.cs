@@ -3,6 +3,8 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 using DDDSample1.Domain.Shared;
+using DDDSample1.Domain.Entregas;
+using System.Collections.Generic;
 
 namespace DDDSample1.Domain.Armazens
 {
@@ -16,6 +18,8 @@ namespace DDDSample1.Domain.Armazens
         public ArmazemCoordenadas Coordenadas { get; private set; }
 
         public ArmazemAltura Altura { get; private set; }
+
+        public ICollection<Entrega> entregas { get; private set; }
 
         public bool Active { get; private set; }
 
