@@ -6,17 +6,15 @@
 # To run your pipeline on a Windows machine, create a self-hosted Windows runner.
 # For instructions on setting up a Windows runner, see https://support.atlassian.com/bitbucket-cloud/docs/set-up-runners-for-windows/
 
-
-
 pipelines:
   branches:
     master:
-    - parallel:
-        -step:
+      - parallel:
+          -step:
             name: Deploy to production
             image: node:19.2
             deployment: production
-            caches: 
+            caches:
               - node
             script:
               - cd SPA
@@ -27,35 +25,34 @@ pipelines:
                 variables:
                   HEROKU_API_KEY: $HEROKU_API_KEY
                   HEROKU_APP_NAME: $HEROKU_APP_NAME
-        - step:
-            name: Build and Test
-            image: mcr.microsoft.com/dotnet/sdk:6.0
-            caches:
-              - dotnetcore
-            script:
-             - cd Armazem_MasterData
-             - dotnet restore 
-             - dotnet build
-             - dotnet test
-             - cd ..
-             - cd ArmazemDotNetTeste
-             - dotnet restore 
-             - dotnet build
-             - dotnet test
+          # - step:
+          #     name: Build and Test
+          #     image: mcr.microsoft.com/dotnet/sdk:6.0
+          #     caches:
+          #       - dotnetcore
+          #     script:
+          #      - cd Armazem_MasterData
+          #      - dotnet restore
+          #      - dotnet build
+          #      - dotnet test
+          #      - cd ..
+          #      - cd ArmazemDotNetTeste
+          #      - dotnet restore
+          #      - dotnet build
+          #      - dotnet test
 
-
-      # - step:
-      #     name: Installation & Build & Deploy
-      #     image: node:18.12
-      #     caches:
-      #       - node
-      #     script:
-      #       - cd SPA
-      #       - npm install
-      #       - npm install -g @angular/cli@14.2.0
-      #       - ng build --configuration production
-      #       - echo "$(ls -la)"
-      #       - echo "$(ls -la dist)"
-      #       - apt-get update
-      #       - apt-get install sshpass -y
-      #       - time sshpass -p $Password scp -o StrictHostKeyChecking=no -o LogLevel=DEBUG -P 10682 -r dist/ root@vsgate-ssh.dei.isep.ipp.pt:/root/lei_2223_sem5_pi/Angular
+        # - step:
+        #     name: Installation & Build & Deploy
+        #     image: node:18.12
+        #     caches:
+        #       - node
+        #     script:
+        #       - cd SPA
+        #       - npm install
+        #       - npm install -g @angular/cli@14.2.0
+        #       - ng build --configuration production
+        #       - echo "$(ls -la)"
+        #       - echo "$(ls -la dist)"
+        #       - apt-get update
+        #       - apt-get install sshpass -y
+        #       - time sshpass -p $Password scp -o StrictHostKeyChecking=no -o LogLevel=DEBUG -P 10682 -r dist/ root@vsgate-ssh.dei.isep.ipp.pt:/root/lei_2223_sem5_pi/Angular
