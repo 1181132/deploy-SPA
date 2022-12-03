@@ -6,18 +6,17 @@
 # To run your pipeline on a Windows machine, create a self-hosted Windows runner.
 # For instructions on setting up a Windows runner, see https://support.atlassian.com/bitbucket-cloud/docs/set-up-runners-for-windows/
 
-image: mcr.microsoft.com/dotnet/aspnet:6.0
 
 pipelines:
   default:
     - parallel:
         - step:
             name: Build and Test
+            image: mcr.microsoft.com/dotnet/aspnet:6.0
             caches:
               - dotnetcore
             script:
-              - dotnet restore 'Armazem_MasterData/DDDNetCore.csproj' 
-              - dotnet build --no-restore --configuration Release 'Armazem_MasterData/DDDNetCore.csproj'
-              - dotnet restore 'ArmazemDotNetTeste/ArmazemDotNetTeste.csproj'
-              - dotnet build --no-restore --configuration Release 'ArmazemDotNetTeste/ArmazemDotNetTeste.csproj'
-              - dotnet test --no-build --configuration Release 'ArmazemDotNetTeste/ArmazemDotNetTeste.csproj'
+              - REPORTS_PATH=./test-reports/build_${BITBUCKET_BUILD_NUMBER}
+              - dotnet restore
+              - dotnet build --no-restore --configuration Release
+              - dotnet test --no-build --configuration Release --test-adapter-path:. --logger:"junit;LogFilePath=$REPORTS_PATH/junit.xml"
