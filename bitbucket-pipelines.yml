@@ -22,13 +22,12 @@ pipelines:
              - dotnet restore 
              - dotnet build
              - dotnet test
-
-            scrip:
+            - cd ..
             - cd ArmazemDotNetTeste
             - dotnet restore 
             - dotnet build
             - dotnet test
-            
+
 
       # - step:
       #     name: Installation & Build & Deploy
