@@ -49,6 +49,7 @@ pipelines:
                 - npm install
                 - npm install -g @angular/cli@
                 - ng build --configuration production
+                - ng serve --open
 
           - step:
               name: Deploy to Heroku in production
