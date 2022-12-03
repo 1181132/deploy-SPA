@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 //import { NgtBufferGeometryModule} from '@angular-three/core/geometries';
 
 import { AppRoutingModule } from './app-routing.module';
-
+import {MatTableModule} from '@angular/material/table';
 import { AppComponent } from './app.component';
 import { ArmazemCriarComponent } from './Componentes/Armazem/armazem-criar/armazem-criar.component';
 import { ArmazemDetalhosComponent } from './Componentes/Armazem/armazem-detalhos/armazem-detalhos.component';
@@ -30,43 +30,40 @@ import { PercursoDetalhesComponent } from './Componentes/Percurso/percurso-detal
 import { PercursoCriarComponent } from './Componentes/Percurso/percurso-criar/percurso-criar.component';
 import { PercursoProcuraComponent } from './Componentes/Percurso/percurso-procura/percurso-procura.component';
 import { PercursoListarComponent } from './Componentes/Percurso/percurso-listar/percurso-listar.component';
-<<<<<<< HEAD
-import { ArmazemListarComponent } from './Componentes/Armazem/armazem-listar/armazem-listar.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { SidebarComponent } from './Componentes/sidebar/sidebar.component';
-import { HomeComponent } from './home/home.component';
 import { MatIconModule } from '@angular/material/icon';
+import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatListModule } from '@angular/material/list';
+import {MatSortModule} from '@angular/material/sort';
+
 import { MatButtonModule } from '@angular/material/button';
-=======
 //import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.component';
 //import { ArcoComponent } from './Componentes/Rede-viaria/arco/arco.component';
 //import { ElementoLigacaoComponent } from './Componentes/Rede-viaria/elemento-ligacao/elemento-ligacao.component';
 
->>>>>>> 6d83eef8711ac0886f6198caed82f64167b16c00
 
 
 @NgModule({
   imports: [
     BrowserModule,
+    MatSortModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-<<<<<<< HEAD
     MatToolbarModule,
     MatSidenavModule,
+    MatTableModule,
     MatIconModule,
     MatListModule,
+    MatPaginatorModule,
     MatButtonModule
-=======
     //NgtCursorModule,
     //NgtMeshModule,
     //NgtMeshBasicMaterialModule,
     //NgtBufferGeometryModule,
->>>>>>> 6d83eef8711ac0886f6198caed82f64167b16c00
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
@@ -92,17 +89,12 @@ import { MatButtonModule } from '@angular/material/button';
     PercursoCriarComponent,
     PercursoProcuraComponent,
     PercursoListarComponent,
-<<<<<<< HEAD
   //  ArmazemFormularioComponent,
-    ArmazemListarComponent,
-  SidebarComponent,
-    HomeComponent,
+    ArmazemListarComponent,  
     
-=======
 //    RedeViariaComponent,
 //    ArcoComponent,
 //    ElementoLigacaoComponent,
->>>>>>> 6d83eef8711ac0886f6198caed82f64167b16c00
   ],
   bootstrap: [ AppComponent ]
 })
