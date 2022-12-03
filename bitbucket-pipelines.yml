@@ -11,6 +11,7 @@
 pipelines:
   branches:
     master:
+    - parallel:
       - step:
           name: Build and Test .NET
           image: mcr.microsoft.com/dotnet/sdk:6.0
@@ -35,7 +36,7 @@ pipelines:
           script:
             - cd lapr5nodejs
             - npm install
-            - npm buld
+            - npm run
             - npm test
 
 
