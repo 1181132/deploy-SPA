@@ -12,6 +12,21 @@ pipelines:
   branches:
     master:
     - parallel:
+        -step:
+            name: Deploy to production
+            image: node:19.2
+            deployment: production
+            caches: 
+              - node
+            script:
+              - cd SPA
+              - npm install
+              - npm install -g @angular/cli
+              - ng build --configuration production
+              - pipe: atlassian/heroku-deploy:1.2.1
+                variables:
+                  HEROKU_API_KEY: $HEROKU_API_KEY
+                  HEROKU_APP_NAME: $HEROKU_APP_NAME
         - step:
             name: Build and Test
             image: mcr.microsoft.com/dotnet/sdk:6.0
