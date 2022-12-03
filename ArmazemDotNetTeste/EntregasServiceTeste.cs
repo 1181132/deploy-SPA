@@ -134,7 +134,7 @@ namespace dotNetUnitTestes.Entregas
         }
 
         
-        [Fact]
+    /*     [Fact]
         public async Task PutEntregaNaoExistenteInRepo_ShouldReturnNull()
         {
             // Arrange     
@@ -162,7 +162,7 @@ namespace dotNetUnitTestes.Entregas
             //Assert       
             Assert.Null(response);
         }
-
+ */
      /*           [Fact]
         public async Task PutEntregaEmArmazemNaoExistenteInRepo_ShouldReturnNull()
         {
@@ -212,7 +212,7 @@ namespace dotNetUnitTestes.Entregas
             await Assert.ThrowsAsync<BusinessRuleValidationException>(result);
         }*/
 
-        [Fact]
+       /*  [Fact]
         public async Task PostValidEntregaInRepoAsync_ShouldReturnEntregaDTO()
         {
             // Arrange     
@@ -231,6 +231,6 @@ namespace dotNetUnitTestes.Entregas
 
             // Assert
             Assert.IsType<EntregaDto>(response);
-        } 
+        }  */
     }
 }
