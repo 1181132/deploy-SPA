@@ -6,50 +6,64 @@
 # To run your pipeline on a Windows machine, create a self-hosted Windows runner.
 # For instructions on setting up a Windows runner, see https://support.atlassian.com/bitbucket-cloud/docs/set-up-runners-for-windows/
 
-image: node:19.2
+# image: node:19.2
 
 pipelines:
   branches:
     master:
       - step:
-          name: "Build app"
+          name: Build and Test .NET
+          image: mcr.microsoft.com/dotnet/sdk:6.0
+          caches:
+            - dotnetcore
+          script:
+           - cd Armazem_MasterData
+           - dotnet restore
+           - dotnet build
+           - dotnet test
+           - cd ..
+           - cd ArmazemDotNetTeste
+           - dotnet restore
+           - dotnet build
+           - dotnet test
+
+      - step:
+          name: Build and Test Node
+          image: node:19.2
           caches:
             - node
           script:
-            - npm install --quiet
-            - npm run build --progress=false
-          artifacts:
-            - dist/**
-      - step:
-          name: "Create zip"
-          script:
-            - tar czfv application.tgz dist -C angular.io-example .
-          artifacts:
-            - application.tgz
-      - step:
-          name: "Deploy to Heroku in production"
-          deployment: production
-          script:
-            - pipe: atlassian/heroku-deploy:1.2.1
-              variables:
-                HEROKU_API_KEY: $HEROKU_API_KEY
-                HEROKU_APP_NAME: $HEROKU_APP_NAME
-                ZIP_FILE: "application.tgz"
-      # - step:
-      #     name: Build and Test
-      #     image: mcr.microsoft.com/dotnet/sdk:6.0
-      #     caches:
-      #       - dotnetcore
-      #     script:
-      #      - cd Armazem_MasterData
-      #      - dotnet restore
-      #      - dotnet build
-      #      - dotnet test
-      #      - cd ..
-      #      - cd ArmazemDotNetTeste
-      #      - dotnet restore
-      #      - dotnet build
-      #      - dotnet test
+            - cd lapr5nodejs
+            - npm install
+            - npm buld
+            - npm test
+
+
+#       - step:
+#           name: "Build app"
+#           caches:
+#             - node
+#           script:
+#             - npm install --quiet
+#             - npm run build --progress=false
+#           artifacts:
+#             - dist/**
+#       - step:
+#           name: "Create zip"
+#           script:
+#             - tar czfv application.tgz dist -C angular.io-example .
+#           artifacts:
+#             - application.tgz
+#       - step:
+#           name: "Deploy to Heroku in production"
+#           deployment: production
+#           script:
+#             - pipe: atlassian/heroku-deploy:1.2.1
+#               variables:
+#                 HEROKU_API_KEY: $HEROKU_API_KEY
+#                 HEROKU_APP_NAME: $HEROKU_APP_NAME
+#                 ZIP_FILE: "application.tgz"
+
 
       # - step:
       #     name: Installation & Build & Deploy
