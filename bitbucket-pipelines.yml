@@ -9,23 +9,26 @@
 
 
 pipelines:
-  default:
+  branches:
+    master:
     - parallel:
         - step:
             name: Build and Test
-            image: mcr.microsoft.com/dotnet/aspnet:6.0
+            image: mcr.microsoft.com/dotnet/sdk:6.0
             caches:
               - dotnetcore
             script:
              - cd Armazem_MasterData
-             - dotnet restore DDDNetCore.csproj 
-             - dotnet build --no-restore --configuration Release DDDNetCore.csproj
-             - cd ..
-             - cd ArmazemDotNetTeste
-             - dotnet restore ArmazemDotNetTeste.csproj
-             - dotnet build --no-restore --configuration Release ArmazemDotNetTeste.csproj
-             - dotnet test --no-build --configuration Release ArmazemDotNetTeste.csproj
+             - dotnet restore 
+             - dotnet build
+             - dotnet test
 
+            scrip:
+            - cd ArmazemDotNetTeste
+            - dotnet restore 
+            - dotnet build
+            - dotnet test
+            
 
       # - step:
       #     name: Installation & Build & Deploy
