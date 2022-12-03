@@ -26,32 +26,36 @@ namespace dotNetUnitTestes.Entregas
             var d1 = new ArmazemDesignacao("Armazem1");
             var e1 = new ArmazemEndereco("rua do quadrado",1234,"1224-321","Porto","Portugal");
             var c1 = new ArmazemCoordenadas(50,44);
-            var a1 = new Armazem(i1,d1,e1,c1);
-            var ent1 = new Entrega(new EntregaId("1"), new EntregaData("20-10-2000"),new EntregaMassa(10),a1.Id,new EntregaTempoColocar(10), new EntregaTempoRetirar(15));
+            var al1 = new ArmazemAltura(200);
+            var a1 = new Armazem(i1,d1,e1,c1,al1);
+            var ent1 = new Entrega(new EntregaId("1"), new EntregaData("20-10-2000"),new EntregaMassa(10),a1.Id.AsString(),new EntregaTempoColocar(10), new EntregaTempoRetirar(15));
             testList.Add(ent1);   
 
             var i2 = new ArmazemId("as2");
             var d2 = new ArmazemDesignacao("Armazem1");
             var e2 = new ArmazemEndereco("rua do triangulo",1235,"1224-322","Coimbra","Portugal");
             var c2 = new ArmazemCoordenadas(-30,60);
-            var a2 = new Armazem(i2,d2,e2,c2);
-            var ent2 = new Entrega(new EntregaId("2"), new EntregaData("20-10-2000"),new EntregaMassa(15),a2.Id,new EntregaTempoColocar(15), new EntregaTempoRetirar(20));
+            var al2 = new ArmazemAltura(300);
+            var a2 = new Armazem(i2,d2,e2,c2,al2);
+            var ent2 = new Entrega(new EntregaId("2"), new EntregaData("20-10-2000"),new EntregaMassa(15),a2.Id.AsString(),new EntregaTempoColocar(15), new EntregaTempoRetirar(20));
             testList.Add(ent2); 
 
             var i3 = new ArmazemId("as3");
             var d3 = new ArmazemDesignacao("Armazem3");
             var e3 = new ArmazemEndereco("rua do circulo",1236,"1224-323","Madrid","Espanha");
             var c3 = new ArmazemCoordenadas(22,-14);
-            var a3 = new Armazem(i3,d3,e3,c3);
-            var ent3 = new Entrega(new EntregaId("3"), new EntregaData("20-10-2000"),new EntregaMassa(20),a3.Id,new EntregaTempoColocar(20), new EntregaTempoRetirar(25));
+            var al3 = new ArmazemAltura(400);
+            var a3 = new Armazem(i3,d3,e3,c3,al3);
+            var ent3 = new Entrega(new EntregaId("3"), new EntregaData("20-10-2000"),new EntregaMassa(20),a3.Id.AsString(),new EntregaTempoColocar(20), new EntregaTempoRetirar(25));
             testList.Add(ent3); 
             
             var i4 = new ArmazemId("as4");
             var d4 = new ArmazemDesignacao("ArmazemTeste");
             var e4 = new ArmazemEndereco("rua do teste",1237,"1224-324","Paris","Franca");
             var c4 = new ArmazemCoordenadas(22,-14);
-            var novoArmazem = new Armazem(i4,d4,e4,c4);
-            var novaEntrega = new Entrega(new EntregaId("4"), new EntregaData("20-10-2000"),new EntregaMassa(10),novoArmazem.Id,new EntregaTempoColocar(25), new EntregaTempoRetirar(30));
+            var al4 = new ArmazemAltura(500);
+            var novoArmazem = new Armazem(i4,d4,e4,c4,al4);
+            var novaEntrega = new Entrega(new EntregaId("4"), new EntregaData("20-10-2000"),new EntregaMassa(10),novoArmazem.Id.AsString(),new EntregaTempoColocar(25), new EntregaTempoRetirar(30));
 
             var srv = new Mock<IEntregaRepository>();
             
@@ -139,14 +143,15 @@ namespace dotNetUnitTestes.Entregas
             var d1 = new ArmazemDesignacao("Armazem1");
             var e1 = new ArmazemEndereco("rua do quadrado",1234,"1224-321","Porto","Portugal");
             var c1 = new ArmazemCoordenadas(50,44);
-            var a1 = new Armazem(i1,d1,e1,c1);
+            var al1 = new ArmazemAltura(200);
+            var a1 = new Armazem(i1,d1,e1,c1,al1);
 
             var novaInfo = new EntregaDto()
             {
                 Id="6",
                 Data = "20-10-2000",
                 Massa = 10,
-                ArmazemId = a1.Id,
+                ArmazemId = a1.Id.AsString(),
                 TempoColocarEntrega= 10,
                 TempoRetirarEntrega = 15
             };
@@ -216,9 +221,10 @@ namespace dotNetUnitTestes.Entregas
             var d1 = new ArmazemDesignacao("Armazem1");
             var e1 = new ArmazemEndereco("rua do quadrado",1234,"1224-321","Porto","Portugal");
             var c1 = new ArmazemCoordenadas(50,44);
-            var a1 = new Armazem(i1,d1,e1,c1);
+            var al1 = new ArmazemAltura(200);
+            var a1 = new Armazem(i1,d1,e1,c1,al1);
 
-            var novoEntrega = new CreatingEntregaDto("77","20-10-2022",10,a1.Id,20,25);
+            var novoEntrega = new CreatingEntregaDto("77","20-10-2022",10,a1.Id.AsString(),20,25);
  
             // Act
             var response = await theService.AddAsync(novoEntrega);
