@@ -1,19 +1,75 @@
-<h2>Todos os Percursos</h2>
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Embedded Style Sheet</title>
+<style>
+  h1  {
+    color: #009;
+    font-size: 3em;
+    margin-bottom: .3em;
+    text-align: center;
+    text-decoration:solid;
+  }
+  
+  table {
+    margin: .3em;
+    width: auto;
+    justify-content: center;
+  }
+  
+  th {
+    padding: .2em;
+  }
+  
+  td {
+    background-color: rgb(0, 0, 0);
+    border: 1px solid #900;
+    padding-left: .5em;
+    padding-right: .5em;
+  }
+  
+  #trHeader {
+    color: #900;
+    text-align: center;
+  }
+  
+  .centerCell {
+    text-align: center;
+  }
+</style>
+</head>
+<body>
 
+<div>
+<h1>Listar Percurso</h1>
+<table>
+  <tr id="trHeader">
+    <th>Atributes: Armazém1,  Armazém2,  Distância,   Tempo,   Energia,  CargaExtra</th>
+    <!-- <th>Matricula</th>
+    <th>Tara</th>
+    <th>Capacidade de Carga</th>
+    <th>Carga Total de Baterias</th>
+    <th>Autonomia com Carga Max</th>
+    <th>Tempo Carregamento</th> -->
+  </tr>
+  <tr>
+    <ul class="percursos">
+      <li *ngFor="let percurso of percursos">
+    <td><span class="badge">{{percurso.armazem1}}</span></td>
+    <td> <span class="badge">{{percurso.armazem2}}</span></td>
+    <td> <span class="badge">{{percurso.distancia}}</span></td>
+    <td> <span class="badge">{{percurso.tempo}}</span></td>
+    <td> <span class="badge">{{percurso.energia}}</span></td>
+    <td> <span class="badge">{{percurso.cargaExtra}}</span></td>
+      </li>
+  </ul>
+  </tr>
+</table>
+</div>
+</body>
+</html>
 
-<app-armazem-procura></app-armazem-procura>
-
-
-
-<ul class="percursos">
-  <li *ngFor="let percurso of percursos">
-    <a routerLink="/detail/{{percurso.armazem1}}">
-      <span class="badge">{{percurso.armazem1}}</span> {{percurso.armazem2}} 
-    </a>
-    <button type="button" class="delete" title="delete percurso"
-      (click)="delete(percurso)">x</button>
-  </li>
-</ul>
 
 
 

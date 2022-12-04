@@ -15,12 +15,15 @@ import { CamiaoDetalhesComponent } from './Componentes/Camiao/camiao-detalhes/ca
 import { PercursoListarComponent } from './Componentes/Percurso/percurso-listar/percurso-listar.component';
 import { PercursoDetalhesComponent } from './Componentes/Percurso/percurso-detalhes/percurso-detalhes.component';
 import { PercursoCriarComponent } from './Componentes/Percurso/percurso-criar/percurso-criar.component';
+//import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.component';
+
+
 import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.component';
-//import { HomeComponent } from './home/home.component';
+import { MenuHeaderComponent } from './Componentes/menu-header/menu-header.component';
+import { HomeComponent } from './Componentes/home/home.component';
 
 const routes: Routes = [
-//  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
- // { path: 'home' , component: HomeComponent},
+ {path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'listarArmazem', component: ArmazemListarComponent },
   { path: 'detail/:id', component: ArmazemDetalhosComponent },
   { path: 'criarArmazem', component: ArmazemCriarComponent },
@@ -35,6 +38,8 @@ const routes: Routes = [
   { path: 'detalhe/:armazem1', component: PercursoDetalhesComponent},
   { path: 'criarPercurso', component: PercursoCriarComponent },
   { path: 'redeViaria', component: RedeViariaComponent },
+  { path: 'menu', component: MenuHeaderComponent },
+  { path: 'home', component: HomeComponent}
 ];
 
 @NgModule({

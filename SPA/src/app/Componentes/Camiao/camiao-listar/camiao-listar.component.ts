@@ -10,6 +10,7 @@ import { CamiaoService } from 'src/app/Servicos/Camiao/camiao.service';
 export class CamiaoListarComponent implements OnInit {
   camiaos: Camiao[] = [];
 
+  
   constructor(private camiaoService: CamiaoService) { }
 
   ngOnInit(): void {

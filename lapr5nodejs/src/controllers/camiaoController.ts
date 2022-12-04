@@ -30,7 +30,7 @@ export default class CamiaoController implements ICamiaoController /* TODO: exte
     }
   };
 
-  public async getCamiao(req: Request, res: Response, next: NextFunction) {
+/*   public async getCamiao(req: Request, res: Response, next: NextFunction) {
     try {
       const camiaoOrError = await this.camiaoServiceInstance.getCamiao(req.body) as Result<ICamiaoDTO>;
       
@@ -42,7 +42,7 @@ export default class CamiaoController implements ICamiaoController /* TODO: exte
     catch (e) {
       return next(e);
     }
-  };
+  }; */
 
   public async listCamioes(req: Request, res: Response, next: NextFunction) {
     try {

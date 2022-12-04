@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
-
+import {MatTableModule} from '@angular/material/table';
 import { AppComponent } from './app.component';
 import { ArmazemCriarComponent } from './Componentes/Armazem/armazem-criar/armazem-criar.component';
 //import { ArmazemService} from './Servicos/Armazens/armazem.service'
@@ -24,24 +24,39 @@ import { PercursoDetalhesComponent } from './Componentes/Percurso/percurso-detal
 import { PercursoCriarComponent } from './Componentes/Percurso/percurso-criar/percurso-criar.component';
 import { PercursoProcuraComponent } from './Componentes/Percurso/percurso-procura/percurso-procura.component';
 import { PercursoListarComponent } from './Componentes/Percurso/percurso-listar/percurso-listar.component';
-import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.component';
-// import {MatSidenavModule} from '@angular/material/sidenav';
-// import {MatToolbarModule} from '@angular/material/toolbar';
-// import { SidebarComponent } from './Componentes/sidebar/sidebar.component';
-// import { HomeComponent } from './home/home.component';
-// import { MatIconModule } from '@angular/material/icon';
-// import { MatListModule } from '@angular/material/list';
-// import { MatButtonModule } from '@angular/material/button';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatListModule } from '@angular/material/list';
+import {MatSortModule} from '@angular/material/sort';
 
+import { MatButtonModule } from '@angular/material/button';
+import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.component';
+import { MenuHeaderComponent } from './Componentes/menu-header/menu-header.component';
+import { DashboardComponent } from './Componentes/dashboard/dashboard.component';
+import { HomeComponent } from './Componentes/home/home.component';
 
 @NgModule({
   imports: [
     BrowserModule,
+    MatSortModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatTableModule,
+    MatIconModule,
+    MatListModule,
+    MatPaginatorModule,
+    MatButtonModule,
+    //NgtCursorModule,
+    //NgtMeshModule,
+    //NgtMeshBasicMaterialModule,
+    //NgtBufferGeometryModule,
   //  MatToolbarModule,
   //  MatSidenavModule,
   //  MatIconModule,
@@ -75,7 +90,16 @@ import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.compo
     PercursoCriarComponent,
     PercursoProcuraComponent,
     PercursoListarComponent,
-    RedeViariaComponent,
+  //  ArmazemFormularioComponent,
+    ArmazemListarComponent,
+  MenuHeaderComponent,
+  DashboardComponent,
+  HomeComponent,  
+    
+//    RedeViariaComponent,
+//    ArcoComponent,
+//    ElementoLigacaoComponent,
+   RedeViariaComponent,
     ArmazemListarComponent,
  // SidebarComponent,
  //   HomeComponent,

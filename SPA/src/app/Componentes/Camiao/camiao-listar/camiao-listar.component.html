@@ -1,20 +1,74 @@
-<p>Lista dos Camiões</p>
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Embedded Style Sheet</title>
+<style>
+  h1  {
+    color: #009;
+    font-size: 3em;
+    margin-bottom: .3em;
+    text-align: center;
+    text-decoration:solid;
+  }
+  
+  table {
+    margin: .3em;
+    width: auto;
+    justify-content: center;
+  }
+  
+  th {
+    padding: .2em;
+  }
+  
+  td {
+    background-color: rgb(0, 0, 0);
+    border: 1px solid #900;
+    padding-left: .5em;
+    padding-right: .5em;
+  }
+  
+  #trHeader {
+    color: #900;
+    text-align: center;
+  }
+  
+  .centerCell {
+    text-align: center;
+  }
+</style>
+</head>
+<body>
 
-<app-camiao-procura></app-camiao-procura>
-
-
-
-<ul class="camiaos">
-  <li *ngFor="let camiao of camiaos">
-    <a routerLink="/detalhe/{{camiao.matricula}}">
-      <span class="badge">{{camiao.matricula}}</span> 
-    </a>
-    <button type="button" class="delete" title="delete camiao"
-      (click)="delete(camiao)">x</button>
-  </li>
-</ul>
-
-
+<div>
+<h1>Listar Camião</h1>
+<table>
+  <tr id="trHeader">
+    <th>Atributes: Matricula,  Tara,   Capacidade de Carga,   Carga Total de Baterias,   Autonomia com Carga Max,  Tempo Carregamento</th>
+    <!-- <th>Matricula</th>
+    <th>Tara</th>
+    <th>Capacidade de Carga</th>
+    <th>Carga Total de Baterias</th>
+    <th>Autonomia com Carga Max</th>
+    <th>Tempo Carregamento</th> -->
+  </tr>
+  <tr>
+    <ul class="camiaos">
+      <li *ngFor="let camiao of camiaos">
+    <td><span class="badge">{{camiao.matricula}}</span></td>
+    <td> <span class="badge">{{camiao.tara}}</span></td>
+    <td> <span class="badge">{{camiao.capacidadeCarga}}</span></td>
+    <td> <span class="badge">{{camiao.cargaTotalBaterias}}</span></td>
+    <td> <span class="badge">{{camiao.autonomiaCargaMax}}</span></td>
+    <td> <span class="badge">{{camiao.tempoCarregamento20ate80}}</span></td>
+      </li>
+  </ul>
+  </tr>
+</table>
+</div>
+</body>
+</html>
 
 
 

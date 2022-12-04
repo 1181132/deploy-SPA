@@ -1,6 +1,14 @@
 /* DashboardComponent's private CSS styles */
 h2 {
   text-align: center;
+  
+
+}
+.div{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
 }
 .armazens {
   margin: 0 0 2em 0;
@@ -13,7 +21,7 @@ input {
   display: block;
   width: 100%;
   padding: .5rem;
-  margin: 1rem 0;
+  margin: rem 0;
   box-sizing: border-box;
 }
 
