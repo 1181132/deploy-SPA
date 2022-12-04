@@ -27,7 +27,8 @@ export class EntregaCriarComponent implements OnInit{
       ]),
       entregaData: new FormControl('', [
         Validators.required,
-        Validators.pattern("(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)")
+       // Validators.pattern("(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)")
+       Validators.pattern("(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)[0-9][0-9]")
       ]),
       entregaMassa: new FormControl('', [
         Validators.required,
@@ -79,7 +80,7 @@ export class EntregaCriarComponent implements OnInit{
     if(!id){
       return;
     }
-    this.entregaService.addEntrega({id, data, armazemId, tempoColocarEntrega, tempoRetirarEntrega} as Entrega)
+    this.entregaService.addEntrega({id, data, massa, armazemId, tempoColocarEntrega, tempoRetirarEntrega} as Entrega)
     .subscribe((entrega: Entrega) => {
       this.entregas.push(entrega);
     });

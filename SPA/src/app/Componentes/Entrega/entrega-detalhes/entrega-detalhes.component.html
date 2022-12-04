@@ -98,8 +98,8 @@
 
                 <div class="form-group">
                     <label for="entregatempocolocar">Tempo Colocar a Entrega </label>
-                    <input type="number" class="form-control" formControlName="entregaTempoColocar"
-                        id="entregaTempoColocar" placeholder="15" min="1" required #tempoColocar />
+                    <input type="number" class="form-control" formControlName="entregaTempoColocarEntrega"
+                        id="entregaTempoColocarEntrega" placeholder="15" min="1" required #tempoColocar />
 
                     <div *ngIf="entregaTempoColocarEntrega.invalid && (entregaTempoColocarEntrega.dirty || entregaTempoColocarEntrega.touched)"
                         class="alert alert-danger">
@@ -117,8 +117,8 @@
 
                 <div class="form-group">
                     <label for="entregatemporetirar">Tempo Retirar a Entrega </label>
-                    <input type="number" class="form-control" formControlName="entregaTempoRetirar"
-                        id="entregatemporetirar" placeholder="30" min="1" required #tempoRetirar />
+                    <input type="number" class="form-control" formControlName="entregaTempoRetirarEntrega"
+                        id="entregaTempoRetirarEntrega" placeholder="30" min="1" required #tempoRetirar />
 
                     <div *ngIf="entregaTempoRetirarEntrega.invalid && (entregaTempoRetirarEntrega.dirty || entregaTempoRetirarEntrega.touched)"
                         class="alert alert-danger">
