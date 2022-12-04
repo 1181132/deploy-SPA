@@ -44,3 +44,8 @@ label {
     padding-left: 0;
   }
   
+  .body{
+    justify-content: center;
+    text-align: center;
+    
+  }
