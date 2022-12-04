@@ -8,7 +8,10 @@ h1 {
 
 table {
   margin: .3em;
-  width: 290px;
+  border-collapse: collapse;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
 }
 
 th {
@@ -19,7 +22,7 @@ td {
   padding-left: .5em;
   padding-right: .5em;
   border: 1px solid #900;
-  background-color: #ffc;
+  background-color: #842029;
 }
 
 #trHeader {
