@@ -548,3 +548,149 @@ calcularTempoDeViagem(X,T),
 armazemVisitar(X,Warehouses),
 atualiza(Warehouses,T),
 leitorHead(Xs). %start
+
+% --------------------Heuristicas---------------------
+
+%getTempoMax(<IdArmazem1>,<IdArmazem2>,<Retorno>)
+getTempo(A1, A2, R):- dadosCam_t_e_ta(eTruck01, A1, A2, R, _,_).
+getArmazemDeEntrega(E,R):- entrega(E, _,_, R,_,_).
+
+%getEntregaDeArmazem(<IdArmazem>,<Peso>)
+getPesoDeEncomenda(A,P):- entrega(_,_,P,A,_,_).
+%getEntregaComMaiorMassa([ListaDeEntregas], <Entrega Com maior massa>)
+
+% armazemMaisProximo([Lista de Armazens a visitar],
+% <ArmazemPartida>, <TempoGasto>, <IdArmazem>)
+armazemMaisProximo([], _, R, R, A,A). %end
+armazemMaisProximo([X|Xs], I, R, WK, _, A1):-
+    getTempo(I,X,D),
+    D <  WK,armazemMaisProximo(Xs, I, R, D, X,A1). %WK is Carry about
+armazemMaisProximo([X|Xs], I, R, WK, A ,A1):-
+    getTempo(I,X,D),
+    D >= WK, armazemMaisProximo(Xs, I, R, WK, A, A1).
+armazemMaisProximo([X|Xs], I, R, A):-
+    getTempo(I,X,D), armazemMaisProximo(Xs,I,R,D,X,A). %start
+
+/* perdicado para retornar a entrega com mais peso usando os ids das entregas
+%entregaComMaisPeso([IdsEntregas], <IdEntregaComMaisPeso>)
+entregaComMaisPeso([], R, _, R).
+entregaComMaisPeso([X|Xs], R, WK, _):- getPesoDeEncomenda(X,P), P > WK, entregaComMaisPeso(Xs, R, P, X).
+entregaComMaisPeso([X|Xs], R, WK, ID):- getPesoDeEncomenda(X,P), P =< WK, entregaComMaisPeso(Xs, R, WK, ID).
+entregaComMaisPeso([X|Xs], R):- getPesoDeEncomenda(X,P),entregaComMaisPeso(Xs,R,P, X). %start
+*/
+
+% perdicado para retornar a entrega com mais peso usando os ids dos
+% armazens
+%entregaComMaisPeso([IdArmazens, <Armazem a Visitar>)
+entregaComMaisPeso([], R, _, R).
+entregaComMaisPeso([X|Xs], R, WK, _):-
+    getPesoDeEncomenda(X,P),
+    P > WK,
+    entregaComMaisPeso(Xs, R, P, X).
+entregaComMaisPeso([X|Xs], R, WK, ID):-
+    getPesoDeEncomenda(X,P),
+    P =< WK,
+    entregaComMaisPeso(Xs, R, WK, ID).
+entregaComMaisPeso([X|Xs], R):-
+    getPesoDeEncomenda(X,P),entregaComMaisPeso(Xs,R,P, X). %start
+
+% armazemMaisProximoMisto([Lista de Ids de armazens], <Armazem
+% Inicial>, <TempoResultante>, <IdArmazemSeguinte>)
+armazemMaisProximoMisto([], _, R, R,_, A,A). %end
+armazemMaisProximoMisto([X|Xs], I, R, WK, P1, _,A1):-
+    getTempo(I,X,D),
+    getPesoDeEncomenda(X,P),
+    (D <  WK-15; P >= P1 +50),
+    armazemMaisProximoMisto(Xs, I, R, D, P,X,A1). %WK é distancia menor
+armazemMaisProximoMisto([X|Xs], I, R, WK, P1, A, A1):-
+    getTempo(I,X,D),
+    getPesoDeEncomenda(X,P),
+    (D >= WK-15; P < P1+50),
+    armazemMaisProximoMisto(Xs, I, R, WK,P1,A,A1).
+armazemMaisProximoMisto([X|Xs], I, R, A):-
+    getTempo(I,X,D),
+    getPesoDeEncomenda(X,P),
+    armazemMaisProximoMisto(Xs,I,R,D,P,X,A). %start
+
+
+
+% entregaMaisProxima([IdEntregas], <Id armazem>, <Id Entrega>)
+%entregaMaisProxima([], A, R)
+
+%fazerPercursoMaisPerto([Lista de Armazens], [Caminho a fazer])
+fazerPercursoMaisPerto([],_,_).
+fazerPercursoMaisPerto(A,[Ch|Ct], Atual):-
+    armazemMaisProximo(A,Atual,_,Destino),
+    apagarDaLista(Destino,A,A1),
+    fazerPercursoMaisPerto(A1, Ct, Destino), Ch is Destino.
+fazerPercursoMaisPerto(A,[C|Ct]):-
+    armazemMaisProximo(A,5,_,Destino),
+    apagarDaLista(Destino,A,A1),C is Destino,
+    fazerPercursoMaisPerto(A1,Ct,Destino).
+
+%fazerPercursoMenosPesado([Lista de Armazens], [Caminho a fazer])
+fazerPercursoMenosPesado1([],_).
+fazerPercursoMenosPesado1(A,[Ch|Ct]):-
+    entregaComMaisPeso(A,Destino),
+    apagarDaLista(Destino,A,A1),
+    fazerPercursoMenosPesado1(A1, Ct),
+    Ch is Destino.
+fazerPercursoMenosPesado(A,[C|Ct]):-
+    entregaComMaisPeso(A,Destino),
+ apagarDaLista(Destino,A,A1),
+ C is Destino,
+ fazerPercursoMenosPesado1(A1,Ct).
+
+%fazerPercursoMisto([Lista de Armazens], [caminho a fazer])
+fazerPercursoMisto([],_,_).
+fazerPercursoMisto(A,[Ch|Ct], Atual):-
+    armazemMaisProximoMisto(A,Atual,_,Destino),
+    apagarDaLista(Destino,A,A1),
+    fazerPercursoMisto(A1, Ct, Destino),
+    Ch is Destino.
+fazerPercursoMisto(A,[C|Ct]):-
+    armazemMaisProximoMisto(A,5,_,Destino),
+    apagarDaLista(Destino,A,A1),
+    C is Destino,
+    fazerPercursoMisto(A1,Ct,Destino).
+
+calcularTempoDeViagemWarehouse(ListWarehouse,Time):-
+completarTodasRotas(ListWarehouse, AllList),
+camiao(TruckName,_,_,_,_),
+energiaMaxima(TruckName,InicialEnergy),
+pesoPorArmazem(ListWarehouse, ListWeights),
+calculaPesoTotal(ListWeights,ListFinalWeights),
+tempoRetirarEntregaWarehouse(ListWarehouse,UnloadingTime),
+tempoDeViagem(TruckName,InicialEnergy,AllList,ListFinalWeights,UnloadingTime,Time).
+
+tempoRetirarEntregaWarehouse([], [0]).
+
+tempoRetirarEntregaWarehouse([Head|Tail], ListTime):-
+    tempoRetirarEntregaWarehouse(Tail,Temp),
+    entrega(_,_,_,Head,_,Time),
+    append([Time], Temp, ListTime).
+
+
+calculaTempoComArmazensParametro(ListaArmazens,Tempo,ListaArmazensCarregar):-
+somaPesoCamiaoArmazensEspecificos(ListaArmazens,ListaPesos),
+armazemPrincipal(AP),
+append([AP|ListaArmazens],[AP],ListaArmazensCompleta),
+cargainicial(CargaInicial),
+%autonimiamin(AutonomiaMin),
+custo20(ListaArmazensCompleta,CargaInicial,ListaPesos,Tempo,ListaArmazensCarregar).
+
+apagarDaLista(A,L,R):- use_module(library(lists)),delete(L,A,R).
+
+
+heuristicaDistancia(LArmazens, Tempo, Caminho):-
+fazerPercursoMaisPerto(LArmazens,Caminho),
+calcularTempoDeViagemWarehouse(Caminho,Tempo).
+
+heuristicaPeso(LArmazens, Tempo, Caminho):-
+fazerPercursoMenosPesado(LArmazens,Caminho),
+calcularTempoDeViagemWarehouse(Caminho,Tempo).
+
+heuristicaMista(LArmazens,Tempo,Caminho):-
+fazerPercursoMisto(LArmazens,Caminho),
+calcularTempoDeViagemWarehouse(Caminho,Tempo).
+% ---------------------------------------------------------
