@@ -5,19 +5,19 @@ namespace DDDSample1.Domain.Entregas
 {
     public class EntregaId : EntityId
     {
-        public String Id { get; private set; }
+        public string Id { get; private set; }
 
-        public EntregaId(String value):base(value)
+        public EntregaId(string value):base(value)
         {
 
         }
         
-        protected override Object createFromString(String text){
+        protected override Object createFromString(string text){
             return text;
         }
         
-        public override String AsString(){
-            return (String) base.Value;
+        public override string AsString(){
+            return (string) base.Value;
         }
     }
 }

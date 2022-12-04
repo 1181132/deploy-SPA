@@ -162,8 +162,8 @@ namespace DDDNetCore.Migrations
                             b1.Property<string>("EntregaId")
                                 .HasColumnType("varchar(255)");
 
-                            b1.Property<int>("Massa")
-                                .HasColumnType("int");
+                            b1.Property<double>("Massa")
+                                .HasColumnType("double");
 
                             b1.HasKey("EntregaId");
 
@@ -178,8 +178,8 @@ namespace DDDNetCore.Migrations
                             b1.Property<string>("EntregaId")
                                 .HasColumnType("varchar(255)");
 
-                            b1.Property<int>("TempoColocarEntrega")
-                                .HasColumnType("int");
+                            b1.Property<double>("TempoColocarEntrega")
+                                .HasColumnType("double");
 
                             b1.HasKey("EntregaId");
 
@@ -194,8 +194,8 @@ namespace DDDNetCore.Migrations
                             b1.Property<string>("EntregaId")
                                 .HasColumnType("varchar(255)");
 
-                            b1.Property<int>("TempoRetirarEntrega")
-                                .HasColumnType("int");
+                            b1.Property<double>("TempoRetirarEntrega")
+                                .HasColumnType("double");
 
                             b1.HasKey("EntregaId");
 

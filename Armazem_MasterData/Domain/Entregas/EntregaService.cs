@@ -51,7 +51,7 @@ namespace DDDSample1.Domain.Entregas
         {
             //alterar para os outros, ver com o da stora o que ha de diferenças
             await checkArmazemIdAsync(dto.ArmazemId.AsString());
-            var entrega = new Entrega(dto.Id, dto.Data, dto.Massa, dto.ArmazemId.AsString(), dto.TempoColocarEntrega, dto.TempoRetirarEntrega);
+            var entrega = new Entrega(dto.Id.AsString(), dto.Data.Data, dto.Massa.Massa, dto.ArmazemId.AsString(), dto.TempoColocarEntrega.TempoColocarEntrega, dto.TempoRetirarEntrega.TempoRetirarEntrega);
 
             await this._repo.AddAsync(entrega);
 
@@ -133,7 +133,7 @@ namespace DDDSample1.Domain.Entregas
             TempoRetirarEntrega = entrega.TempoRetirarEntrega.TempoRetirarEntrega};
         }
 
-         private async Task checkArmazemIdAsync(String armazemId)
+         private async Task checkArmazemIdAsync(string armazemId)
          {
              var armazem = await _repoArm.GetByIdAsync(new ArmazemId(armazemId));
              if (armazem == null)

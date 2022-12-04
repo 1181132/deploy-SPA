@@ -17,7 +17,7 @@ namespace DDDSample1.Domain.Entregas
 
         public EntregaTempoRetirar TempoRetirarEntrega { get; set; }
 
-        public CreatingEntregaDto(String id, String data, Double massa, String armazemId, Double tempoColocar, Double tempoRetirar){
+        public CreatingEntregaDto(string id, string data, double massa, string armazemId, double tempoColocar, double tempoRetirar){
             this.Id= new EntregaId(id);
             this.Data = new EntregaData(data);
             this.Massa = new EntregaMassa(massa);

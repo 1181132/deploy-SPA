@@ -9,9 +9,9 @@ namespace DDDSample1.Domain.Entregas
     [Owned]
     public class EntregaData : IValueObject{
         
-        public String Data { get; private set;}
+        public string Data { get; private set;}
 
-        public EntregaData(String data){
+        public EntregaData(string data){
            /* if(!validaData(data)){
                 throw new BusinessRuleValidationException("A data não se encontra dentro dos parametros dia,mes,ano (ex: dd-mm-aaaa, dd/mm/aaaa, dd.mm.aaaa)");
                 

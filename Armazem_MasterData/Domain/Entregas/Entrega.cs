@@ -27,35 +27,49 @@ namespace DDDSample1.Domain.Entregas
             this.Active = true;
         }
 
-        public Entrega(EntregaId id, EntregaData  data, EntregaMassa massa, String armazemId, EntregaTempoColocar tempoColocarEntrega, EntregaTempoRetirar tempoRetirarEntrega)
+        public Entrega(string id, string  data, double massa, string armazemId, double tempoColocarEntrega, double tempoRetirarEntrega)
         {
             if(armazemId == null){
                 throw new BusinessRuleValidationException("Todas as entregas tem de ter um armazem");
             }
-            this.Id = id;
-            this.Data = data;
-            this.Massa =massa;
+            this.Id = new EntregaId(id);
+            this.Data = new EntregaData(data);
+            this.Massa = new EntregaMassa(massa);
             this.ArmazemId = new ArmazemId(armazemId);
-            this.TempoColocarEntrega = tempoColocarEntrega;
-            this.TempoRetirarEntrega = tempoRetirarEntrega;
+            this.TempoColocarEntrega = new EntregaTempoColocar(tempoColocarEntrega);
+            this.TempoRetirarEntrega = new EntregaTempoRetirar (tempoRetirarEntrega);
             this.Active = true;
         }
 
-        public void ChangeDataEntrega(String data)
+        // public Entrega(EntregaId id, EntregaData  data, EntregaMassa massa, string armazemId, EntregaTempoColocar tempoColocarEntrega, EntregaTempoRetirar tempoRetirarEntrega)
+        // {
+        //     if(armazemId == null){
+        //         throw new BusinessRuleValidationException("Todas as entregas tem de ter um armazem");
+        //     }
+        //     this.Id = id;
+        //     this.Data = data;
+        //     this.Massa = massa;
+        //     this.ArmazemId = new ArmazemId(armazemId);
+        //     this.TempoColocarEntrega = tempoColocarEntrega;
+        //     this.TempoRetirarEntrega =tempoRetirarEntrega;
+        //     this.Active = true;
+        // }
+
+        public void ChangeDataEntrega(string data)
         {
             if (!this.Active)
                 throw new BusinessRuleValidationException("Não é possível alterar a data entrega para uma inativa entrega.");
             this.Data = new EntregaData(data);
         }
 
-        public void ChangeMassaEntrega(Double massa)
+        public void ChangeMassaEntrega(double massa)
         {
             if (!this.Active)
                 throw new BusinessRuleValidationException("Não é possível alterar a massa de uma entrega para uma inativa entrega.");
             this.Massa = new EntregaMassa(massa);
         }
 
-        public void ChangeArmazemEntrega(String armazemId)
+        public void ChangeArmazemEntrega(string armazemId)
         {
             if (!this.Active)
                 throw new BusinessRuleValidationException("Não é possível alterar o armazem de uma entrega para uma inativa entrega.");
@@ -64,14 +78,14 @@ namespace DDDSample1.Domain.Entregas
             this.ArmazemId = new ArmazemId(armazemId);
         }
 
-        public void ChangeTempoColocarEntrega(Double tempoColocarEntrega)
+        public void ChangeTempoColocarEntrega(double tempoColocarEntrega)
         {
             if (!this.Active)
                 throw new BusinessRuleValidationException("Não é possível alterar o tempo colocar entrega para uma inativa entrega.");
             this.TempoColocarEntrega = new EntregaTempoColocar(tempoColocarEntrega);
         }
 
-        public void ChangeTempoRetirarEntrega(Double tempoRetirarEntrega)
+        public void ChangeTempoRetirarEntrega(double tempoRetirarEntrega)
         {
             if (!this.Active)
                 throw new BusinessRuleValidationException("Não é possível alterar o tempo retirar entrega para uma inativa entrega.");

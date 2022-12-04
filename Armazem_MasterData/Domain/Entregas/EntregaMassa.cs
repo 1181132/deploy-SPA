@@ -7,16 +7,16 @@ namespace DDDSample1.Domain.Entregas
 {
     [Owned]
     public class EntregaMassa : IValueObject {
-        public Double Massa { get; private set;}
+        public double Massa { get; private set;}
 
-        public EntregaMassa(Double massa){
+        public EntregaMassa(double massa){
             /*if(!validaMassa(massa)){
                 throw new BusinessRuleValidationException("O valor tem de ser superior a 0");
             }*/
             this.Massa = massa;
         }
         
-        private static bool validaMassa(Double massa){
+        private static bool validaMassa(double massa){
             return massa > 0;
         }
     }
