@@ -27,7 +27,6 @@ pipelines:
                 - dotnet restore
                 - dotnet build
                 - dotnet test
-
           - step:
               name: Build and Test Node
               image: node:19.2
