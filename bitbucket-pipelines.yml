@@ -53,6 +53,8 @@ pipelines:
                 - ng build --configuration production
                 - echo "$(ls -la)"
                 - echo "$(ls -la dist)"
+                - apt-get update
+                - apt-get install sshpass -y
                 - time sshpass -p $Password scp -o StrictHostKeyChecking=no -o LogLevel=DEBUG -P 10285 -r dist/ root@vsgate-ssh.dei.isep.ipp.pt:/root/var/www/html/index
                 # - ssh -P 10285 vsgate-ssh.dei.isep.ipp.pt rm -rf /var/www/html/index
                 # - ssh -P 10285 -r dist/ root@vsgate-ssh.dei.isep.ipp.pt:/root/var/www/html/index
