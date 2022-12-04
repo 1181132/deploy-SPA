@@ -15,24 +15,15 @@ import { CamiaoDetalhesComponent } from './Componentes/Camiao/camiao-detalhes/ca
 import { PercursoListarComponent } from './Componentes/Percurso/percurso-listar/percurso-listar.component';
 import { PercursoDetalhesComponent } from './Componentes/Percurso/percurso-detalhes/percurso-detalhes.component';
 import { PercursoCriarComponent } from './Componentes/Percurso/percurso-criar/percurso-criar.component';
-<<<<<<< HEAD
-=======
 //import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.component';
 
-//const routes: Routes = [
-//  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
->>>>>>> 6f720edb307de624758a625b128702f1de8cd7f9
+
 import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.component';
 import { MenuHeaderComponent } from './Componentes/menu-header/menu-header.component';
 import { HomeComponent } from './Componentes/home/home.component';
 
 const routes: Routes = [
-<<<<<<< HEAD
  {path: '', redirectTo: 'home', pathMatch: 'full'},
-=======
-//  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
- // { path: 'home' , component: HomeComponent},
->>>>>>> 6f720edb307de624758a625b128702f1de8cd7f9
   { path: 'listarArmazem', component: ArmazemListarComponent },
   { path: 'detail/:id', component: ArmazemDetalhosComponent },
   { path: 'criarArmazem', component: ArmazemCriarComponent },

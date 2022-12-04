@@ -32,28 +32,10 @@ import { MatListModule } from '@angular/material/list';
 import {MatSortModule} from '@angular/material/sort';
 
 import { MatButtonModule } from '@angular/material/button';
-//import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.component';
-//import { ArcoComponent } from './Componentes/Rede-viaria/arco/arco.component';
-//import { ElementoLigacaoComponent } from './Componentes/Rede-viaria/elemento-ligacao/elemento-ligacao.component';
-<<<<<<< HEAD
-
 import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.component';
 import { MenuHeaderComponent } from './Componentes/menu-header/menu-header.component';
 import { DashboardComponent } from './Componentes/dashboard/dashboard.component';
 import { HomeComponent } from './Componentes/home/home.component';
-
-
-=======
-import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.component';
-// import {MatSidenavModule} from '@angular/material/sidenav';
-// import {MatToolbarModule} from '@angular/material/toolbar';
-// import { SidebarComponent } from './Componentes/sidebar/sidebar.component';
-// import { HomeComponent } from './home/home.component';
-// import { MatIconModule } from '@angular/material/icon';
-// import { MatListModule } from '@angular/material/list';
-// import { MatButtonModule } from '@angular/material/button';
->>>>>>> 6f720edb307de624758a625b128702f1de8cd7f9
-
 
 @NgModule({
   imports: [
@@ -75,10 +57,6 @@ import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.compo
     //NgtMeshModule,
     //NgtMeshBasicMaterialModule,
     //NgtBufferGeometryModule,
-<<<<<<< HEAD
-
-=======
->>>>>>> 6f720edb307de624758a625b128702f1de8cd7f9
   //  MatToolbarModule,
   //  MatSidenavModule,
   //  MatIconModule,
@@ -121,13 +99,10 @@ import { RedeViariaComponent } from './Componentes/Rede-viaria/rede-viaria.compo
 //    RedeViariaComponent,
 //    ArcoComponent,
 //    ElementoLigacaoComponent,
-<<<<<<< HEAD
-=======
-    RedeViariaComponent,
+   RedeViariaComponent,
     ArmazemListarComponent,
  // SidebarComponent,
  //   HomeComponent,
->>>>>>> 6f720edb307de624758a625b128702f1de8cd7f9
   ],
   bootstrap: [ AppComponent ]
 })
