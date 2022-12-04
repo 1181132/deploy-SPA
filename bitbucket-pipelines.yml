@@ -61,10 +61,10 @@ pipelines:
               script:
                 - echo "$(ls -la)"
                 - echo "$(ls -la dist)"
-                #- ssh root@vs285 rm -rf /var/www/html/index
-                #- ssh -r dist/index root@vs285:/var/www/html/index
                 - ssh -P 10285 vsgate-ssh.dei.isep.ipp.pt rm -rf /var/www/html/index
                 - ssh -P 10285 -r dist/ root@vsgate-ssh.dei.isep.ipp.pt:/root/var/www/html/index
+                #- ssh root@vs285 rm -rf /var/www/html/index
+                #- ssh -r dist/index root@vs285:/var/www/html/index
 
         # - step:
         #     name: Installation & Build & Deploy
