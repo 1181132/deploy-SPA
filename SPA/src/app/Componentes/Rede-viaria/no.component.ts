@@ -2,11 +2,6 @@ import { Component, Inject, Input } from '@angular/core'
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
-@Component({
-  selector: 'app-no',
-  templateUrl: 'no.component.html',
-  styleUrls: ['./no.component.css'],
-})
 export class NoComponent extends THREE.Group {
   circle: THREE.Mesh<THREE.CircleGeometry, THREE.MeshBasicMaterial>
 
