@@ -40,6 +40,7 @@ pipelines:
                 # - npm test
           - step:
               name: Installation
+              image: node:19.2
               caches:
                 - node
               script:
