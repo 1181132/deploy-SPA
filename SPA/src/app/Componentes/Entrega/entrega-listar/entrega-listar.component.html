@@ -1,9 +1,21 @@
+<div style="background-color:rgb(220, 210, 125);">
+
+
+
+
 <h2>Todos as Entregas</h2>
 
+<h2 >
 
+    <div>
 <app-entrega-procura></app-entrega-procura>
+</div>
+</h2>
 
 
+<body style="background-color:rgb(184, 176, 104);">
+    <div>
+    
 
 <ul class="entregas">
     <li *ngFor="let entrega of entregas">
@@ -14,3 +26,7 @@
         <button type="button" class="delete" title="delete entrega" (click)="delete(entrega)">x</button>
     </li>
 </ul>
+</div>
+</body>
+
+</div>

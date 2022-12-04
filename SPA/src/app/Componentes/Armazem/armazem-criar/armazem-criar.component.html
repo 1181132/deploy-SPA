@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="background-color:rgb(220, 210, 125);">
 
   <h2>Criar Armazem</h2>
 
@@ -9,7 +9,7 @@
       <div class="cross-validation" [class.cross-validation-error]="armazemForm.errors?.['identityRevealed'] && (armazemForm.touched || armazemForm.dirty)">
         
         <div class="form-group">
-          <label for="armazemid">ID do Armazem</label>
+          <label for="armazemid">ID do Armazem </label>
           <input type="text" id="armazemId" class="form-control"
                 formControlName="armazemId" placeholder="M13" required #id>
 
@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-group">
-          <label for="armazemdesignacao">Designacao do Armazem: </label>
+          <label for="armazemdesignacao">Designacao do Armazem </label>
           <input type="text" id="armazemDesignacao" class="form-control"
                 formControlName="armazemDesignacao" placeholder="Maçarelos" required #designacao>
 
@@ -52,7 +52,7 @@
 
 
         <div class="form-group">
-          <label for="armazemrua">Rua: </label>
+          <label for="armazemrua">Rua </label>
           <input type="text" class="form-control"
           formControlName="armazemRua" id="armazemRua" placeholder="Avenida dos Aliados" required #rua />
 
@@ -182,7 +182,7 @@
 
       </div>
 
-      <p>Complete o formulário para habilitar o buton Submeter.</p>
+      <p>Complete o formulário para habilitar o butom Submeter.</p>
       <button type="submit"
               class="btn btn-default"
               [disabled]="armazemForm.invalid" >Submeter

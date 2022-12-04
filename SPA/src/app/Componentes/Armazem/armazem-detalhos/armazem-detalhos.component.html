@@ -1,12 +1,13 @@
-<div *ngIf="armazem">
-  <h2>{{armazem.designacao | uppercase}} Detalhos</h2>
-  <div><span>id: </span>{{armazem.id}}
-</div>
 
-<div class="container">
 
-  <h2>Editar Armazem</h2>
+<div class="container" style="background-color:rgb(220, 210, 125);">
 
+  <div *ngIf="armazem">
+    <h2>{{armazem.designacao | uppercase}} Detalhos</h2>
+    <div><span>id: </span>{{armazem.id}}
+  </div>
+
+  <br>
   <form [formGroup]="armazemForm" #formDir="ngForm">
 
     <div [hidden]="formDir.submitted">

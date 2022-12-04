@@ -1,5 +1,6 @@
 /* HeroSearch private styles */
 
+
 label {
   display: block;
   font-weight: bold;
@@ -24,6 +25,9 @@ li {
   list-style-type: none;
 }
 .search-result li a {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: small;
+  background-color: #8aa2ce;
   border-bottom: 1px solid gray;
   border-left: 1px solid gray;
   border-right: 1px solid gray;

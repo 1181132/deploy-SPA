@@ -40,7 +40,7 @@ getArmazem(id: string): Observable<Armazem> {
 
 /** PUT: update the Armazem on the server */
 updateArmazem(armazem: Armazem): Observable<any> {
-  return this.http.put(this.armazensUrl, armazem, this.httpOptions).pipe(
+  return this.http.put(this.armazensUrl, armazem.id, this.httpOptions).pipe(
     catchError(this.handleError<Armazem>('updateArmazem'))
   );
 }
@@ -64,11 +64,11 @@ deleteArmazem(id: string): Observable<Armazem> {
 /* GET heroes whose name contains search term */
 searchArmazens(term: string): Observable<Armazem[]> {
   if (!term.trim()) {
-    // if not search term, return empty hero array.
+    // if not search term, return empty armzem array.
     return of([]);
   }
   return this.http.get<Armazem[]>(`${this.armazensUrl}/?designacao=${term}`).pipe(
-    catchError(this.handleError<Armazem[]>('searchArmazens', []))
+      catchError(this.handleError<Armazem[]>('searchArmazens', []))
   );
 }
 

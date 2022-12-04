@@ -1,15 +1,19 @@
-<h2>Todos os Armazens</h2>
+<div style="background-color:rgb(220, 210, 125);">
 
-<h2>
+
+
+
+<h2>Listar Armazens</h2>
+
+<h2 >
 
   <div><app-armazem-procura></app-armazem-procura>
   </div>
 </h2>
 
-<body>
+<body style="background-color:rgb(184, 176, 104);">
   <div>
   
-
 <ul class="armazens">
   <li *ngFor="let armazem of armazens">
     <a routerLink="/detail/{{armazem.id}}">
@@ -23,3 +27,4 @@
 </div>
 </body>
 
+</div>
