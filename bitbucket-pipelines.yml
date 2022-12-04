@@ -62,28 +62,10 @@ pipelines:
               script:
                 - echo "$(ls -la)"
                 - echo "$(ls -la dist)"
-                - ssh root@vs285 rm -rf /var/www/html/index
-                - ssh -r dist/index root@vs285:/var/www/html/index
-          # - step:
-          #     name: Installation & Build & Deploy SPA
-          #     image: node:19.2
-          #     caches:
-          #       - node
-          #     script:
-          #       - cd SPA
-          #       - npm install
-          #       - npm install -g @angular/cli@
-          #       - ng build --configuration production
-          #       - ng serve --open
-
-          # - step:
-          #     name: Deploy to Heroku in production
-          #     deployment: production
-          #     script:
-          #       - pipe: atlassian/heroku-deploy:1.2.1
-          #         variables:
-          #           HEROKU_API_KEY: $HEROKU_API_KEY
-          #           HEROKU_APP_NAME: $HEROKU_APP_NAME
+                #- ssh root@vs285 rm -rf /var/www/html/index
+                #- ssh -r dist/index root@vs285:/var/www/html/index
+                - ssh -P 10285 vsgate-ssh.dei.isep.ipp.pt rm -rf /var/www/html/index
+                - ssh -P 10285 -r dist/ root@vsgate-ssh.dei.isep.ipp.pt:/root/var/www/html/index
 
         # - step:
         #     name: Installation & Build & Deploy
@@ -100,3 +82,24 @@ pipelines:
         #       - apt-get update
         #       - apt-get install sshpass -y
         #       - time sshpass -p $Password scp -o StrictHostKeyChecking=no -o LogLevel=DEBUG -P 10682 -r dist/ root@vsgate-ssh.dei.isep.ipp.pt:/root/lei_2223_sem5_pi/Angular
+
+        # - step:
+        #     name: Installation & Build & Deploy SPA
+        #     image: node:19.2
+        #     caches:
+        #       - node
+        #     script:
+        #       - cd SPA
+        #       - npm install
+        #       - npm install -g @angular/cli@
+        #       - ng build --configuration production
+        #       - ng serve --open
+
+        # - step:
+        #     name: Deploy to Heroku in production
+        #     deployment: production
+        #     script:
+        #       - pipe: atlassian/heroku-deploy:1.2.1
+        #         variables:
+        #           HEROKU_API_KEY: $HEROKU_API_KEY
+        #           HEROKU_APP_NAME: $HEROKU_APP_NAME
