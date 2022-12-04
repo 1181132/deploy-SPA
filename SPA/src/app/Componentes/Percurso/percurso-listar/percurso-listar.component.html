@@ -1,4 +1,26 @@
-<!DOCTYPE HTML>
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">armazem1</th>
+      <th scope="col">Armazém2</th>
+      <th scope="col">distancia</th>
+      <th scope="col">tempo</th>
+      <th scope="col">energia</th>
+      <th scope="col">cargaExtra</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let percurso of percursos">
+      <td>{{percurso.armazem1}}</td>
+      <td>{{percurso.armazem2}}</td>
+      <td>{{percurso.distancia}}</td>
+      <td>{{percurso.tempo}}</td>
+      <td>{{percurso.energia}}</td>
+      <td>{{percurso.cargaExtra}}</td>
+    </tr>
+  </tbody>
+</table>
+<!-- <!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -46,12 +68,6 @@
 <table>
   <tr id="trHeader">
     <th>Atributes: Armazém1,  Armazém2,  Distância,   Tempo,   Energia,  CargaExtra</th>
-    <!-- <th>Matricula</th>
-    <th>Tara</th>
-    <th>Capacidade de Carga</th>
-    <th>Carga Total de Baterias</th>
-    <th>Autonomia com Carga Max</th>
-    <th>Tempo Carregamento</th> -->
   </tr>
   <tr>
     <ul class="percursos">
@@ -73,3 +89,4 @@
 
 
 
+ -->
