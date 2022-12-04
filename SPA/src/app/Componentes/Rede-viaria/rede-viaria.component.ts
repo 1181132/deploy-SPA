@@ -36,8 +36,8 @@ export class RedeViariaComponent implements OnInit {
     //Eixo Azul: Z -> altitude
     var scene = new THREE.Scene()
 
-    const sceneAxisHelper = new THREE.AxesHelper(100)
-    scene.add(sceneAxisHelper)
+/*     const sceneAxisHelper = new THREE.AxesHelper(100)
+    scene.add(sceneAxisHelper) */
 
     scene.fog = new THREE.FogExp2(0xebebeb, 0.0004)
 
