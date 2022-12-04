@@ -37,34 +37,34 @@ pipelines:
                 - npm install
                 - npm run
                 # - npm test
-          - step:
-              name: Installation
-              image: node:19.2
-              caches:
-                - node
-              script:
-                - npm install
-              artifacts:
-                - node_modules/**
-          - step:
-              name: Lint
-              script:
-                - npm run lint
-          - step:
-              name: Build
-              script:
-                - npm run build:production
-              artifacts:
-                - dist/**
-          - step:
-              name: Deploy
-              script:
-                - echo "$(ls -la)"
-                - echo "$(ls -la dist)"
-                - ssh -P 10285 vsgate-ssh.dei.isep.ipp.pt rm -rf /var/www/html/index
-                - ssh -P 10285 -r dist/ root@vsgate-ssh.dei.isep.ipp.pt:/root/var/www/html/index
-                #- ssh root@vs285 rm -rf /var/www/html/index
-                #- ssh -r dist/index root@vs285:/var/www/html/index
+          # - step:
+          #     name: Installation
+          #     image: node:19.2
+          #     caches:
+          #       - node
+          #     script:
+          #       - npm install
+          #     artifacts:
+          #       - node_modules/**
+          # - step:
+          #     name: Lint
+          #     script:
+          #       - npm run lint
+          # - step:
+          #     name: Build
+          #     script:
+          #       - npm run build:production
+          #     artifacts:
+          #       - dist/**
+          # - step:
+          #     name: Deploy
+          #     script:
+          #       - echo "$(ls -la)"
+          #       - echo "$(ls -la dist)"
+          #       - ssh -P 10285 vsgate-ssh.dei.isep.ipp.pt rm -rf /var/www/html/index
+          #       - ssh -P 10285 -r dist/ root@vsgate-ssh.dei.isep.ipp.pt:/root/var/www/html/index
+          #- ssh root@vs285 rm -rf /var/www/html/index
+          #- ssh -r dist/index root@vs285:/var/www/html/index
 
         # - step:
         #     name: Installation & Build & Deploy
