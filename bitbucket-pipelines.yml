@@ -12,32 +12,32 @@ pipelines:
   branches:
     master:
       # - parallel:
-          - step:
-              name: Build and Test .NET
-              image: mcr.microsoft.com/dotnet/sdk:6.0
-              caches:
-                - dotnetcore
-              script:
-                - cd Armazem_MasterData
-                - dotnet restore
-                - dotnet build
-                - dotnet test
-                - cd ..
-                - cd ArmazemDotNetTeste
-                - dotnet restore
-                - dotnet build
-                - dotnet test
+          # - step:
+          #     name: Build and Test .NET
+          #     image: mcr.microsoft.com/dotnet/sdk:6.0
+          #     caches:
+          #       - dotnetcore
+          #     script:
+          #       - cd Armazem_MasterData
+          #       - dotnet restore
+          #       - dotnet build
+          #       - dotnet test
+          #       - cd ..
+          #       - cd ArmazemDotNetTeste
+          #       - dotnet restore
+          #       - dotnet build
+          #       - dotnet test
 
-          - step:
-              name: Build and Test Node
-              image: node:19.2
-              caches:
-                - node
-              script:
-                - cd lapr5nodejs
-                - npm install
-                - npm run
-                # - npm test
+          # - step:
+          #     name: Build and Test Node
+          #     image: node:19.2
+          #     caches:
+          #       - node
+          #     script:
+          #       - cd lapr5nodejs
+          #       - npm install
+          #       - npm run
+          #       # - npm test
 
 
           - step:
@@ -49,6 +49,7 @@ pipelines:
                 - cd SPA
                 - npm install
                 - npm install -g @angular/cli@
+                - npm install @angular-three/core
               artifacts:
                 - node_modules/**
           # - step:
