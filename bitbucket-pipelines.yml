@@ -47,9 +47,9 @@ pipelines:
                 - node
               script:
                 - cd SPA
-                - npm install
-                - npm install -g @angular/cli@
-                - npm install @angular-three/core
+                - npm install --legacy-peer-deps
+                - npm install -g @angular/cli@ --legacy-peer-deps
+                - npm install @angular-three/core --legacy-peer-deps
               artifacts:
                 - node_modules/**
           # - step:
