@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { Location } from '@angular/common'
-import { Coordenadas } from './Coordenadas'
+import { Armazens } from './Armazens'
 import { WebGLRenderer } from 'three'
 import { NoComponent } from './no.component'
 
@@ -27,7 +27,6 @@ export class RedeViariaComponent implements OnInit {
     const INFINITESIMO = 0.01
     const K_LIGACAO = 2
     const circleRadius = K_CIRCULO * wij
-    const rotundaColor = 0x388c3a388c3a
     const elemLigColor = 0x7e848c
     const ruaColor = 0x5d636b
 
@@ -88,65 +87,65 @@ export class RedeViariaComponent implements OnInit {
     controls.update()
 
     //Exemplos de nos
-    const coords1 = new Coordenadas(1, 'Arouca', -50, -42.6618, 15.625)
-    const coords2 = new Coordenadas(2, 'Espinho', 26.6951, -36.7615, 34.375)
-    const coords3 = new Coordenadas(3, 'Gondomar', 50, 50, 12.5)
-    const coords4 = new Coordenadas(4, 'Maia', 22.8206, -19.4217, 43.75)
-    const coords5 = new Coordenadas(5, 'Matosinhos', 37.408, -22.8394, 21.875)
-    const coords6 = new Coordenadas(
+    const coords1 = new Armazens(1, 'Arouca', -50, -42.6618, 15.625)
+    const coords2 = new Armazens(2, 'Espinho', 26.6951, -36.7615, 34.375)
+    const coords3 = new Armazens(3, 'Gondomar', 50, 50, 12.5)
+    const coords4 = new Armazens(4, 'Maia', 22.8206, -19.4217, 43.75)
+    const coords5 = new Armazens(5, 'Matosinhos', 37.408, -22.8394, 21.875)
+    const coords6 = new Armazens(
       6,
       'Oliveira de Azeméis',
       -5.0756,
       -50.0,
       46.875,
     )
-    const coords7 = new Coordenadas(7, 'Paredes', -33.4754, -21.2052, 0.0)
-    const coords8 = new Coordenadas(8, 'Porto', 24.3898, -24.9214, 37.5)
-    const coords9 = new Coordenadas(
+    const coords7 = new Armazens(7, 'Paredes', -33.4754, -21.2052, 0.0)
+    const coords8 = new Armazens(8, 'Porto', 24.3898, -24.9214, 37.5)
+    const coords9 = new Armazens(
       9,
       'Póvoa de Varzim',
       49.9225,
       -7.4403,
       25.0,
     )
-    const coords10 = new Coordenadas(
+    const coords10 = new Armazens(
       10,
       'Santa Maria da Feira',
       8.7369,
       -43.0783,
       6.25,
     )
-    const coords11 = new Coordenadas(
+    const coords11 = new Armazens(
       11,
       'Santo Tirso',
       -5.6955,
       -10.3708,
       40.625,
     )
-    const coords12 = new Coordenadas(
+    const coords12 = new Armazens(
       12,
       'São João da Madeira',
       -2.4215,
       -45.1446,
       18.75,
     )
-    const coords13 = new Coordenadas(13, 'Trofa', 11.0035, -10.6851, 28.125)
-    const coords14 = new Coordenadas(
+    const coords13 = new Armazens(13, 'Trofa', 11.0035, -10.6851, 28.125)
+    const coords14 = new Armazens(
       14,
       'Vale de Cambra',
       -20.8446,
       -49.6622,
       3.125,
     )
-    const coords15 = new Coordenadas(15, 'Valongo', -0.9492, -22.5016, 50.0)
-    const coords16 = new Coordenadas(
+    const coords15 = new Armazens(15, 'Valongo', -0.9492, -22.5016, 50.0)
+    const coords16 = new Armazens(
       16,
       'Vila do Conde',
       47.4041,
       -9.6952,
       9.375,
     )
-    const coords17 = new Coordenadas(
+    const coords17 = new Armazens(
       17,
       ' Vila Nova de Gaia',
       21.0384,
@@ -154,7 +153,7 @@ export class RedeViariaComponent implements OnInit {
       31.25,
     )
 
-    let coords: Coordenadas[] = [
+    let coords: Armazens[] = [
       coords1,
       coords2,
       coords3,
