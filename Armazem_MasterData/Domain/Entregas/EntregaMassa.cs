@@ -16,6 +16,10 @@ namespace DDDSample1.Domain.Entregas
             this.Massa = massa;
         }
         
+       public Double getValor(){
+        return (Double) Massa;
+    } 
+
         private static bool validaMassa(Double massa){
             return massa > 0;
         }

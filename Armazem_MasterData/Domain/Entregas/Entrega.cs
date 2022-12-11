@@ -27,17 +27,17 @@ namespace DDDSample1.Domain.Entregas
             this.Active = true;
         }
 
-        public Entrega(EntregaId id, EntregaData  data, EntregaMassa massa, String armazemId, EntregaTempoColocar tempoColocarEntrega, EntregaTempoRetirar tempoRetirarEntrega)
+        public Entrega(String id, String  data, Double massa, String armazemId, Double tempoColocarEntrega, Double tempoRetirarEntrega)
         {
             if(armazemId == null){
                 throw new BusinessRuleValidationException("Todas as entregas tem de ter um armazem");
             }
-            this.Id = id;
-            this.Data = data;
-            this.Massa =massa;
+            this.Id = new EntregaId(id);
+            this.Data = new EntregaData(data);
+            this.Massa =new EntregaMassa(massa);
             this.ArmazemId = new ArmazemId(armazemId);
-            this.TempoColocarEntrega = tempoColocarEntrega;
-            this.TempoRetirarEntrega = tempoRetirarEntrega;
+            this.TempoColocarEntrega = new EntregaTempoColocar(tempoColocarEntrega);
+            this.TempoRetirarEntrega = new EntregaTempoRetirar(tempoRetirarEntrega);
             this.Active = true;
         }
 

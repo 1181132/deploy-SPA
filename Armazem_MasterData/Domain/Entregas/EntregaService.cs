@@ -51,7 +51,7 @@ namespace DDDSample1.Domain.Entregas
         {
             //alterar para os outros, ver com o da stora o que ha de diferenças
             await checkArmazemIdAsync(dto.ArmazemId.AsString());
-            var entrega = new Entrega(dto.Id, dto.Data, dto.Massa, dto.ArmazemId.AsString(), dto.TempoColocarEntrega, dto.TempoRetirarEntrega);
+            var entrega = new Entrega(dto.Id.AsString(), dto.Data.ToString(), dto.Massa.getValor(), dto.ArmazemId.AsString(), dto.TempoColocarEntrega.getValor(), dto.TempoRetirarEntrega.getValor());
 
             await this._repo.AddAsync(entrega);
 

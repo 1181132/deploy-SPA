@@ -16,6 +16,10 @@ namespace DDDSample1.Domain.Entregas
             this.TempoColocarEntrega = tempoColocarEntrega;
         }
 
+        public Double getValor(){
+        return (Double) TempoColocarEntrega;
+    }
+
         private static bool validaTempo (Double tempoColocarEntrega){
             return tempoColocarEntrega > 0;
         }

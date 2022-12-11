@@ -19,6 +19,11 @@ namespace DDDSample1.Domain.Entregas
             this.Data=data;
     }
 
+        public override string ToString()
+        {
+            return Data.ToString();
+        }
+
         /*private static bool validaData(String data){
             return Validacoes.ValidaExpressao(data,Constantes.PADRAO_DATA);
         } */
