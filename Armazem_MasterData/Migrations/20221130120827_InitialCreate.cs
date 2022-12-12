@@ -47,11 +47,11 @@ namespace DDDNetCore.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Data_Data = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Massa_Massa = table.Column<int>(type: "int", nullable: true),
+                    Massa_Massa = table.Column<double>(type: "double", nullable: true),
                     ArmazemId = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    TempoColocarEntrega_TempoColocarEntrega = table.Column<int>(type: "int", nullable: true),
-                    TempoRetirarEntrega_TempoRetirarEntrega = table.Column<int>(type: "int", nullable: true),
+                    TempoColocarEntrega_TempoColocarEntrega = table.Column<double>(type: "double", nullable: true),
+                    TempoRetirarEntrega_TempoRetirarEntrega = table.Column<double>(type: "double", nullable: true),
                     Active = table.Column<bool>(type: "tinyint(1)", nullable: false)
                 },
                 constraints: table =>

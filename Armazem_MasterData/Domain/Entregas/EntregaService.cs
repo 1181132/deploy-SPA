@@ -23,11 +23,11 @@ namespace DDDSample1.Domain.Entregas
         {
             var list = await this._repo.GetAllAsync();
             
-            List<EntregaDto> listDto = list.ConvertAll<EntregaDto>(entrega => new EntregaDto{Id = entrega.Id.AsString(), Data = entrega.Data.Data,
-            Massa = entrega.Massa.Massa,
+            List<EntregaDto> listDto = list.ConvertAll<EntregaDto>(entrega => new EntregaDto{Id = entrega.Id.AsString(), Data = entrega.Data.ToString(),
+            Massa = entrega.Massa.getValor(),
             ArmazemId = entrega.ArmazemId.AsString(),
-            TempoColocarEntrega = entrega.TempoColocarEntrega.TempoColocarEntrega,
-            TempoRetirarEntrega = entrega.TempoRetirarEntrega.TempoRetirarEntrega});
+            TempoColocarEntrega = entrega.TempoColocarEntrega.getValor(),
+            TempoRetirarEntrega = entrega.TempoRetirarEntrega.getValor()});
 
             return listDto;
         }
